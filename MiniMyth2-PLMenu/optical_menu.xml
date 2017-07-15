@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="OPTICAL_DISK">
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Odtwarzaj</text>
+        <description>DVD/BluRay</description>
+        <action>JUMP Play Disc</action>
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Zgraj</text>
+        <description>DVD/BluRay na serwer</description>
+        <action>EXEC /usr/bin/mm_manage bluray_rip_start</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Status</text>
+        <description>Zgrywania</description>
+        <action>EXEC /usr/bin/mm_manage bluray_rip_progress</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Skopjuj</text>
+        <description>DVD/BluRay na serwer</description>
+        <action>EXEC /usr/bin/mm_manage bluray_copy_start</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Zatrzymaj</text>
+        <description>Zgrywanie</description>
+        <action>EXEC /usr/bin/mm_manage bluray_rip_stop</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>EJECT</type>
+        <text>Wysuń</text>
+        <description>Tacka napędu</description>
+        <action>EJECT</action>
+    </button>
+
+</mythmenu>

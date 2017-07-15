@@ -1,0 +1,59 @@
+<mythmenu name="MINIMYTH_MAINTAIN">
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Database</text>
+      <description>Check / Optimize</description>
+      <action>EXEC /usr/bin/mm_manage check_mythtv_db</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Skin</text>
+      <description>Save Cache</description>
+      <action>EXEC /usr/bin/mm_manage save_themecache</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Cookies</text>
+      <description>Save</description>
+      <action>EXEC /usr/bin/mm_manage save_cookiejar</action>
+   </button>
+
+   <button>
+      <type>MINIMYTH_REFRESH_PHONEBOOK</type>
+      <text>Telephony</text>
+      <description>Reload Phonebook</description>
+      <action>EXEC su root -c "/usr/bin/mm_manage reload_voip_config"</action>
+   </button>
+
+   <button>
+      <type>MINIMYTH_REFRESH_THEME</type>
+      <text>Skin</text>
+      <description>Reload and Install</description>
+      <action>EXEC su root -c "/usr/bin/mm_manage redownload_theme"</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>LAN</text>
+      <description>Test speed</description>
+      <action>EXEC /usr/bin/mm_manage test_network_speed</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Games</text>
+      <description>Save State</description>
+      <action>EXEC /usr/bin/mm_manage save_game</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Games</text>
+      <description>Restore State</description>
+      <action>EXEC /usr/bin/mm_manage restore_game</action>
+   </button>
+
+</mythmenu>

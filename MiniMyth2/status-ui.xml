@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="status">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamSystemBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="status1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- CUSTOM EDIT POPUP                                  -->
+            <!-- ================================================== -->
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>System status</value>
+            </textarea>
+        </group>
+
+        <group name="statusbutton1group" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <!-- ===================================================== -->
+            <!--     STATUS GROUPS                                     -->
+            <!-- ===================================================== -->
+            <buttonlist name="category" from="buttonlist_menu_2">
+                <position>2,175</position>
+            </buttonlist>
+        </group>
+
+        <group name="status2group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <buttonlist name="log" from="buttonlist_dialog_wide_permanent">
+                <area>250,175,510,420</area>
+               <buttonarea>0,0,510,400</buttonarea>
+               <statetype name="upscrollarrow">
+                   <position>10,404</position>
+               </statetype>
+               <statetype name="downscrollarrow">
+                   <position>30,404</position>
+               </statetype>
+            </buttonlist>
+
+            <textarea name="helptext" from="textarea_base">
+                <area>250,560,510,150</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+    </window>
+
+</mythuitheme>
+

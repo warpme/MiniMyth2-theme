@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="TVSETUP">
+
+    <button>
+        <type>TV_SETTINGS_PLAYBACK</type>
+        <text>Odtwarzanie</text>
+        <description>Ustawienia</description>
+        <action>SETTINGS PLAYBACK</action>
+    </button>
+
+    <button>
+        <type>TV_SETTINGS_GENERAL</type>
+        <text>Nagrywanie</text>
+        <description>Ustawienia</description>
+        <action>SETTINGS GENERAL</action>
+    </button>
+
+    <button>
+        <type>TV_SETTINGS_PROGRAM_GUIDE</type>
+        <text>EPG</text>
+        <description>Ustawienia</description>
+        <action>SETTINGS EPG</action>
+    </button>
+
+    <button>
+        <type>TV_SETTINGS_PLAYBACK_OSD</type>
+        <text>OSD</text>
+        <description>Ustawienia</description>
+        <action>SETTINGS OSD</action>
+    </button>
+
+    <button>
+        <type>TV_RECPRIORITIES_SETTINGS_GENERAL</type>
+        <text>Priorytety</text>
+        <description>Ustawienia</description>
+        <action>SETTINGS GENERALRECPRIORITIES</action>
+    </button>
+
+    <button>
+        <type>TV_SETTINGS_PLAYBACK_GROUPS</type>
+        <text>Profile</text>
+        <description>Odtwarzanie</description>
+        <action>SETTINGS PLAYGROUP</action>
+    </button>
+
+    <button>
+      <type>TV_SETTINGS_CHANNEL_GROUP</type>
+      <text>Grupy</text>
+      <description>Ulubionych kanałów</description>
+      <action>SETTINGS CHANNELGROUPS</action>
+    </button>
+
+</mythmenu>

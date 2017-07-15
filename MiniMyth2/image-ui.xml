@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="gallery">
+
+        <imagetype name="bgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamPicturesBGD.png</filename>
+        </imagetype>
+
+        <textarea name="clock" from="textarea_clock_base"/>
+
+        <imagetype name="TitleBackgroundDateText" from="titlebackground">
+            <area>410,5,560,45</area>
+        </imagetype>
+
+        <imagetype name="MediaCountBackground">
+            <area>1110,5,160,40</area>
+            <filename>images/shared/MediaCountBackgroundLong.png</filename>
+        </imagetype>
+
+        <textarea name="position" from="screentitle">
+            <area>1090,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>\
+
+        <!-- the shape where the imagelist is displayed -->
+        <shape name="gallerybackground">
+            <area>25,60,1230,633</area>
+            <type>roundbox</type>
+            <fill color="#000000" alpha="130" />
+            <line color="#AAAAAA" alpha="150" width="1" />
+            <cornerradius>2</cornerradius>
+        </shape>
+
+        <!--Shows scan progress-->
+        <!--<progressbar name="scanprogressbar" from="baseprogressbar">-->
+        <progressbar name="scanprogressbar" from="progressbar_base">
+            <area>690,80,400,40</area>
+            <imagetype name="background">
+                <area>0,0,100%,100%</area>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,100%,100%</area>
+            </imagetype>
+        </progressbar>
+
+        <!--Shows numerical scan progress-->
+        <textarea name="scanprogresstext" from="basetextarea">
+            <area>790,85,200,30</area>
+            <font>normal</font>
+            <align>center</align>
+        </textarea>
+
+        <!-- OK shows path to current image -->
+        <textarea name="breadcrumbs" from="screentitle">
+            <area>45,80,900,30</area>
+            <cutdown>yes</cutdown>
+            <font>title</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <!-- OK shows the name of the folder or image -->
+        <textarea name="caption" from="basetextarea">
+            <area>550,10,70%,30</area>
+            <cutdown>yes</cutdown>
+            <font>normal</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <!-- shows state of hidden filter -->
+        <textarea name="hidefilter" from="basetextarea">
+            <area>65%,5,120,30</area>
+        </textarea>
+
+        <!-- shows state of type filter -->
+        <textarea name="typefilter" from="basetextarea">
+            <area>75%,5,130,30</area>
+        </textarea>
+
+        <!-- OK shows current position in grid eg '1/123' -->
+        <textarea name="position" from="basetextarea">
+            <area>100%-210,10,140,30</area>
+            <font>normal</font>
+            <align>right,vcenter</align>
+        </textarea>
+
+        <!-- Mandatory: the image list 10 columns x 6 rows -->
+        <buttonlist name="images0">
+            <area>45,155,1170,535</area>
+            <buttonarea>0,0,1190,535</buttonarea>
+            <wrapstyle>flowing</wrapstyle>
+            <layout>grid</layout>
+            <arrange>fixed</arrange>
+            <align>allcenter</align>
+            <spacing>0</spacing>
+            <statetype name="buttonitem">
+                <area>0,0,100%,100%</area>
+                <state name="active" from="galleryactivebutton">
+                    <area>0,0,10%,16%</area>
+                </state>
+                <state name="selectedactive" from="galleryselectedbutton">
+                    <area>0,0,10%,16%</area>
+                </state>
+                <state name="inactive" from="active"/>
+                <state name="selectedinactive" from="active"/>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>100%-40,-65</position>
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename>images/shared/ArrowUpNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename>images/shared/ArrowUpFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+
+            <!-- Show the arrow image that indicates that there are
+                more images below -->
+            <statetype name="downscrollarrow">
+                <position>100%-10,-65</position>
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename>images/shared/ArrowDownNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename>images/shared/ArrowDownFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+
+        </buttonlist>
+
+       <!-- the image list 8 columns x 4 rows -->
+        <buttonlist name="images1" from="images0">
+            <statetype name="buttonitem">
+                <state name="active" from="galleryactivebutton">
+                    <area>0,0,12%,25%</area>
+                </state>
+                <state name="selectedactive" from="galleryselectedbutton">
+                    <area>0,0,12%,25%</area>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <!-- the image list 6 columns x 3 rows -->
+        <buttonlist name="images2" from="images0">
+            <statetype name="buttonitem">
+                <state name="active" from="galleryactivebutton">
+                    <area>0,0,16%,33%</area>
+                </state>
+                <state name="selectedactive" from="galleryselectedbutton">
+                    <area>0,0,16%,33%</area>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <!-- the image list 4 columns x 2 rows -->
+        <buttonlist name="images3" from="images0">
+            <statetype name="buttonitem">
+                <state name="active" from="galleryactivebutton">
+                    <area>0,0,25%,50%</area>
+                </state>
+                <state name="selectedactive" from="galleryselectedbutton">
+                    <area>0,0,25%,50%</area>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <!-- shows a message when no images are available
+             in the current directory -->
+         <textarea name="noimages" from="basetextarea">
+             <area>0,0,100%,100%</area>
+             <align>allcenter</align>
+             <multiline>yes</multiline>
+         </textarea>
+
+      <!-- Mandatory: Shows file info overlay -->
+        <buttonlist name="infolist" from="galleryinfolist">
+            <drawfrombottom>true</drawfrombottom>
+        </buttonlist>
+
+    </window>
+
+    <!-- Gallery Slideshow window which shows the a single image only or a slideshow. -->
+    <window name="slideshow">
+
+        <!-- Extra small text for Gallery images -->
+        <fontdef name="gallerytext" from="basesmall">
+            <outlinecolor>#000000</outlinecolor>
+            <outlinesize>2</outlinesize>
+        </fontdef>
+
+        <!-- the background behind the images -->
+        <shape name="background_shape">
+            <area>0,0,100%,100%</area>
+            <fill color="#000000" alpha="30"/>
+        </shape>
+
+        <!-- an image  -->
+        <imagetype name="image">
+            <area>0,0,100%,100%</area>
+            <preserveaspect>yes</preserveaspect>
+        </imagetype>
+
+        <!-- Represents "Show Captions" state for use as a dependancy by other widgets
+         Set = Hide; empty = Show  -->
+        <textarea name="hidecaptions" from="basetextarea">
+            <area>0,0,0,0</area>
+        </textarea>
+
+        <!-- End/Loading/Failed to load status -->
+        <textarea name="status" from="basetextarea" depends="!hidecaptions">
+            <area>10,0,400,30</area>
+            <font>gallerytext</font>
+        </textarea>
+
+        <!-- Slide count -->
+        <textarea name="slidecount" from="basetextarea" depends="!hidecaptions">
+            <area>100%-200,0,190,30</area>
+            <font>gallerytext</font>
+            <align>right, vcentre</align>
+        </textarea>
+
+        <!-- Name/date/Comment -->
+        <textarea name="caption" from="basetextarea" depends="!hidecaptions">
+            <area>10,100%-30,100%-20,30</area>
+            <font>gallerytext</font>
+            <align>centre, vcentre</align>
+        </textarea>
+
+      <!-- Shows file info overlay -->
+        <buttonlist name="infolist" from="galleryinfolist"/>
+
+    </window>
+
+</mythuitheme>
+
+

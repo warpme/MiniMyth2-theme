@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "../mythuitheme.dtd">
+<mythuitheme>
+
+<!-- ===================================================== -->
+<!-- RECORDINGS STUFF                                      -->
+<!-- ===================================================== -->
+    <window name="watchrecordings">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamRecordingsBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="rec_count" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     RECORDING LIST IN THE GROUP                       -->
+        <!-- ===================================================== -->
+        <buttonlist name="recordings" from="buttonlist_menu_details">
+            <position>740,260</position>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <progressbar name="buttonprogress">
+                        <area>0,0,490,40</area>
+                        <layout>horizontal</layout>
+                        <style>reveal</style>
+                        <shape name="progressimage">
+                        <area>0,39,490,1</area>
+                        <type>box</type>
+                        <fill color="#FFFFFF" alpha="120"/>
+                        </shape>
+                    </progressbar>
+                    <textarea name="titlesubtitle" from="textarea_base">
+                        <area>10,0,490,40</area>
+                        <alpha>128</alpha>
+                        <font state="error">normal_red</font>
+                        <font state="running">normal_amber</font>
+                        <align>left,vcenter</align>
+                        <template>%titlesubtitle%% (|progresspercent|%)%</template>
+                    </textarea>
+                    <statetype name="jobstate">
+                        <area>510,9,22,22</area>
+                        <state name="recording">
+                            <imagetype name="animation">
+                                <area>0,0,22,22</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/recording_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="animation">
+                                <area>0,0,22,22</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/transcoding_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                        <state name="commflagging">
+                            <imagetype name="animation">
+                                <area>0,0,22,22</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/flagging_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <statetype name="playlist">
+                        <state name="yes">
+                            <imagetype name="playlist_icon">
+                                <area>510,9,22,22</area>
+                                <preserveaspect>no</preserveaspect>
+                                <filename>images/shared/LEDOn.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no"/>
+                    </statetype>
+                </state>
+                <state name="selectedactive">
+                    <progressbar name="buttonprogress">
+                        <area>0,0,490,40</area>
+                        <layout>horizontal</layout>
+                        <style>reveal</style>
+                        <shape name="progressimage">
+                        <area>0,39,490,1</area>
+                        <type>box</type>
+                        <fill color="#FFFFFF" alpha="128"/>
+                        </shape>
+                    </progressbar>
+                    <textarea name="titlesubtitle" from="textarea_base">
+                        <area>10,0,350,40</area>
+                        <scroll direction="left" />
+                        <font state="error">normal_red</font>
+                        <font state="running">normal_amber</font>
+                        <align>left,vcenter</align>
+                        <template>%titlesubtitle%% (|progresspercent|%)%</template>
+                    </textarea>
+                    <textarea name="lenmins" from="textarea_base">
+                        <area>405,5,120,35</area>
+                        <font>verysmall</font>
+                        <font state="error">verysmall_red</font>
+                        <font state="running">verysmall_amber</font>
+                        <case>Normal</case>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <statetype name="watched">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayWatched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no">
+                            <imagetype name="no">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayUnwatched.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <statetype name="jobstate">
+                        <area>510,9,22,22</area>
+                        <state name="recording">
+                            <imagetype name="animation">
+                                <area>0,0,22,22</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/recording_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                        <state name="transcoding">
+                            <imagetype name="animation">
+                                <area>0,0,22,22</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/transcoding_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                        <state name="commflagging">
+                            <imagetype name="animation">
+                                <area>0,0,22,22</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/flagging_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     RECORDINGS GROUPS                                 -->
+        <!-- ===================================================== -->
+        <buttonlist name="groups" from="buttonlist_menu">
+            <position>740,260</position>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     DISK OCCUPATION BAR                               -->
+        <!-- ===================================================== -->
+        <progressbar name="usedbar" from="progressbar_base">
+            <area>810,697,260,5</area>
+            <layout>horizontal</layout>
+            <style>slide</style>
+           <imagetype name="background">
+               <area>0,0,260,11</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,260,11</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+
+        <textarea name="freereport">
+            <area>1100,690,170,25</area>
+            <font>verysmall</font>
+            <multiline>no</multiline>
+            <align>right,vcenter</align>
+        </textarea>
+
+
+        <!-- ===================================================== -->
+        <!--     PROGRAM DETAILS                                   -->
+        <!-- ===================================================== -->
+
+        <!-- ===================================================== -->
+        <!--     PROGRAM DETAILS when coverart available           -->
+        <!-- ===================================================== -->
+
+<!--
+        <group name="preview_details" depends="coverart">
+            <textarea name="title" from="textarea_base">
+                <area>300,260,425,30</area>
+                <font>title</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <case>upper</case>
+                <align>left,bottom</align>
+                <template>%TITLE%%|\n00x00| -% %"|SUBTITLE|"%</template>
+            </textarea>
+    
+            <textarea name="category" from="textarea_base">
+                <area>300,295,425,25</area>
+                <font>title_small</font>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <alpha>128</alpha>
+                <case>upper</case>
+                <align>left,vcenter</align>
+                <value>Kat.Nieokreślona</value>
+            </textarea>
+    
+            <textarea name="longchannel" from="textarea_base">
+                <area>300,320,425,25</area>
+                <align>left,vcenter</align>
+                <case>upper</case>
+            </textarea>
+    
+            <textarea name="subtitle" from="textarea_base">
+                <area>300,370,425,180</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <template>%00x00| - %%"|SUBTITLE|"\n%%|YEARSTARS| - %%DESCRIPTION%</template>
+                <cutdown>yes</cutdown>
+            </textarea>
+
+            <textarea name="startdate" from="longchannel">
+                <area>300,575,425,25</area>
+                <font>smaller</font>
+                <case>normal</case>
+                <multiline>yes</multiline>
+                <align>left,top</align>
+                <template>Nagrane: %startdate%, %starttime% - %endtime%</template>
+                <alpha>128</alpha>
+            </textarea>
+    
+            <textarea name="storagegroup" from="startdate">
+                <position>300,600</position>
+                <template>Zajmuje: %filesize_str% of %storagegroup% Storage</template>
+            </textarea>
+    
+             <textarea name="rectypestatus" from="startdate">
+                <position>300,625</position>
+                <template>Następne Nagr: %rectypestatus%</template>
+            </textarea>
+       </group>
+       -->
+
+        <!-- ===================================================== -->
+        <!--     PROGRAM DETAILS when NO coverart available        -->
+        <!-- ===================================================== -->
+
+<!--        <group name="coverart_details" depends="!coverart">-->
+            <textarea name="titlesubtitle" from="textarea_base">
+                <area>400,260,325,30</area>
+                <font>title</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <case>upper</case>
+                <align>left,bottom</align>
+                <template>%TITLE%</template>
+            </textarea>
+
+            <textarea name="category" from="textarea_base">
+                <area>400,295,325,25</area>
+                <font>title_small</font>
+                <multiline>no</multiline>
+                <cutdown>yes</cutdown>
+                <alpha>128</alpha>
+                <case>upper</case>
+                <align>left,vcenter</align>
+                <!--<template>%category% %LONGREPEAT%%STARS%</template>-->
+            </textarea>
+
+            <textarea name="longchannel" from="textarea_base">
+                <area>400,320,325,25</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>left,vcenter</align>
+            </textarea>
+
+            <!--<textarea name="stars" from="textarea_base">
+                <area>400,345,325,25</area>
+                <font>small</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>left,vcenter</align>-->
+                <!--<template>%%LONGREPEAT%%Ocena: |STARS| %</template>-->
+                <!--<value>Ocena:</value>
+            </textarea>-->
+            <statetype name="ratingstate" from="rating_base">
+                <position>400,345</position>
+            </statetype>
+
+            <textarea name="startdate" from="longchannel">
+                <position>400,390</position>
+                <font>smaller</font>
+                <template>%startdate%, %starttime% - %endtime%</template>
+                <alpha>128</alpha>
+            </textarea>
+
+            <textarea name="storagegroup" from="startdate">
+                <position>400,415</position>
+                <template>%filesize_str%</template>
+            </textarea>
+
+            <!--<textarea name="rectypestatus" from="startdate">
+                <position>400,420</position>
+                <template>Next recording: %rectypestatus%</template>
+            </textarea>
+
+            <textarea name="inetref" from="startdate">
+                <position>400,445</position>
+                <template>Grabber ID: %inetref%</template>
+            </textarea>
+
+            <textarea name="programid" from="startdate" depends="!inetref">
+                <position>400,445</position>
+                <template>Program ID: %programid%</template>
+            </textarea>-->
+
+            <textarea name="subtitle" from="textarea_base">
+                <area>25,490,700,170</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <template>%"|SUBTITLE|" %%DESCRIPTION%</template>
+                <cutdown>yes</cutdown>
+            </textarea>
+<!--         </group>-->
+
+<!--
+        <imagetype name="coverart">
+            <area>25,260,250,375</area>
+            <filename>images/shared/amt-blank-poster.png</filename>
+            <preserveaspect>yes</preserveaspect>
+            <reflection shear="0" scale="65" length="10"/>
+        </imagetype>
+        -->
+        <imagetype name="preview" depends="!coverart">
+            <area>25,260,350,200</area>
+            <preserveaspect>no</preserveaspect>
+            <reflection shear="0" scale="65" length="18"/>
+        </imagetype>
+
+        <imagetype name="defaultimage" depends="!preview">
+            <area>25,260,350,200</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/defaultHardDiskBig.png</filename>
+            <reflection shear="0" scale="65" length="18"/>
+        </imagetype>
+        <imagetype name="previewframe">
+            <area>13,248,374,224</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <group name="infoicons" from="defaultinfoicons">
+            <position>0,660</position>
+        </group>
+
+        <imagetype name="banner">
+            <area>558,670,162,30</area>
+<!--            <mask>images/shared/BannerMask.png</mask>-->
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+
+       <!-- ===================================================== -->
+       <!--     NO RECORDINGS TEXT                                -->
+       <!-- ===================================================== -->
+       <textarea name="norecordings" from="subtitle">
+            <value>No recordings available, please schedule recordings first in order to watch them here</value>
+        </textarea>
+    </window>
+
+    <window name="groupfilter">
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="974,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+       <imagetype name="popup_background">
+           <area>974,0,308,720</area>    
+           <filename>images/shared/HomeBladeSubRight.png</filename>
+       </imagetype>
+       <textarea name="label">
+           <area>990,20,290,100</area>
+           <font>title_small</font>
+           <case>upper</case>
+           <multiline>yes</multiline>
+           <align>left,bottom</align>
+           <cutdown>yes</cutdown>
+           <value>Change display groups</value>
+       </textarea>
+        <buttonlist name="groups" from="buttonlist_popup">
+            <position>980,130</position>
+        </buttonlist>
+    </window>
+
+    <window name="groupselector">
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="974,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+       <imagetype name="popup_background">
+           <area>974,0,308,720</area>    
+           <filename>images/shared/HomeBladeSubRight.png</filename>
+       </imagetype>
+       <textarea name="label">
+           <area>990,20,290,100</area>
+           <font>title_small</font>
+           <case>upper</case>
+           <multiline>yes</multiline>
+           <align>left,bottom</align>
+           <cutdown>yes</cutdown>
+           <value>Change display groups</value>
+       </textarea>
+       <buttonlist name="groups" from="buttonlist_popup">
+           <position>980,130</position>
+       </buttonlist>
+    </window>
+
+    <window name="changeview">
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="974,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+       <imagetype name="popup_background">
+           <area>974,0,308,720</area>    
+           <filename>images/shared/HomeBladeSubRight.png</filename>
+       </imagetype>
+       <textarea name="changeviewtitle">
+           <area>990,20,290,100</area>
+           <font>title_small</font>
+           <case>upper</case>
+           <multiline>yes</multiline>
+           <align>left,bottom</align>
+           <cutdown>yes</cutdown>
+           <value>Change display groups</value>
+       </textarea>
+        <textarea name="titlelabel" from="textarea_base">
+            <area>1000,130,175,35</area>
+            <value>Titles</value>
+        </textarea>
+        <checkbox name="titles" from="checkbox_base">
+            <position>1240,130</position>
+        </checkbox>
+        <textarea name="catagorieslabel" from="titlelabel">
+            <position>1000,165</position>
+            <value>Catagories</value>
+        </textarea>
+        <checkbox name="catagories" from="checkbox_base">
+            <position>1240,165</position>
+        </checkbox>
+        <textarea name="recgroupslabel" from="titlelabel">
+            <position>1000,200</position>
+            <value>Recording groups</value>
+        </textarea>
+        <checkbox name="recgroups" from="checkbox_base">
+            <position>1240,200</position>
+        </checkbox>
+        <textarea name="watchlistlabel" from="titlelabel">
+            <position>1000,235</position>
+            <value>Watch list</value>
+        </textarea>
+        <checkbox name="watchlist" from="checkbox_base">
+            <position>1240,235</position>
+        </checkbox>
+        <textarea name="livetvlabel" from="titlelabel">
+            <position>1000,270</position>
+            <value>Live TV</value>
+        </textarea>
+        <checkbox name="livetv" from="checkbox_base">
+            <position>1240,270</position>
+        </checkbox>
+        <textarea name="watchedlabel" from="titlelabel">
+            <position>1000,305</position>
+            <value>Watched programs</value>
+        </textarea>
+        <checkbox name="watched" from="checkbox_base">
+            <position>1240,305</position>
+        </checkbox>
+        <textarea name="unfinishedlabel" from="titlelabel">
+            <position>1000,340</position>
+            <value>Show Unfinished</value>
+        </textarea>
+        <checkbox name="unfinished" from="checkbox_base">
+            <position>1240,340</position>
+        </checkbox>
+        <button name="save" from="button_base">
+            <position>1150,395</position>
+            <value>Save</value>
+        </button>
+    </window>
+
+    <window name="passwordchanger">
+        <area>-1,-1,520,245</area>
+        <animation trigger="AboutToShow">
+            <section duration="400" centre="middle">
+                <zoom start="10" end="100" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="400" centre="middle">
+                <zoom start="100" end="10" easingcurve="InBack" />
+            </section>
+        </animation>
+        <imagetype name="DialogProgressBG">
+            <area>0,0,520,245</area>
+            <filename>images/shared/DialogProgressBG.png</filename>
+        </imagetype>
+        <textarea name="title" from="textarea_base">
+            <area>20,35,480,35</area>
+           <font>title_small</font>
+           <case>upper</case>
+           <multiline>yes</multiline>
+           <align>left,bottom</align>
+           <cutdown>yes</cutdown>
+            <value>Change Recording Group Password</value>
+        </textarea>
+        <textarea name="oldpasslabel" from="textarea_base">
+            <area>40,75,150,35</area>
+            <value>Old Password:</value>
+            <align>left,vcenter</align>
+        </textarea>
+        <textedit name="oldpassword" from="textedit_base">
+           <position>180,75</position>
+        </textedit>
+        <textarea name="newpasslabel" from="oldpasslabel">
+            <position>40,110</position>
+            <value>New Password:</value>
+        </textarea>
+        <textedit name="newpassword" from="oldpassword">
+            <position>180,110</position>
+        </textedit>
+
+        <button name="ok" from="button_base">
+            <position>370,180</position>
+            <value>Save</value>
+        </button>
+
+    </window>
+
+    <window name="iconhelp">
+        <area>869,0,411,720</area>
+        <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,0" end="869,0" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="869,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+        <imagetype name="popup_background">
+            <area>0,0,420,720</area>    
+            <filename>images/shared/HomeBladeSubRight.png</filename>
+        </imagetype>
+        <textarea name="title" from="textarea_base">
+            <area>21,20,390,35</area>
+            <font>title_small</font>
+            <case>upper</case>
+            <multiline>yes</multiline>
+            <align>left,vcenter</align>
+            <cutdown>yes</cutdown>
+            <value>Status Icon Help</value>
+        </textarea>
+        <buttonlist name="iconlist" from="buttonlist_menu">
+            <area>31,60,380,660</area>
+            <buttonarea>0,0,300,640</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,35</area>
+                    <imagetype name="MenuItemNF">
+                        <area>0,0,380,35</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <statetype name="icons">
+                        <position>0,0</position>
+                        <state name="autoexpire">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/shared/OSDRepeatFO.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="commflagged">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/shared/OSDPresetSettingsFO.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="cutlist">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/shared/OSDVideoFO.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="bookmark">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/shared/OSDBookmarksFO.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="playlist">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/shared/OSDPlaylistFO.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="processing">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filepattern low="1" high="8">images/tv-recordings/processing/flagging_%1.png</filepattern>
+                                <delay>60</delay>
+                            </imagetype>
+                        </state>
+                        <state name="cc">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/tv-recordings/subtitles/cc.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="subtitles">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/tv-recordings/subtitles/subtitles.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="onscreensub">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/tv-recordings/subtitles/onscreensub.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hdtv">
+                            <imagetype name="statusimage">
+                                <area>-5,0,75,30</area>
+                                <filename>images/mediaflags/Video/1080.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hd1080">
+                            <imagetype name="statusimage">
+                                <area>-5,0,75,30</area>
+                                <filename>images/mediaflags/Video/1080.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="hd720">
+                            <imagetype name="statusimage">
+                                <area>-5,0,75,30</area>
+                                <filename>images/mediaflags/Video/720.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="widescreen">
+                            <imagetype name="statusimage">
+                                <area>-5,0,75,30</area>
+                                <filename>images/mediaflags/Video/tv.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="mono">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/mediaflags/Audio/1.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="stereo">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/mediaflags/Audio/2.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="surround">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/mediaflags/Audio/6.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="dolby">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                                <filename>images/mediaflags/Audio/dolbydigital.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="watched">
+                            <imagetype name="statusimage">
+                                <area>15,0,30,30</area>
+                              <filename>images/shared/OverlayWatched.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>80,0,400,35</area>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <case>normal</case>
+                        <alpha>128</alpha>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="MenuItemFO">
+                        <area>0,0,380,35</area>
+                        <filename>images/shared/MenuItemFO.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>80,0,400,35</area>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <case>normal</case>
+                        <alpha>255</alpha>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+            </statetype>
+            <!--ARROWS-->
+            <statetype name="upscrollarrow">
+                <position>10,644</position>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>30,644</position>
+            </statetype>
+        </buttonlist>
+    </window>
+
+    <window name="editmetadata">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamRecordingsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="editmetadatagroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,988,720</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Edit Recording Metadata</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="title_editlbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Title:</value>
+            </textarea>
+
+            <textedit name="title" from="textedit_base">
+               <position>450,175</position>
+            </textedit>
+
+            <textarea name="subtitle_editlbl" from="title_editlbl">
+                <position>250,210</position>
+                <value>Subtitle:</value>
+            </textarea>
+
+            <textedit name="subtitle" from="title">
+                <position>450,210</position>
+            </textedit>
+
+            <textarea name="inetreflbl" from="title_editlbl">
+                <position>250,245</position>
+                <value>TMDB/TVDB ID:</value>
+            </textarea>
+
+            <textedit name="inetref" from="title">
+                <position>450,245</position>
+            </textedit>
+
+            <textarea name="seasonlbl" from="title_editlbl">
+                <position>250,280</position>
+                <value>Season:</value>
+            </textarea>
+
+            <spinbox name="season" from="spinbox_menu">
+                <position>420,280</position>
+            </spinbox>
+
+            <textarea name="episodelbl" from="title_editlbl">
+                <position>530,280</position>
+                <value>Episode:</value>
+            </textarea>
+
+            <spinbox name="episode" from="spinbox_base">
+                <position>670,280</position>
+            </spinbox>
+
+            <textarea name="descriptionlbl" from="title_editlbl">
+                <position>250,315</position>
+                <value>Description:</value>
+            </textarea>
+
+            <textedit name="description" from="textedit_menu_box_wide">
+               <position>250,380</position>
+            </textedit>
+
+            <button name="query_button" from="button_base">
+                <position>450,490</position>
+                <value>Query Metadata</value>
+            </button>
+
+           <!-- ===================================================== -->
+           <!-- SHOW GRAPHICS                                         -->
+           <!-- ===================================================== -->
+           <group name="artworkoverview" from="defaultartworkoverview">
+               <position>250,475</position>
+           </group>
+        </group>
+
+        <group name="editmetadatabuttongroup" from="defaultscreencontent_2B_animated">
+           <area>788,0,988,720</area>
+            <button name="ok" from="button_base_menu">
+                <position>2,175</position>
+                <value>save</value>
+            </button>
+        </group>
+    </window>
+
+</mythuitheme>

@@ -1,0 +1,24 @@
+<mythmenu name="ZONEMINDER">
+
+   <button>
+        <type>ZONEMINDER</type>
+        <text>Zdarzenia</text>
+        <description>Przjżyj</description>
+        <action>JUMP ZoneMinder Events</action>
+   </button>
+
+   <button>
+        <type>ZONEMINDER</type>
+        <text>Zarządzanie</text>
+        <description>Konsola</description>
+        <action>JUMP ZoneMinder Console</action>
+   </button>
+
+   <button>
+        <type>ZONEMINDER</type>
+        <text>Live</text>
+        <description>Ogladaj Kamery</description>
+        <action>JUMP ZoneMinder Live View</action>
+   </button>
+
+</mythmenu>

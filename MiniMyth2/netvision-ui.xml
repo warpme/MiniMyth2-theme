@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+  <window name="netsearch">
+        <imagetype name="netsearchbgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="page" from="textarea_base">
+            <area>1112,8,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <textarea name="searchlbl" from="textarea_base">
+            <area>750,260,510,35</area>
+            <value>Search for:</value>
+        </textarea>
+
+        <textedit name="search" from="textedit_base">
+            <position>910,260</position>
+        </textedit>
+
+        <buttonlist name="sites" from="buttonlist_menu">
+            <area>740,295,540,420</area>
+            <buttonarea>0,0,540,400</buttonarea>
+            <statetype name="upscrollarrow">
+                <position>10,404</position>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>30,404</position>
+            </statetype>
+        </buttonlist>
+
+        <buttonlist name="results" from="buttonlist_menu_details">
+            <area>740,295,540,420</area>
+            <buttonarea>0,0,540,400</buttonarea>
+            <statetype name="buttonitem">
+                <state name="selectedactive">
+                    <textarea name="length" from="textarea_base">
+                        <area>405,5,120,35</area>
+                        <font>verysmall</font>
+                        <font state="error">verysmall_red</font>
+                        <font state="running">verysmall_amber</font>
+                        <case>Normal</case>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <statetype name="downloadable">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayUnwatched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no">
+                            <imagetype name="no">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayWatched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="default">
+                            <imagetype name="defaultimage">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayUnwatched.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>10,404</position>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>30,404</position>
+            </statetype>
+        </buttonlist>
+
+        <imagetype name="preview">
+            <area>25,260,350,197</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/defaultNetworkBigWide.png</filename>
+            <reflection shear="0" scale="65" length="18"/>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>400,260,325,85</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,bottom</align>
+        </textarea>
+
+        <textarea name="author" from="textarea_base">
+            <area>400,350,325,25</area>
+            <font>title_small</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <alpha>128</alpha>
+            <case>upper</case>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="date" from="textarea_base">
+            <area>400,395,325,25</area>
+            <font>smaller</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <template>Published on %date%</template>
+            <alpha>128</alpha>
+        </textarea>
+
+        <textarea name="resolution" from="textarea_base">
+            <area>400,445,325,25</area>
+            <font>smaller</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <template>%RESOLUTION|, %%filesize_str%</template>
+            <alpha>128</alpha>
+        </textarea>
+
+        <textarea name="countries" from="textarea_base">
+            <area>400,420,325,25</area>
+            <font>smaller</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <template>Available in %countries%</template>
+            <alpha>128</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>25,490,700,170</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,top</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <template>%00x00| - %%"|SUBTITLE|"\n%%|RATING| - %%DESCRIPTION%</template>
+        </textarea>
+
+        <textarea name="mediaurl" from="textarea_base">
+            <area>255,685,470,25</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <scroll direction="left" />
+            <alpha>64</alpha>
+        </textarea>
+
+        <textarea name="nosites" from="description">
+            <value>Can't find any search scripts! This usually indicates missing search script prerequisites. Try running a script from the command line.</value>
+        </textarea>
+
+       <imagetype name="defaultsub">
+           <area>25,670,74,50</area>
+           <alpha>64</alpha>
+           <preserveaspect>no</preserveaspect>
+           <filename>images/flags/onscreensub.png</filename>
+       </imagetype>
+       <imagetype name="defaultvideo">
+           <area>95,670,74,50</area>
+           <preserveaspect>no</preserveaspect>
+           <alpha>64</alpha>
+           <filename>images/flags/576i.png</filename>
+       </imagetype>
+       <imagetype name="defaultaudio">
+           <area>170,670,74,50</area>
+           <preserveaspect>no</preserveaspect>
+           <alpha>64</alpha>
+           <filename>images/flags/dd20.png</filename>
+       </imagetype>
+
+  </window>
+
+  <window name="treeeditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="treeeditor1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Manage Site Subscriptions</value>
+            </textarea>
+
+            <buttonlist name="grabbers" from="buttonlist_dialog_wide_check">
+                <position>250,175</position>
+            </buttonlist>
+        </group>
+
+  </window>
+
+  <window name="rsseditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="rsseditor1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Manage Site Subscriptions</value>
+            </textarea>
+
+            <buttonlist name="sites" from="buttonlist_dialog_wide_check">
+                <position>250,175</position>
+            </buttonlist>
+
+            <textarea name="description" from="textarea_base">
+                <area>250,640,510,70</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+            </textarea>
+        </group>
+
+        <group name="rsseditorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="new" from="button_base_menu">
+                <position>2,175</position>
+                <value>New</value>
+            </button>
+
+            <button name="edit" from="button_base_menu">
+                <position>2,210</position>
+                <value>Edit</value>
+            </button>
+
+            <button name="delete" from="button_base_menu">
+                <position>2,245</position>
+                <value>Delete</value>
+            </button>
+        </group>
+
+  </window>
+
+  <window name="rsseditpopup">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="rsseditorpopup1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Manage RSS Subscriptions</value>
+            </textarea>
+
+            <textarea name="titlelbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Feed Name:</value>
+            </textarea>
+
+            <textedit name="title" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+            <textarea name="authorlbl" from="titlelbl">
+                <position>250,210</position>
+                <value>Feed Author:</value>
+            </textarea>
+
+            <textedit name="author" from="textedit_base">
+                <position>450,210</position>
+            </textedit>
+
+            <textarea name="urllabel" from="titlelbl">
+                <position>250,280</position>
+                <value>Feed URL:</value>
+            </textarea>
+
+            <textedit name="url" from="textedit_base">
+                <position>450,280</position>
+            </textedit>
+
+            <textarea name="desclabel" from="titlelbl">
+                <position>250,385</position>
+                <value>Site Description:</value>
+            </textarea>
+
+            <textedit name="description" from="textedit_base">
+                <position>450,385</position>
+            </textedit>
+
+            <textarea name="downloadlbl" from="titlelbl">
+                <position>250,490</position>
+                <value>Download this feed automatically</value>
+            </textarea>
+
+            <checkbox name="download" from="checkbox_base">
+                <position>730,490</position>
+            </checkbox>
+
+            <imagetype name="preview">
+                <area>372,560,267,150</area>
+            </imagetype>
+        </group>
+
+        <group name="rsseditorpopubutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="preview_browse" from="button_base_menu">
+                <position>2,175</position>
+                <value>Preview</value>
+            </button>
+
+            <button name="ok" from="button_base_menu">
+                <position>2,210</position>
+                <value>Save</value>
+            </button>
+
+            <button name="cancel" from="button_base_menu">
+                <position>2,245</position>
+                <value>Cancel</value>
+            </button>
+        </group>
+
+  </window>
+
+  <window name="tree">
+        <imagetype name="treebgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="childcount" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <buttontree name="videos"from="buttontree_menu">
+            <position>740,260</position>
+        </buttontree>
+
+        <imagetype name="preview">
+            <area>25,260,350,197</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/defaultNetworkBigWide.png</filename>
+            <reflection shear="0" scale="65" length="18"/>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>400,230,325,85</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,bottom</align>
+        </textarea>
+
+        <textarea name="author" from="textarea_base">
+            <area>400,330,325,25</area>
+            <font>title_small</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <alpha>128</alpha>
+            <case>upper</case>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="date" from="textarea_base">
+            <area>400,375,325,25</area>
+            <font>smaller</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <template>Published on %date%</template>
+            <alpha>128</alpha>
+        </textarea>
+
+       <textarea name="resolution" from="textarea_base">
+            <area>400,425,325,25</area>
+            <font>smaller</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <template>%RESOLUTION|, %%filesize_str| %%(|length|)%</template>
+            <alpha>128</alpha>
+        </textarea>
+
+        <textarea name="countries" from="textarea_base">
+            <area>400,400,325,25</area>
+            <font>smaller</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <template>Available in %countries%</template>
+            <alpha>128</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>25,490,700,170</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,top</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <template>%00x00| - %%"|SUBTITLE|"\n%%|RATING| - %%DESCRIPTION%</template>
+        </textarea>
+
+        <textarea name="mediaurl" from="textarea_base">
+            <area>255,685,470,25</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <scroll direction="left" />
+            <alpha>64</alpha>
+        </textarea>
+
+        <textarea name="nosites" from="description">
+            <value>Can't find any search scripts! This usually indicates missing search script prerequisites. Try running a script from the command line.</value>
+        </textarea>
+
+       <imagetype name="defaultsub">
+           <area>25,670,74,50</area>
+           <alpha>64</alpha>
+           <preserveaspect>no</preserveaspect>
+           <filename>images/flags/onscreensub.png</filename>
+       </imagetype>
+       <imagetype name="defaultvideo">
+           <area>95,670,74,50</area>
+           <preserveaspect>no</preserveaspect>
+           <alpha>64</alpha>
+           <filename>images/flags/576i.png</filename>
+       </imagetype>
+       <imagetype name="defaultaudio">
+           <area>170,670,74,50</area>
+           <preserveaspect>no</preserveaspect>
+           <alpha>64</alpha>
+           <filename>images/flags/dd20.png</filename>
+       </imagetype>
+
+    </window>
+
+    <window name="browser">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutBrowse_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="childcount" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <buttonlist name="videos" from="buttonlist_browse">
+            <position>0,505</position>
+        </buttonlist>
+
+        <imagetype name="preview">
+            <area>25,70,290,410</area>
+            <filename>images/shared/Take2RaspberryLong.png</filename>
+            <preserveaspect>yes</preserveaspect>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>345,70,915,40</area>
+            <font>title_big</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <template>%TITLE% %SUBTITLE%</template>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>345,125,915,125</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>-->
+        </textarea>
+
+        <textarea name="nosites" from="description">
+            <value>You haven't added any Sites/RSS Feeds yet! To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+        </textarea>
+
+        <textarea name="MovieDetailslbl" from="textarea_base">
+            <area>345,275,400,25</area>
+            <font>title_small</font>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <value>Movie Details</value>
+        </textarea>
+
+        <textarea name="resolution" from="textarea_base">
+            <area>345,300,495,25</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>None</value>
+        </textarea>
+
+        <textarea name="date" from="resolution">
+            <position>345,325</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="length" from="resolution">
+            <position>345,350</position>
+            <value>N/A</value>resolution
+        </textarea>
+
+        <textarea name="rating" from="resolution">
+            <position>345,375</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="Urllbl" from="MovieDetailslbl">
+            <position>345,425</position>
+            <value>Movie URL</value>
+        </textarea>
+
+       <textarea name="mediaurl" from="resolution">
+            <position>345,450</position>
+        </textarea>
+
+        <textarea name="Directorlbl" from="MovieDetailslbl">
+            <position>850,275</position>
+            <value>Author</value>
+        </textarea>
+
+        <textarea name="author" from="resolution">
+            <position>850,300</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="Seasonlbl" from="MovieDetailslbl">
+            <position>850,425</position>
+            <value>Season and Episode</value>
+        </textarea>
+
+        <textarea name="s##e##" from="resolution">
+            <position>850,450</position>
+            <value>s00e00</value>
+        </textarea>
+
+    </window>
+
+    <window name="gallery">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNetVisionBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="childcount" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <buttonlist name="videos" from="buttonlist_gallery">
+            <position>20,240</position>
+        </buttonlist>
+
+        <textarea name="title" from="textarea_base">
+            <area>820,260,440,35</area>
+            <font>title</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <template>%TITLE% %SUBTITLE%</template>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>820,295,440,355</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>-->
+        </textarea>
+
+        <textarea name="nosites" from="basetextarea">
+            <value>You haven't added any Sites/RSS Feeds yet!  To add a site, press MENU, then choose "Scan/Manage Subscriptions," then "Manage Site Subscriptions."</value>
+        </textarea>
+
+        <textarea name="authorlbl" from="textarea_base">
+            <area>820,680,120,25</area>
+            <font>normal</font>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <value>Author:</value>
+        </textarea>
+
+       <textarea name="author" from="textarea_base">
+            <area>900,680,370,25</area>
+            <font>small</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+    </window>
+
+</mythuitheme>

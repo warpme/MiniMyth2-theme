@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+    <window name="appearance">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/tv-monoscopio_16x9.png</filename>
+        </imagetype>
+
+        <imagetype name="topleft">
+            <filename>images/shared/CalibrateTopLeft_amber.png</filename>
+        </imagetype>
+
+        <imagetype name="bottomright">
+            <filename>images/shared/CalibrateBottomRight_amber.png</filename>
+        </imagetype>
+
+        <imagetype name="DialogProgressBG">
+            <area>380,220,520,280</area>
+            <filename>images/shared/DialogProgressBG.png</filename>
+        </imagetype>
+
+        <textarea name="part" from="textarea_base">
+            <font>title</font>
+            <area>380,220,520,70</area>
+            <value>Appearance Wizard</value>
+            <align>allcenter</align>
+        </textarea>
+
+        <textarea name="part1" from="textarea_base">
+            <area>400,280,480,90</area>
+            <case>normal</case>
+            <alpha>128</alpha>
+            <value>Move the selected amber arrow to the corner of the TV screen.  Press SELECT to edit the other arrow.  Press MENU for options and ESC to quit.</value>
+            <multiline>yes</multiline>
+            <align>top,justify</align>
+        </textarea>
+
+        <textarea name="size" from="part1">
+            <area>400,380,480,30</area>
+            <alpha>255</alpha>
+        </textarea>
+
+        <textarea name="offsets" from="size">
+            <position>400,410</position>
+        </textarea>
+
+        <textarea name="changeamount" from="size">
+            <position>400,440</position>
+        </textarea>
+
+    </window>
+</mythuitheme>

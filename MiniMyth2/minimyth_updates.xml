@@ -1,0 +1,17 @@
+<mythmenu name="MINIMYTH_UPDATES">
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Check</text>
+      <description>Updates</description>
+      <action>EXEC /usr/bin/mm_manage check_updates</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Install</text>
+      <description>Updates</description>
+      <action>EXEC /usr/bin/mm_manage install_updates</action>
+   </button>
+
+</mythmenu>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="ADVANCED">
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>Tools</text>
+        <description>MiniMyth2</description>
+        <action>MENU minimyth_tools.xml</action>
+    </button>
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>System Status</text>
+        <description>See what your system is doing</description>
+        <action>TV_STATUS</action>
+    </button>
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>Music Tools</text>
+        <description>Select, import, or play music</description>
+        <action>PLUGIN mythmusic</action>
+        <depends>mythmusic</depends>
+    </button>
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>Archive</text>
+        <description>Recordings</description>
+        <action>PLUGIN mytharchive</action>
+        <depends>mytharchive</depends>
+    </button>
+
+</mythmenu>

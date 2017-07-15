@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.xsd">
+
+<mythuitheme>
+
+    <window name="notification">
+        <area>758,55,512,152</area>
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,152</area>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>45,20,350,35</area>
+            <font>title</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>45,50,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>45,70,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea">
+            <area>45,87,350,60</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="progress_text" from="textarea_base">
+            <area>45,110,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <!--<progressbar name="progress" from="progressbar_base">-->
+        <progressbar name="progress">    
+            <area>45,130,345,5</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+           <imagetype name="background">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="notification-image">
+        <area>758,55,512,152</area>
+        <!-- <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,55" end="758,55" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="758,55" end="1280,55" easingcurve="InBack" />
+            </section>
+        </animation>-->
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,152</area>
+        </imagetype>
+
+        <statetype name="mediastate">
+            <area>0,0,100%,100%</area>
+            <state name="ok"/>
+            <state name="noartwork">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageartwork">
+                    <!-- Artist: Vargas21 http://www.iconarchive.com/show/aquave-metal-icons-by-vargas21/Music-icon.html -->
+                    <filename>images/mythnotify/noartwork.png</filename>
+                    <area>18,18,144,144</area>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <statetype name="errorstate">
+            <area>0,0,100%,100%</area>
+            <state name="ok"/>
+            <state name="error">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageerror">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Error-icon.html -->
+                    <filename>images/mythnotify/error.png</filename>
+                    <area>18,18,115,115</area>
+                </imagetype>
+            </state>
+            <state name="check">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageok">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Select-icon.html -->
+                    <filename>images/mythnotify/check.png</filename>
+                    <area>18,18,115,115</area>
+                </imagetype>
+            </state>
+            <state name="warning">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imagewarning">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Alert-icon.html -->
+                    <filename>images/mythnotify/warning.png</filename>
+                    <area>18,18,144,144</area>
+                </imagetype>
+            </state>
+            <state name="busy">
+                <area>0,0,100%,100%</area>
+                <imagetype name="animationbusy">
+                    <area>35,35,80,80</area>
+                    <!--<filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>-->
+                    <filepattern low="1" high="8">mb_loading_%1.png</filepattern>
+                    <delay>100</delay>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <imagetype name="coverartbgd">
+            <area>20,20,115,115</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="image" depends="!mediastate&amp;!errorstate">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>20,20,115,115</area>
+        </imagetype>
+        <imagetype name="coverartglass" from="image">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>145,20,350,35</area>
+            <font>title</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>145,50,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>145,70,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea">
+            <area>145,87,350,60</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="progress_text" from="textarea_base">
+            <area>145,110,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <!--<progressbar name="progress" from="progressbar_base">-->
+        <progressbar name="progress">
+            <area>145,130,345,5</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+           <imagetype name="background">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="notification-full">
+        <area>0,0,100%,100%</area>
+
+        <shape name="background">
+            <area>0,0,100%,100%</area>
+            <fill color="#000000"/>
+        </shape>
+
+        <statetype name="mediastate">
+            <area>0,0,100%,100%</area>
+            <state name="ok"/>
+            <state name="noartwork">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageartwork">
+                    <!-- Artist: Vargas21 http://www.iconarchive.com/show/aquave-metal-icons-by-vargas21/Music-icon.html -->
+                    <filename>images/mythnotify/noartwork512.png</filename>
+                    <area>0,0,100%,100%</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <statetype name="errorstate">
+            <area>0,0,100%,100%</area>
+            <state name="ok"/>
+            <state name="error">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageerror">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Error-icon.html -->
+                    <filename>images/mythnotify/error.png</filename>
+                    <area>0,0,100%,100%</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="check">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageok">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Select-icon.html -->
+                    <filename>images/mythnotify/check.png</filename>
+                    <area>704,189,512,512</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="warning">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imagewarning">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Alert-icon.html -->
+                    <filename>images/mythnotify/warning.png</filename>
+                    <area>704,189,512,512</area>
+                    <preserveaspect>true</preserveaspect>
+                </imagetype>
+            </state>
+            <state name="busy">
+                <area>0,0,100%,100%</area>
+                <imagetype name="animationbusy">
+                    <area>704,189,512,512</area>
+                    <!--<filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>-->
+                    <filepattern low="1" high="8">mb_loading_%1.png</filepattern>
+                    <delay>100</delay>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <imagetype name="image" depends="!mediastate&amp;!errorstate">
+            <filename>damaged.png</filename>
+            <area>-1,-1,100%,100%</area>
+            <preserveaspect>true</preserveaspect>
+        </imagetype>
+
+        <textarea name="title" from="basetextarea">
+            <area>170,10,-10,35</area>
+            <font>mysmall</font>
+        </textarea>
+
+        <textarea name="origin" from="basetextarea">
+            <area>170,45,-10,30</area>
+            <font>myverysmall</font>
+        </textarea>
+
+        <textarea name="description" from="basetextarea" depends="progress">
+            <area>170,75,-10,30</area>
+            <font>myverysmall</font>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea" depends="progress">
+            <area>170,105,300,30</area>
+            <font>myverysmall</font>
+        </textarea>
+
+        <textarea name="progress_text" from="basetextarea">
+            <area>370,105,-10,30</area>
+            <font>myverysmall</font>
+            <align>right</align>
+        </textarea>
+
+        <progressbar name="progress" from="baseprogressbar">
+            <area>170,100%-100,10,10</area>
+        </progressbar>
+
+        <textarea name="description_noprogress" from="basetextarea" depends="!progress">
+            <area>170,100%-165,-10,115</area>
+            <font>basemedium</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <template>%DESCRIPTION%</template>
+        </textarea>
+    </window>
+
+    <window name="notification-image-nextrec-small">
+        <area>758,55,512,78</area>
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,78</area>
+        </imagetype>
+
+        <imagetype name="coverartbgd">
+            <area>13,10,72,58</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="image" depends="!mediastate&amp;!errorstate">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>13,10,72,58</area>
+        </imagetype>
+        <imagetype name="coverartglass" from="image">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>90,7,350,30</area>
+            <font>title</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>90,32,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>90,52,350,20</area>
+            <font>tiny</font>
+            <case>normal</case>
+            <alpha>120</alpha>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea">
+            <area>90,72,350,60</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+    </window>
+
+    <window name="notification-image-incomming-call">
+
+        <area>558,55,712,352</area>
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,712,352</area>
+        </imagetype>
+
+        <imagetype name="coverartbgd">
+            <area>40,50,220,220</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="image" depends="!mediastate&amp;!errorstate">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>40,50,220,220</area>
+        </imagetype>
+        <imagetype name="coverartglass" from="image">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>260,60,412,30</area>
+            <font>title_big</font>
+            <align>center,center</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>300,110,350,20</area>
+            <font>normal_bold</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>40,285,220,20</area>
+            <font>normal_bold</font>
+            <align>center,center</align>
+            <case>normal</case>
+        </textarea>
+
+        <imagetype name="talk">
+               <area>300,150,30,30</area>
+               <filename>images/mythnotify/phone-talk.png</filename>
+               <preserveaspect>false</preserveaspect>
+        </imagetype>
+
+        <imagetype name="voicemail-listen">
+               <area>300,190,30,30</area>
+               <filename>images/mythnotify/phone-voicemail-listen.png</filename>
+               <preserveaspect>false</preserveaspect>
+        </imagetype>
+
+        <imagetype name="voicemail">
+               <area>300,230,30,30</area>
+               <filename>images/mythnotify/phone-voicemail.png</filename>
+               <preserveaspect>false</preserveaspect>
+        </imagetype>
+
+        <imagetype name="reject">
+               <area>300,270,30,30</area>
+               <filename>images/mythnotify/phone-reject.png</filename>
+               <preserveaspect>false</preserveaspect>
+        </imagetype>
+
+        <textarea name="talk-label" from="textarea_base">
+            <area>350,150,350,30</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>Klawisz [1]: Odbierz</value>
+        </textarea>
+
+        <textarea name="voicemail-talk-label" from="textarea_base">
+            <area>350,190,350,30</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>Klawisz [2]: Poczta Głosowa z Podsłuchem</value>
+        </textarea>
+
+        <textarea name="voicemail-label" from="textarea_base">
+            <area>350,230,350,30</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>Klawisz [3]: Poczta Głosowa</value>
+        </textarea>
+
+        <textarea name="reject-label" from="textarea_base">
+            <area>350,270,350,30</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>Klawisz [4]: Odrzuć</value>
+        </textarea>
+
+    </window>
+
+    <window name="notification-nextrec">
+        <area>558,55,712,352</area>
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,712,352</area>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>45,20,622,35</area>
+            <font>title</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>45,70,622,360</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+            <alpha>120</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>45,100,622,360</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea">
+            <area>45,130,622,360</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="progress_text" from="textarea_base">
+            <area>45,110,622,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>120</alpha>
+        </textarea>
+
+        <!--<progressbar name="progress" from="progressbar_base">-->
+        <progressbar name="progress">
+            <area>45,130,622,5</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+           <imagetype name="background">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="notification-image-tuners">
+        <area>758,55,512,112</area>
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,112</area>
+        </imagetype>
+
+        <imagetype name="coverartbgd">
+            <area>20,23,88,64</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="image" depends="!mediastate&amp;!errorstate">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>20,23,88,64</area>
+        </imagetype>
+        <imagetype name="coverartglass" from="image">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>122,10,350,35</area>
+            <font>title</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>122,40,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>122,58,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea">
+            <area>122,77,350,60</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="progress_text" from="textarea_base">
+            <area>122,77,350,20</area>
+            <font>tiny</font>
+            <case>normal</case>
+            <alpha>120</alpha>
+        </textarea>
+
+        <!--<progressbar name="progress" from="progressbar_base">-->
+        <progressbar name="progress">
+            <area>122,97,345,5</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+           <imagetype name="background">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="notification-image-mail">
+        <area>758,55,512,152</area>
+        <!-- <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,55" end="758,55" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="758,55" end="1280,55" easingcurve="InBack" />
+            </section>
+        </animation>-->
+
+        <imagetype name="background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,152</area>
+        </imagetype>
+
+        <statetype name="mediastate">
+            <area>0,0,100%,100%</area>
+            <state name="ok"/>
+            <state name="noartwork">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageartwork">
+                    <!-- Artist: Vargas21 http://www.iconarchive.com/show/aquave-metal-icons-by-vargas21/Music-icon.html -->
+                    <filename>images/mythnotify/noartwork.png</filename>
+                    <area>18,18,144,144</area>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <statetype name="errorstate">
+            <area>0,0,100%,100%</area>
+            <state name="ok"/>
+            <state name="error">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageerror">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Error-icon.html -->
+                    <filename>images/mythnotify/error.png</filename>
+                    <area>18,18,115,115</area>
+                </imagetype>
+            </state>
+            <state name="check">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imageok">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Select-icon.html -->
+                    <filename>images/mythnotify/check.png</filename>
+                    <area>18,18,115,115</area>
+                </imagetype>
+            </state>
+            <state name="warning">
+                <area>0,0,100%,100%</area>
+                <imagetype name="imagewarning">
+                    <!-- Artist: Kyo-Tux http://www.iconarchive.com/show/phuzion-icons-by-kyo-tux/Sign-Alert-icon.html -->
+                    <filename>images/mythnotify/warning.png</filename>
+                    <area>18,18,144,144</area>
+                </imagetype>
+            </state>
+            <state name="busy">
+                <area>0,0,100%,100%</area>
+                <imagetype name="animationbusy">
+                    <area>35,35,80,80</area>
+                    <!--<filepattern low="1" high="29">images/shared/busy/busy-%1.png</filepattern>-->
+                    <filepattern low="1" high="8">mb_loading_%1.png</filepattern>
+                    <delay>100</delay>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <imagetype name="coverartbgd">
+            <area>20,20,115,115</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="image" depends="!mediastate&amp;!errorstate">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>20,20,115,115</area>
+        </imagetype>
+        <imagetype name="coverartglass" from="image">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>145,20,350,35</area>
+            <font>title</font>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="origin" from="textarea_base">
+            <area>145,50,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>145,70,350,20</area>
+            <font>tiny</font>
+            <case>normal</case>
+            <alpha>120</alpha>
+        </textarea>
+
+        <textarea name="extra" from="basetextarea">
+            <area>145,87,350,60</area>
+            <font>verysmall</font>
+            <multiline>yes</multiline>
+            <align>left,top</align>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="progress_text" from="textarea_base">
+            <area>145,110,350,20</area>
+            <font>verysmall</font>
+            <case>normal</case>
+            <alpha>160</alpha>
+        </textarea>
+
+        <!--<progressbar name="progress" from="progressbar_base">-->
+        <progressbar name="progress">
+            <area>145,130,345,5</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+           <imagetype name="background">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+    </window>
+
+</mythuitheme>

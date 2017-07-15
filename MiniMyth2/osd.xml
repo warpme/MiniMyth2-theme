@@ -1,0 +1,1294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="osd_message">
+        <fontdef name="medium" face="DejaVu LGC Sans">
+            <pixelsize>28</pixelsize>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <color>#FFFFFF</color>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <area>465,0,350,70</area>
+        <imagetype name="osd_messageBackground">
+            <area>0,0,350,70</area>
+            <filename>images/shared/InfoMessagePanel.png</filename>
+        </imagetype>
+        <textarea name="message_text">
+            <font>medium</font>
+            <case>upper</case>
+            <area>10,5,330,60</area>
+            <align>hcenter,vcenter</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+    </window>
+
+    <window name="osd_input">
+        <fontdef name="normal" face="DejaVu LGC Sans">
+            <pixelsize>28</pixelsize>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <color>#FFFFFF</color>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <area>465,0,350,70</area>
+        <imagetype name="osd_messageBackground">
+            <area>0,0,350,70</area>
+            <filename>images/shared/InfoMessagePanel.png</filename>
+        </imagetype>
+        <textarea name="osd_number_entry">
+            <font>normal</font>
+            <area>10,5,330,60</area>
+            <align>hcenter,vcenter</align>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <template>Zmień Kanał na: %1</template>
+        </textarea>
+    </window>
+
+    <window name="osd_debug">
+        <fontdef name="normal" face="DejaVu LGC Sans">
+            <pixelsize>24</pixelsize>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <color>#FFFFFF</color>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <fontdef name="normal_tiny" from="normal">
+            <pixelsize>16</pixelsize>
+        </fontdef>
+        <fontdef name="title_small" face="Fluid">
+            <color>#FFFFFF</color>
+            <pixelsize>25</pixelsize>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <area>968,0,316,720</area>
+        <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,0" end="968,0" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="968,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+        <imagetype name="popup_background">
+            <area>0,0,350,720</area>
+            <filename>images/shared/VisOsdPanel.png</filename>
+        </imagetype>
+
+        <imagetype name="storage-divider">
+            <area>0,25,316,35</area>
+            <filename>images/shared/MenuItemNF.png</filename>
+        </imagetype>
+
+        <imagetype name="storage_icon">
+            <area>32,70,45,45</area>
+            <filename>images/osd/disk_props.png</filename>
+        </imagetype>
+
+        <textarea name="storage">
+            <area>32,120,130,35</area>
+            <font>normal</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <alpha>255</alpha>
+            <value>Storage to Buffer :</value>
+        </textarea>
+        <textarea name="storagerate">
+            <area>160,120,150,35</area>
+            <font>normal</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <alpha>128</alpha>
+        </textarea>
+        <textarea name="buffer" from="storage">
+            <position>32,155</position>
+            <value>Available Buffer :</value>
+        </textarea>
+        <textarea name="bufferavail" from="storagerate">
+            <position>160,155</position>
+            <template>%BUFFERAVAIL% of %BUFFERSIZE%Mb</template>
+        </textarea>
+
+        <imagetype name="video-divider">
+            <area>0,162,316,35</area>
+            <filename>images/shared/MenuItemNF.png</filename>
+        </imagetype>
+
+        <imagetype name="video_icon">
+            <area>32,210,45,45</area>
+            <filename>images/osd/video_props.png</filename>
+        </imagetype>
+
+        <textarea name="decoder" from="storage">
+            <position>32,260</position>
+            <value>Buffer to Decoder :</value>
+        </textarea>
+        <textarea name="decoderrate" from="storagerate">
+            <position>160,260</position>
+        </textarea>
+
+        <textarea name="video" from="storage">
+            <position>32,295</position>
+            <value>Video :</value>
+        </textarea>
+        <textarea name="videowidth" from="storagerate">
+            <position>160,295</position>
+            <template>%VIDEOWIDTH%x%VIDEOHEIGHT%@%VIDEOFRAMERATE%</template>
+        </textarea>
+        <textarea name="vidcodec" from="storage">
+            <position>32,330</position>
+            <value>Codec/Dec :</value>
+        </textarea>
+        <textarea name="videocodec" from="storagerate">
+            <position>160,330</position>
+            <template>%VIDEOCODEC%/%VIDEODECODER%</template>
+        </textarea>
+        <textarea name="cpuload" from="storage">
+            <position>32,365</position>
+            <value>CPUs :</value>
+        </textarea>
+        <textarea name="load" from="storagerate">
+            <position>160,365</position>
+        </textarea>
+
+        <textarea name="fps" from="storage">
+            <position>32,400</position>
+            <value>FPS :</value>
+        </textarea>
+        <textarea name="framerate" from="storagerate">
+            <position>160,400</position>
+        </textarea>
+
+        <textarea name="sync" from="storage">
+            <position>32,435</position>
+            <value>A/V Sync :</value>
+        </textarea>
+        <textarea name="avsync" from="storagerate">
+            <position>160,435</position>
+        </textarea>
+        <textarea name="frames" from="storage">
+            <position>32,470</position>
+            <value>Frames decoded/free :</value>
+        </textarea>
+        <textarea name="videoframes" from="storagerate">
+            <position>160,470</position>
+            <template>%VIDEOFRAMES% frames</template>
+        </textarea>
+
+        <imagetype name="audio-divider">
+            <area>0,477,316,35</area>
+            <filename>images/shared/MenuItemNF.png</filename>
+        </imagetype>
+
+        <imagetype name="audio_icon">
+            <area>32,525,45,45</area>
+            <filename>images/osd/audio_props.png</filename>
+        </imagetype>
+
+        <textarea name="audio" from="storage">
+            <position>32,575</position>
+            <value>Audio :</value>
+        </textarea>
+        <textarea name="audiocodec" from="storagerate">
+            <position>160,575</position>
+        </textarea>
+        <textarea name="channels" from="storage">
+            <position>32,610</position>
+            <value>Channels :</value>
+        </textarea>
+        <textarea name="audiochannels" from="storagerate">
+            <position>160,610</position>
+        </textarea>
+        <textarea name="audiorate" from="storage">
+            <position>32,645</position>
+            <value>Sample rate :</value>
+        </textarea>
+        <textarea name="samplerate" from="storagerate">
+            <position>160,645</position>
+        </textarea>
+
+        <imagetype name="end-divider">
+            <area>0,652,316,35</area>
+            <filename>images/shared/MenuItemNF.png</filename>
+        </imagetype>
+
+    </window>
+
+    <window name="osd_status">
+        <fontdef name="small" face="DejaVu LGC Sans">
+            <pixelsize>22</pixelsize>
+            <color>#FFFFFF</color>
+            <stretch>condensed</stretch>
+            <weight>normal</weight>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <fontdef name="smaller" from="small">
+            <pixelsize>18</pixelsize>
+        </fontdef>
+        <fontdef name="medium" from="small">
+            <pixelsize>26</pixelsize>
+        </fontdef>
+
+        <area>0,600,1280,120</area>
+        <imagetype name="popup_background">
+            <area>0,0,1280,120</area>    
+            <filename>images/shared/OSDBackground.png</filename>
+        </imagetype>
+
+        <textarea name="title">
+            <font>medium</font>
+            <area>10,30,600,30</area>
+            <align>left,top</align>
+        </textarea>
+        <clock name="clock">
+            <area>970,30,300,30</area>
+            <font>small</font>
+            <template>%TIME%</template>
+            <align>right,top</align>
+        </clock>
+
+        <!--<imagetype name="OSDBookmarksNF">
+            <area>936,20,50,50</area>    
+            <filename>images/shared/OSDBookmarksNF.png</filename>
+        </imagetype>
+        <imagetype name="OSDPlaylistNF">
+            <area>996,20,50,50</area>    
+            <filename>images/shared/OSDPlaylistNF.png</filename>
+        </imagetype>-->
+
+        <statetype name="bookmark">
+            <state name="yes">
+                <imagetype name="OSDBookmarksFO">
+                    <area>936,20,50,50</area>    
+                    <preserveaspect>no</preserveaspect>
+                    <filename>images/shared/OSDBookmarksFO.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+        <statetype name="playlist">
+            <state name="yes">
+                <imagetype name="OSDPlaylistFO">
+                    <area>996,20,50,50</area>    
+                    <preserveaspect>no</preserveaspect>
+                    <filename>images/shared/OSDPlaylistFO.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="description">
+            <font>small</font>
+            <area>10,50,1260,30</area>
+            <align>hcenter,bottom</align>
+            <template>%DESCRIPTION% %VALUE%%UNITS%</template>
+        </textarea>
+
+        <progressbar name="position">
+            <area>100,90,1080,10</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+            <imagetype name="background">
+                <area>0,0,1080,10</area>
+                <filename>images/shared/progressbar/progressbar_background.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,1080,10</area>
+                <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="program_info">
+        <fontdef name="small" face="DejaVu LGC Sans">
+            <pixelsize>22</pixelsize>
+            <color>#FFFFFF</color>
+            <stretch>condensed</stretch>
+            <weight>normal</weight>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <fontdef name="smaller" from="small">
+            <pixelsize>18</pixelsize>
+        </fontdef>
+        <fontdef name="smaller_state" from="small">
+            <color>#105B8F</color>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <pixelsize>25</pixelsize>
+        </fontdef>
+        <fontdef name="medium" from="small">
+            <weight>bold</weight>
+            <pixelsize>26</pixelsize>
+        </fontdef>
+
+        <area>0,500,1280,220</area>
+
+        <imagetype name="popup_background">
+            <area>0,10,1280,225</area>    
+            <filename>images/shared/OSDBackground.png</filename>
+        </imagetype>
+
+        <textarea name="title">
+            <font>medium</font>
+            <area>200,55,600,30</area>
+            <align>left,top</align>
+        </textarea>
+        <textarea name="starttime">
+            <font>smaller</font>
+            <area>200,85,700,30</area>
+            <align>left,top</align>
+            <template>%STARTTIME%-%ENDTIME% : %LENMINS% - %LONGCHANNEL%</template>
+        </textarea>
+        <clock name="clock">
+            <area>970,55,300,30</area>
+            <font>small</font>
+            <template>%TIME%</template>
+            <align>right,top</align>
+        </clock>
+
+        <imagetype name="coverartbgd" depends="coverart">
+            <area>15,-35,160,250</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="coverart">
+            <area>20,-30,150,240</area>
+            <mask>images/shared/list_movieicon_mask_osd.png</mask>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="coverartglass" from="coverart" depends="coverart">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <imagetype name="iconpathbgd" depends="!coverart">
+            <area>15,-10,160,110</area>
+            <filename>images/shared/list_musicicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="iconpath" depends="!coverart">
+            <area>20,-5,150,100</area>
+            <mask>images/shared/list_musicicon_mask_osd.png</mask>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="iconpathglass" from="iconpath" depends="iconpath&amp;!coverart">
+            <filename>images/shared/list_musicicon_glass.png</filename>
+        </imagetype>
+
+        <imagetype name="popup_info" depends="!iconpath&amp;!coverart">
+            <area>20,-5,150,100</area>    
+            <filename>images/shared/Take2Raspberry.png</filename>
+        </imagetype>
+
+        <textarea name="description" depends="!coverart">
+            <font>small</font>
+            <area>20,105,1230,70</area>
+            <align>left,vcenter</align>
+            <multiline>yes</multiline>
+            <template>%DESCRIPTION%</template>
+        </textarea>
+
+        <textarea name="subtitle" depends="coverart">
+            <font>small</font>
+            <area>200,115,1050,70</area>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <template>%"|SUBTITLE|" %%LONGREPEAT%%(|STARS|) %%DESCRIPTION%</template>
+        </textarea>
+
+        <statetype name="tvstate">
+            <state name="WatchingLiveTV">
+                <textarea name="tvstate">
+                    <area>970,85,300,30</area>
+                    <font>smaller_state</font>
+                    <multiline>no</multiline>
+                    <align>right,vcenter</align>
+                    <case>upper</case>
+                    <value>TV na Żywo</value>
+                </textarea>
+            </state>
+            <state name="WatchingPreRecorded">
+                <textarea name="tvstate">
+                    <area>970,85,300,30</area>
+                    <font>smaller_state</font>
+                    <multiline>no</multiline>
+                    <align>right,vcenter</align>
+                    <case>upper</case>
+                    <value>Nagranie</value>
+                </textarea>
+            </state>
+            <state name="WatchingVideo">
+                <textarea name="tvstate">
+                    <area>970,85,300,30</area>
+                    <font>smaller_state</font>
+                    <multiline>no</multiline>
+                    <align>right,vcenter</align>
+                    <case>upper</case>
+                    <value>Video</value>
+                </textarea>
+            </state>
+            <state name="WatchingDVD">
+                <textarea name="tvstate">
+                    <area>970,85,300,30</area>
+                    <font>smaller_state</font>
+                    <multiline>no</multiline>
+                    <align>right,vcenter</align>
+                    <case>upper</case>
+                    <value>DVD</value>
+                </textarea>
+            </state>
+            <state name="WatchingBD">
+                <textarea name="tvstate">
+                    <area>970,85,300,30</area>
+                    <font>smaller_state</font>
+                    <multiline>no</multiline>
+                    <align>right,vcenter</align>
+                    <case>upper</case>
+                    <value>Blu-Ray</value>
+                </textarea>
+            </state>
+            <state name="WatchingRecording">
+                <textarea name="tvstate">
+                    <area>970,85,300,30</area>
+                    <font>smaller_state</font>
+                    <multiline>no</multiline>
+                    <align>right,vcenter</align>
+                    <case>upper</case>
+                    <value>Nagranie</value>
+                </textarea>
+            </state>
+        </statetype>
+
+        <imagetype name="banner">
+            <area>570,170,259,48</area>
+            <mask>images/shared/BannerMaskOSD.png</mask>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+
+    <statetype name="videodescrip">
+        <position>995,185</position>
+        <showempty>yes</showempty>
+        <state name="SD">
+        <imagetype name="sd480">
+            <area>0,0,65,25</area>
+            <filename>images/osd/resolution/480.png</filename>
+        </imagetype>
+        </state>
+        <state name="HD_720_P">
+        <imagetype name="hd720">
+            <area>0,0,65,25</area>
+            <filename>images/osd/resolution/720.png</filename>
+        </imagetype>
+        </state>
+        <state name="HD_1080_I">
+        <imagetype name="hd1080">
+            <area>0,0,65,25</area>
+            <filename>images/osd/resolution/1080.png</filename>
+        </imagetype>
+        </state>
+        <state name="HD_1080_P">
+        <imagetype name="hd1080">
+            <area>0,0,65,25</area>
+            <filename>images/osd/resolution/1080.png</filename>
+        </imagetype>
+        </state>
+    </statetype>
+
+    <statetype name="videocodec">
+        <position>1065,185</position>
+        <showempty>yes</showempty>
+        <state name="MPEG-2">
+        <imagetype name="mpeg-2">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/mpeg2.png</filename>
+        </imagetype>
+        </state>
+        <state name="H.263">
+        <imagetype name="h.263">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/h264.png</filename>
+        </imagetype>
+        </state>
+        <state name="H.264">
+        <imagetype name="h.264">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/h264.png</filename>
+        </imagetype>
+        </state>
+        <state name="MPEG-4">
+        <imagetype name="mpeg-4">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/mpeg4.png</filename>
+        </imagetype>
+        </state>
+        <state name="RTjpeg">
+        <imagetype name="rtjpeg">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/mpeg1.png</filename>
+        </imagetype>
+        </state>
+        <state name="VC-1">
+        <imagetype name="vc-1">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/vc-1.png</filename>
+        </imagetype>
+        </state>
+        <state name="WMV3">
+        <imagetype name="wmv3">
+            <area>0,0,65,25</area>
+            <filename>images/osd/video_codec/wmv.png</filename>
+        </imagetype>
+        </state>
+    </statetype>
+
+    <statetype name="audiochannels">
+        <position>1135,185</position>
+        <showempty>yes</showempty>
+        <state name="1">
+        <imagetype name="1.0">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/1.0.png</filename>
+        </imagetype>
+        </state>
+        <state name="2">
+        <imagetype name="2.0">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/2.0.png</filename>
+        </imagetype>
+        </state>
+        <state name="3">
+        <imagetype name="2.1">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/2.0.png</filename>
+        </imagetype>
+        </state>
+        <state name="4">
+        <imagetype name="4.0">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/4.1.png</filename>
+        </imagetype>
+        </state>
+        <state name="5">
+        <imagetype name="4.1">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/4.1.png</filename>
+        </imagetype>
+        </state>
+        <state name="6">
+        <imagetype name="5.1">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/5.1.png</filename>
+        </imagetype>
+        </state>
+        <state name="7">
+        <imagetype name="6.1">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/6.1.png</filename>
+        </imagetype>
+        </state>
+        <state name="8">
+        <imagetype name="7.1">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio/7.1.png</filename>
+        </imagetype>
+        </state>
+    </statetype>
+
+    <statetype name="audiocodec">
+        <position>1205,185</position>
+        <showempty>yes</showempty>
+        <state name="AAC">
+        <imagetype name="aac">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/aac.png</filename>
+        </imagetype>
+        </state>
+        <state name="AAC/LATM">
+        <imagetype name="aac/latm">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/aac.png</filename>
+        </imagetype>
+        </state>
+        <state name="AC3">
+        <imagetype name="ac3">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/ac3.png</filename>
+        </imagetype>
+        </state>
+        <state name="E-AC3">
+        <imagetype name="ac3">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/eac3.png</filename>
+        </imagetype>
+        </state>
+        <state name="DTS">
+        <imagetype name="dts">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/dts.png</filename>
+        </imagetype>
+        </state>
+        <state name="MP2">
+        <imagetype name="mp2">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/mp2.png</filename>
+        </imagetype>
+        </state>
+        <state name="MP3">
+        <imagetype name="mp3">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/mp3.png</filename>
+        </imagetype>
+        </state>
+        <state name="PCM_DVD">
+        <imagetype name="dolbydigital">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/dolbydigital.png</filename>
+        </imagetype>
+        </state>
+        <state name="PCM_BLURAY">
+        <imagetype name="dolbydigital">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/dolbydigital.png</filename>
+        </imagetype>
+        </state>
+        <state name="TRUEHD">
+        <imagetype name="truehd">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/truehd.png</filename>
+        </imagetype>
+        </state>
+        <state name="VORBIS">
+        <imagetype name="vorbis">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/vorbis.png</filename>
+        </imagetype>
+        </state>
+        <state name="WMAPRO">
+        <imagetype name="wmapro">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/wmapro.png</filename>
+        </imagetype>
+        </state>
+        <state name="WMAV2">
+        <imagetype name="wmav2">
+            <area>0,0,65,25</area>
+            <filename>images/osd/audio_codec/wmapro.png</filename>
+        </imagetype>
+        </state>
+    </statetype>
+
+        <progressbar name="elapsedpercent">
+            <area>950,60,200,10</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+            <imagetype name="background">
+                <area>0,0,200,12</area>
+                <filename>images/shared/progressbar/progressbar_background.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,200,12</area>
+                <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+        </progressbar>
+
+    </window>
+
+    <window name="browse_info">
+        <fontdef name="small" face="DejaVu LGC Sans">
+            <pixelsize>22</pixelsize>
+            <color>#FFFFFF</color>
+            <stretch>condensed</stretch>
+            <weight>normal</weight>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <fontdef name="smaller" from="small">
+            <pixelsize>18</pixelsize>
+        </fontdef>
+        <fontdef name="medium" from="small">
+            <weight>bold</weight>
+            <pixelsize>26</pixelsize>
+        </fontdef>
+        <area>0,500,1280,220</area>
+        <imagetype name="popup_background">
+            <area>0,10,1280,225</area>    
+            <filename>images/shared/OSDBackground.png</filename>
+        </imagetype>
+        <textarea name="title">
+            <font>medium</font>
+            <area>200,55,600,30</area>
+            <align>left,top</align>
+        </textarea>
+        <textarea name="starttime">
+            <font>smaller</font>
+            <area>200,85,700,30</area>
+            <align>left,top</align>
+            <template>%STARTTIME%-%ENDTIME% : %LENMINS% - %LONGCHANNEL%</template>
+        </textarea>
+        <clock name="clock">
+            <area>970,55,300,30</area>
+            <font>small</font>
+            <template>%TIME%</template>
+            <align>right,top</align>
+        </clock>
+
+        <imagetype name="coverartbgd" depends="coverart">
+            <area>15,-35,160,250</area>
+            <filename>images/shared/list_movieicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="coverart">
+            <area>20,-30,150,240</area>
+            <mask>images/shared/list_movieicon_mask_osd.png</mask>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="coverartglass" from="coverart" depends="coverart">
+            <filename>images/shared/list_movieicon_glass.png</filename>
+        </imagetype>
+
+        <imagetype name="iconpathbgd" depends="!coverart">
+            <area>15,-10,160,110</area>
+            <filename>images/shared/list_musicicon_frame.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="iconpath" depends="!coverart">
+            <area>20,-5,150,100</area>
+            <mask>images/shared/list_musicicon_mask_osd.png</mask>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+        <imagetype name="iconpathglass" from="iconpath" depends="iconpath&amp;!coverart">
+            <filename>images/shared/list_musicicon_glass.png</filename>
+        </imagetype>
+
+        <imagetype name="popup_info" depends="!iconpath&amp;!coverart">
+            <area>20,-5,150,100</area>    
+            <filename>images/shared/Take2Raspberry.png</filename>
+        </imagetype>
+
+        <textarea name="description">
+            <font>small</font>
+            <area>20,115,1230,70</area>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <template>%"|SUBTITLE|" %%LONGREPEAT%%(|STARS|) %%DESCRIPTION%</template>
+        </textarea>
+        <progressbar name="elapsedpercent">
+            <area>950,60,200,10</area>
+            <layout>horizontal</layout>
+            <style>reveal</style>
+            <imagetype name="background">
+                <area>0,0,200,10</area>
+                <filename>images/shared/progressbar/progressbar_background.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,200,10</area>
+                <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="ChannelEditor">
+
+        <group name="defaultscreenlayoutSettings_1">
+            <animation trigger="AboutToShow">
+                <section duration="1000" centre="middle">
+                    <position start="-988,0" end="0,0" easingcurve="InOutBack" reversible="false" />
+                </section>
+            </animation>
+            <animation trigger="AboutToHide">
+                <section duration="2000" centre="middle">
+                    <position start="0,0" end="-988,0" easingcurve="InBack" />
+                </section>
+            </animation>        
+            <imagetype name="Menu_background_Sub2">
+                <filename>images/shared/HomeBladeLeft.png</filename>
+                <area>-600,0,846,720</area>
+            </imagetype> 
+            <imagetype name="Menu_Overlay">
+                <area>1045,0,235,720</area> 
+                <filename>images/shared/HomeRightOverlay.png</filename>
+            </imagetype>
+            <imagetype name="Menu_background_Sub3">
+                <filename>images/shared/BlackTransparent.png</filename>
+                <area>238,0,550,720</area>
+            </imagetype> 
+            <imagetype name="Menu_background_Sub4">
+                <filename>images/shared/HomeBladeSub.png</filename>
+                <area>240,0,560,720</area>
+            </imagetype> 
+            <!-- ================================================== -->
+            <!-- The clock                                          -->
+            <!-- ================================================== -->
+            <textarea name="clock" >
+              <area>10,5,160,40</area> 
+               <imagetype name="ClockBackground">
+                   <filename>images/shared/ClockBackgroundLong.png</filename>
+                   <area>0,0,160,40</area>
+               </imagetype>
+               <clock name="texthours">
+                   <area>30,0,75,40</area>
+                   <font>normal</font>
+                   <template>hh:mm</template>
+                   <align>right,vcenter</align>
+                   <multiline>no</multiline>
+                   <cutdown>no</cutdown>
+               </clock>
+               <clock name="textdaypart">
+                   <area>110,0,30,40</area>
+                   <font>normal_blue_bold</font>
+                   <template>AP</template>
+                   <align>hcenter,vcenter</align>
+                   <multiline>no</multiline>
+                   <cutdown>no</cutdown>
+               </clock>
+           </textarea>
+        </group>
+        <group name="defaultscreenlayoutSettings_2">
+             <imagetype name="Menu_background_Sub5">
+                <area>788,0,200,720</area>
+                 <animation trigger="AboutToShow">
+                     <section duration="2000" centre="middle">
+                         <position start="588,0" end="788,0" easingcurve="InOutBack" reversible="false" />
+                     </section>
+                 </animation>
+                 <animation trigger="AboutToHide">
+                     <section duration="1000" centre="middle">
+                         <position start="788,0" end="588,0" easingcurve="InBack" />
+                     </section>
+                 </animation>
+                <filename>images/shared/HomeBladeSub.png</filename>
+             </imagetype>
+        </group>
+
+        <group name="screencontent_1">
+           <area>0,0,720,988</area>
+            <animation trigger="AboutToShow">
+                <section duration="1000" centre="middle">
+                    <alpha start="0" end="255" easingcurve="InExpo" />
+                    <position start="-988,0" end="0,0" easingcurve="InOutBack" />
+                </section>
+            </animation>
+            <animation trigger="AboutToHide">
+                <section duration="2000" centre="middle">
+                    <alpha start="255" end="0" easingcurve="OutExpo" />
+                    <position start="0,0" end="-988,0" easingcurve="InBack" />
+                </section>
+            </animation>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Aktualizuj</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Edytor Kanałow</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="callsign_label" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Identyfikator:</value>
+            </textarea>
+
+            <textedit name="callsign" from="textedit_base">
+               <area>420,175,340,35</area>
+               <statetype name="background">
+                   <state name="active">
+                        <imagetype name="backgroundactive">
+                            <area>-170,0,510,35</area>
+                            <filename>images/shared/MenuItemNF.png</filename>
+                        </imagetype>
+                    </state>
+                    <state name="selected">
+                        <imagetype name="backgroundactive">
+                            <area>-170,0,510,35</area>
+                            <filename>images/shared/MenuItemNF.png</filename>
+                        </imagetype>
+                        <imagetype name="backgroundselected">
+                            <area>0,0,330,35</area>
+                            <filename>images/shared/MenuItemFO.png</filename>
+                        </imagetype>
+                    </state>
+                    <state name="inactive" from="active"/>
+               </statetype>
+               <imagetype name="cursor">
+                   <filename>images/shared/cursor.png</filename>
+                   <alpha>192</alpha>
+               </imagetype>
+               <textarea name="text">
+                    <area>10,0,320,35</area>
+                    <font>normal</font>
+                    <alpha>128</alpha>
+                    <align>left,vcenter</align>
+               </textarea>
+            </textedit>
+
+            <textarea name="channum_label" from="callsign_label">
+                <position>250,210</position>
+                <value>Numer:</value>
+            </textarea>
+
+            <textedit name="channum" from="callsign">
+                <position>420,210</position>
+            </textedit>
+
+            <textarea name="channame_label" from="callsign_label">
+                <position>250,245</position>
+                <value>Nazwa:</value>
+            </textarea>
+
+            <textedit name="channame" from="callsign">
+                <position>420,245</position>
+            </textedit>
+
+            <textarea name="xmltv_label" from="callsign_label">
+                <position>250,280</position>
+                <value>ID dla XMLTV:</value>
+            </textarea>
+
+            <textedit name="XMLTV" from="callsign">
+                <position>420,280</position>
+            </textedit>
+        </group>
+
+        <group name="screencontent_2">
+            <area>788,0,720,988</area>      
+            <animation trigger="AboutToShow">
+                 <section duration="2000" centre="middle">
+                     <alpha start="0" end="255" easingcurve="InExpo" />
+                     <position start="588,0" end="788,0" easingcurve="InOutBack" />
+                 </section>
+             </animation>
+             <animation trigger="AboutToHide">
+                 <section duration="1000" centre="middle">
+                     <alpha start="255" end="0" easingcurve="OutExpo" />
+                     <position start="788,0" end="588,0" easingcurve="InBack" />
+                 </section>
+             </animation>
+            <button name="probe" from="button_base_menu">
+                 <area>2,175,190,35</area>
+                   <statetype name="buttonstate">
+                       <!--ACTIVE-->
+                       <state name="active">
+                           <imagetype name="ButtonMenuBack">
+                               <area>0,0,190,35</area>
+                               <filename>images/shared/MenuItemNF.png</filename>
+                           </imagetype>
+                           <textarea name="text" from="textarea_base">
+                               <area>10,0,180,35</area>
+                               <align>left,vcenter</align>
+                               <alpha>128</alpha>
+                               <font>normal</font>
+                               <value>Probe</value>
+                           </textarea>
+                       </state>
+                       <!--SELECTED ACTIVE-->
+                       <state name="selected">
+                           <imagetype name="ButtonMenuBack">
+                               <area>0,0,190,35</area>
+                               <filename>images/shared/MenuItemNF.png</filename>
+                           </imagetype>
+                           <imagetype name="ButtonMenuFront">
+                               <area>0,0,190,35</area>
+                               <filename>images/shared/HomeBladeSubFO2.png</filename>
+                           </imagetype>
+                           <textarea name="text" from="textarea_base">
+                               <area>10,0,180,35</area>
+                               <align>left,vcenter</align>
+                               <font>normal</font>
+                                 <value>Probe</value>
+                           </textarea>
+                       </state>
+                       <!--DISABLED-->
+                       <state name="disabled" from="active" />
+                       <!--PUSHED-->
+                       <state name="pushed" from="active">
+                           <alpha>128</alpha>
+                           <textarea name="text" from="textarea_base">
+                               <area>10,0,180,35</area>
+                               <align>left,vcenter</align>
+                               <font>normal_amber</font>
+                               <value>Probe</value>
+                           </textarea>
+                       </state>
+                   </statetype>
+            </button>
+
+            <button name="ok" from="probe">
+                <position>2,210</position>
+                <value>OK</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="osd_program_editor">
+        <fontdef name="small" face="DejaVu LGC Sans">
+            <pixelsize>21</pixelsize>
+            <color>#FFFFFF</color>
+            <stretch>condensed</stretch>
+            <weight>normal</weight>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <fontdef name="labelfont" face="Fluid">
+            <pixelsize>23</pixelsize>
+            <color>#105B8F</color>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+        </fontdef>
+        <fontdef name="smaller" from="small">
+            <pixelsize>17</pixelsize>
+        </fontdef>
+        <fontdef name="medium" from="small">
+            <pixelsize>23</pixelsize>
+        </fontdef>
+        <area>0,500,1280,220</area>
+        <imagetype name="popup_background">
+            <area>0,0,1280,225</area>    
+            <filename>images/shared/OSDBackground.png</filename>
+        </imagetype>
+
+        <textarea name="title">
+            <font>medium</font>
+            <area>10,40,600,30</area>
+            <align>left,top</align>
+        </textarea>
+        <clock name="clock">
+            <area>970,40,300,30</area>
+            <font>small</font>
+            <template>%TIME%</template>
+            <align>right,top</align>
+        </clock>
+
+        <textarea name="seekamountlbl">
+            <area>10,70,170,25</area>
+            <font>labelfont</font>
+            <align>left,vcenter</align>
+            <value>Skok:</value>
+        </textarea>
+
+        <textarea name="seekamount" from="title">
+           <font>small</font>
+           <area>120,70,300,25</area>
+           <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="framedisplaylbl" from="seekamountlbl">
+            <position>10,95</position>
+            <value>Numer Klatki:</value>
+        </textarea>
+
+        <textarea name="framedisplay" from="seekamount">
+            <font>small</font>
+            <position>120,95</position>
+            <align>left,vcenter</align>
+            <template>%FRAMEDISPLAY% / %CUTINDICATOR%</template>
+        </textarea>
+
+        <textarea name="timedisplay" from="title">
+            <font>small</font>
+            <area>100,130,1080,30</area>
+            <align>hcenter,bottom</align>
+            <template>%TIMEDISPLAY% %VALUE%%UNITS%</template>
+        </textarea>
+        <editbar name="editbar">
+            <area>100,175,1080,20</area>
+            <imagetype name="cut">
+                <area>0,0,1080,10</area>
+                <filename>images/shared/progressbar/progressbar_fill_red.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+            <imagetype name="keep">
+                <area>0,0,1080,10</area>
+                <filename>images/shared/progressbar/progressbar_fill_grey.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+            <shape name="cuttoright">
+                <area>0,0,1,10</area>
+                <fill color="#FF0000" alpha="255" />
+            </shape>
+            <shape name="cuttoleft">
+                <area>0,0,1,10</area>
+                <fill color="#FF0000" alpha="255" />
+            </shape>
+            <shape name="keeptoright">
+                <area>0,0,1,10</area>
+                <fill color="#E0991A" alpha="255" />
+            </shape>
+            <shape name="keeptoleft">
+                <area>0,0,1,10</area>
+                <fill color="#E0991A" alpha="255" />
+            </shape>
+            <shape name="position">
+                <area>0,-5,1,20</area>
+                <fill color="#FFFFFF" alpha="255" />
+            </shape>
+        </editbar>
+    </window>
+
+    <window name="MythPopupBox">
+        <fontdef name="normal" face="DejaVu LGC Sans">
+            <pixelsize>25</pixelsize>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <color>#FFFFFF</color>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+        <fontdef name="title_small" face="Fluid">
+            <color>#FFFFFF</color>
+            <pixelsize>25</pixelsize>
+            <stretch>extracondensed</stretch>
+            <weight>normal</weight>
+            <shadowoffset>1,1</shadowoffset>
+            <shadowcolor>#000000</shadowcolor>
+        </fontdef>
+
+        <area>968,0,316,720</area>
+        <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,0" end="968,0" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="968,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+        <imagetype name="popup_background">
+            <area>0,0,350,720</area>    
+            <filename>images/shared/VisOsdPanel.png</filename>
+        </imagetype>
+
+        <textarea name="messagearea">
+            <area>22,20,280,100</area>
+            <font>title_small</font>
+            <case>upper</case>
+            <multiline>yes</multiline>
+            <align>left,bottom</align>
+            <cutdown>yes</cutdown>
+        </textarea>
+        <buttonlist name="list">
+            <area>12,130,300,580</area>
+            <align>top,hcenter</align>
+            <layout>vertical</layout>
+            <wrapstyle>selection</wrapstyle>
+            <arrange>stack</arrange>
+            <buttonarea>0,0,300,560</buttonarea>
+            <statetype name="buttonitem">
+                <!--ACTIVE-->
+                <state name="active">
+                    <imagetype name="MenuItemNFOSD">
+                        <area>0,0,300,40</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>20,0,275,40</area>
+                        <font>normal</font>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <case>upper</case>
+                        <align>left,vcenter</align>
+                        <alpha>128</alpha>
+                    </textarea>
+                </state>
+                <!--SELECTED ACTIVE-->
+                <state name="selectedactive">
+                    <imagetype name="MenuItemNFOSD">
+                        <area>0,0,300,40</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <imagetype name="MenuItemFOOSD">
+                        <area>0,0,300,40</area>
+                        <filename>images/shared/MenuItemFO.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>20,0,275,40</area>
+                        <font>normal</font>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <case>upper</case>
+                        <align>left,vcenter</align>
+                        <alpha>255</alpha>
+                    </textarea>
+                </state>
+                <!--INACTIVE-->
+                <state name="inactive" from="active">
+                    <alpha>0</alpha>
+                </state>
+                <!--SELECTED INACTIVE-->
+                <state name="selectedinactive" from="selectedactive">
+                    <alpha>0</alpha>
+                </state>
+            </statetype>
+            <!--ARROWS-->
+            <statetype name="upscrollarrow">
+                <position>10,564</position>    
+                <state type="off">
+                    <imagetype name="upoff">
+                        <area>0,0,16,16</area>
+                        <filename>images/shared/ArrowUpNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upon">
+                        <area>0,0,16,16</area>
+                        <filename>images/shared/ArrowUpFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>30,564</position>
+                <state type="off">
+                    <imagetype name="upoff">
+                        <area>0,0,16,16</area>
+                        <filename>images/shared/ArrowDownNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upon">
+                        <area>0,0,16,16</area>
+                        <filename>images/shared/ArrowDownFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+    </window>
+</mythuitheme>

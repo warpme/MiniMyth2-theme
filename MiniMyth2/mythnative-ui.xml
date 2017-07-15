@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<!--
+
+MythTV Archive GUI theme
+
+-->
+<mythuitheme>
+
+    <!--
+      The export native wizard
+    -->
+
+    <window name="exportnative">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="exportnative1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+    
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Select Archive Items</value>
+            </textarea>
+    
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <buttonlist name="archivelist" from="buttonlist_dialog_wide_permanent">
+                <area>250,175,510,260</area>
+                <buttonarea>0,0,510,240</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,244</position>    
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,244</position>    
+                </statetype>
+            </buttonlist>
+        </group>
+
+        <group name="exportnativebutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="addrecording_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Add Recording</value>
+            </button>
+    
+            <button name="addvideo_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Add video</value>
+            </button>
+        </group>
+
+        <group name="exportnative2group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="progtitle" from="textarea_base">
+                <area>250,505,510,40</area>
+                <font>title</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <case>upper</case>
+                <align>left,top</align>
+            </textarea>
+    
+            <textarea name="progdescription" from="textarea_base">
+                <area>250,545,510,120</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+            </textarea>
+    
+            <textarea name="nofiles" from="progdescription">
+                <value>No files are selected for archive</value>
+            </textarea>
+    
+            <textarea name="filesizelbl" from="textarea_base">
+                <area>250,665,510,25</area>
+                <font>title_verysmall_blue</font>
+                <align>left,vcenter</align>
+                <value>Filesize</value>
+            </textarea>
+    
+            <textarea name="progdatetimelbl" from="filesizelbl">
+                <position>250,690</position>
+                <value>Date (time)</value>
+            </textarea>
+    
+            <textarea name="filesize" from="textarea_base">
+                <area>350,665,150,25</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>left,vcenter</align>
+            </textarea>
+     
+            <textarea name="progdatetime" from="filesize">
+                <position>350,690</position>
+            </textarea>
+    
+            <progressbar name="size_bar"from="progressbar_base">
+                <area>260,480,490,5</area>
+                <layout>horizontal</layout>
+                <style>reveal</style>
+                <imagetype name="background">
+                    <area>0,0,490,5</area>
+                    <filename>images/shared/progressbar/progressbar_background.png</filename>
+                    <preserveaspect>false</preserveaspect>
+                </imagetype>
+                <imagetype name="progressimage">
+                    <area>0,0,490,5</area>
+                    <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                    <preserveaspect>false</preserveaspect>
+                </imagetype>
+            </progressbar>
+    
+            <textarea name="maxsize" from="textarea_base">
+                <area>650,455,100,20</area>
+                <font>tiny</font>
+                <case>normal</case>
+                <align>right,vcenter</align>
+            </textarea>
+    
+            <textarea name="minsize" from="maxsize">
+                <position>260,455</position>
+                <align>left,vcenter</align>
+            </textarea>
+    
+            <textarea name="currentsize" from="maxsize">
+                <area>360,455,290,20</area>
+                <font>tiny_amber</font>
+                <align>hcenter,vcenter</align>
+                <template>Current size: %1</template>
+            </textarea>
+    
+            <textarea name="currentsize_error" from="currentsize">
+                <font>tiny_red</font>
+            </textarea>
+        </group>
+
+        <group name="exportnativebutton1group" from="defaultscreencontent_2A_animated">
+          <area>788,0,720,988</area>      
+           <textarea name="navigationlbl" from="textarea_base">
+                <area>2,280,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>         
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+    
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,315</position>
+                <value>Cancel</value>
+                <focusorder>1</focusorder>
+            </button>
+    
+            <button name="prev_button" from="button_base_menu">
+                <position>2,350</position>
+                <value>Previous</value>
+            </button>
+    
+            <button name="next_button" from="button_base_menu">
+                <position>2,385</position>
+                <value>Next</value>
+            </button>
+        </group>
+
+    </window>
+
+    <!--
+      Archive File Selector
+    -->
+
+    <window name="archivefile_selector">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="archivefile_selector1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Read video from data dvd or file</value>
+            </textarea>
+    
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>File Finder To Import</value>
+            </textarea>
+    
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textedit name="location_edit" from="textedit_menu_wide">
+                <position>250,175</position>
+            </textedit>
+        </group>
+
+        <group name="archivefile_selectorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="back_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Back</value>
+            </button>
+    
+            <button name="home_button" from="button_base_menu">
+                <position>2,210</position>
+                <focusorder>1</focusorder>
+                <value>Home</value>
+            </button>
+        </group>
+
+        <group name="archivefile_selector2group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <buttonlist name="filelist" from="filelist_base">
+                <area>250,210,510,370</area>
+                <buttonarea>0,0,510,350</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,354</position>    
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,354</position>    
+                </statetype>
+            </buttonlist>
+    
+            <textarea name="title_textlbl" from="textarea_base">
+                <area>250,605,510,35</area>
+                <value>Title:</value>
+            </textarea>
+    
+            <textarea name="subtitle_textlbl" from="title_textlbl">
+                <position>250,640</position>
+                <value>Subtitle:</value>
+            </textarea>
+    
+            <textarea name="starttime_textlbl" from="title_textlbl">
+                <position>250,675</position>
+                <value>Start Time:</value>
+            </textarea>
+    
+            <textarea name="title_text" from="textarea_base">
+                <area>420,605,340,35</area>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+    
+            <textarea name="subtitle_text" from="title_text">
+                <position>420,640</position>
+            </textarea>
+    
+            <textarea name="starttime_text" from="title_text">
+                <position>420,675</position>
+            </textarea>
+        </group>
+
+        <group name="archivefile_selectorbutton2group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,280,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>         
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+    
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,315</position>
+                <value>Cancel</value>
+            </button>
+    
+            <button name="prev_button" from="button_base_menu">
+                <position>2,350</position>
+                <value>Previous</value>
+            </button>
+    
+            <button name="next_button" from="button_base_menu">
+                <position>2,385</position>
+                <value>Next</value>
+            </button>
+        </group>
+
+    </window>
+
+  <!--
+      Import Archive
+   -->
+
+  <window name="importnative">
+        <imagetype name="background" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="importnative1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Read video from data dvd or file</value>
+            </textarea>
+    
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Associated Channel</value>
+            </textarea>
+    
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+    
+            <textarea name="channelidlbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Archive Chan ID:</value>
+            </textarea>
+    
+            <textarea name="chanid" from="textarea_base">
+                <area>420,175,340,35</area>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+    
+            <textarea name="channelnolbl" from="channelidlbl">
+                <position>250,210</position>
+                <value>Archive Chan No:</value>
+            </textarea>
+    
+            <textarea name="channo" from="chanid">
+                <position>420,210</position>
+            </textarea>
+    
+            <textarea name="callsignlbl" from="channelidlbl">
+                <position>250,245</position>
+                <value>Archive Callsign:</value>
+            </textarea>
+    
+            <textarea name="callsign" from="chanid">
+                <position>420,245</position>
+            </textarea>
+    
+            <textarea name="namelbl" from="channelidlbl">
+                <position>250,280</position>
+                <value>Archive Name:</value>
+            </textarea>
+    
+            <textarea name="name" from="chanid">
+                <position>420,280</position>
+            </textarea>
+    
+            <textarea name="progtitle" from="textarea_base">
+                <area>250,350,510,40</area>
+                <font>title</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <case>upper</case>
+                <align>left,top</align>
+            </textarea>
+    
+            <textarea name="progdescription" from="textarea_base">
+                <area>250,390,510,120</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+            </textarea>
+    
+            <textarea name="progdatetimelbl" from="textarea_base">
+                <area>250,510,510,25</area>
+                <font>title_verysmall_blue</font>
+                <align>left,vcenter</align>
+                <value>Date (time)</value>
+            </textarea>
+    
+            <textarea name="progdatetime" from="textarea_base">
+                <area>350,510,150,25</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>left,vcenter</align>
+            </textarea>
+    
+            <imagetype name="preview_image">
+                <area>730,510,30,30</area>
+                <preserveaspect>no</preserveaspect>
+                <filename>blank.png</filename>
+            </imagetype>
+    
+            <!--
+                local file channel
+           -->
+    
+            <textarea name="localchannelidlbl" from="channelidlbl">
+                <position>250,580</position>
+                <value>Local Chan ID:</value>
+            </textarea>
+    
+            <textarea name="local_chanid" from="chanid">
+                <position>420,580</position>
+            </textarea>
+
+            <textarea name="localchannelnolbl" from="channelidlbl">
+                <position>250,615</position>
+                <value>Local Chan No:</value>
+            </textarea>
+    
+            <textarea name="local_channo" from="chanid">
+                <position>420,615</position>
+            </textarea>
+    
+            <textarea name="localcallsign" from="channelidlbl">
+                <position>250,650</position>
+                <value>Local Callsign:</value>
+            </textarea>
+    
+            <textarea name="local_callsign" from="chanid">
+                <position>420,650</position>
+            </textarea>
+    
+            <textarea name="localnamelbl" from="channelidlbl">
+                <position>250,685</position>
+                <value>Local Name:</value>
+            </textarea>
+    
+            <textarea name="local_name" from="chanid">
+                <position>420,685</position>
+            </textarea>
+    
+        </group>
+
+        <group name="importnativebutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <textarea name="localsearchbuttonlbl" from="textarea_base">
+                <area>2,175,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>         
+                <align>right,bottom</align>
+                <value>Search Local</value>
+            </textarea>
+    
+            <button name="searchchanid_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Channel ID</value>
+            </button>
+
+            <button name="searchchanno_button" from="searchchanid_button">
+                <position>2,245</position>
+                <value>Channel No</value>
+            </button>
+    
+            <button name="searchcallsign_button" from="searchchanid_button">
+                <position>2,280</position>
+                <value>Callsign</value>
+            </button>
+    
+            <button name="searchname_button" from="searchchanid_button">
+                <position>2,315</position>
+                <value>Name</value>
+            </button>
+    
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,385,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>         
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+    
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,420</position>
+                <value>Cancel</value>
+                <focusorder>1</focusorder>
+            </button>
+    
+            <button name="prev_button" from="button_base_menu">
+                <position>2,455</position>
+                <value>Previous</value>
+            </button>
+    
+            <button name="finish_button" from="button_base_menu">
+                <position>2,490</position>
+                <value>Finish</value>
+            </button>
+        </group>
+
+  </window>
+
+</mythuitheme>

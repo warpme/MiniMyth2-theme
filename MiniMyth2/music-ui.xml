@@ -1,0 +1,2553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+
+<mythuitheme>
+
+    <window name="albumart_browser">
+
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="heading" from="basetextarea">
+            <area>0,0,800,50</area>
+            <value>Album Art</value>
+            <font>baselarge</font>
+            <align>hcenter</align>
+        </textarea>
+
+        <imagetype name="background">
+            <area>300,55,440,390</area>
+            <filename>mm_trans_background.png</filename>
+        </imagetype>
+
+        <textarea name="imagefilename" from="basetextarea">
+            <area>320,75,400,350</area>
+            <value>No Album Art Found</value>
+            <align>allcenter</align>
+        </textarea>
+
+        <imagetype name="coverart_image">
+            <area>320,75,350,350</area>
+        </imagetype>
+
+        <imagetype name="another_background">
+            <area>300,450,440,70</area>
+            <filename>mm_trans_background.png</filename>
+        </imagetype>
+
+        <textarea name="filenamelabel" from="basetextarea">
+            <area>290,455,170,30</area>
+            <value>Filename:</value>
+            <align>right</align>
+        </textarea>
+
+        <textarea name="typelabel" from="filenamelabel">
+            <position>290,485</position>
+            <value>Type:</value>
+        </textarea>
+
+        <textarea name="imagefilename" from="basetextarea">
+            <area>465,455,190,30</area>
+        </textarea>
+
+        <textarea name="imagetype" from="imagefilename">
+            <position>465,485</position>
+        </textarea>
+
+        <buttonlist name="coverart_grid">
+            <area>40,65,450,450</area>
+            <layout>grid</layout>
+            <buttonarea>0,0,450,450</buttonarea>
+            <spacing>10</spacing>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100,100</area>
+                    <imagetype name="buttonbackground">
+                        <filename>mm_browser_back_reg.png</filename>
+                    </imagetype>
+                    <imagetype name="buttonimage">
+                        <filename>mm_nothumb.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selectedactive" from="active">
+                    <imagetype name="buttonbackground">
+                        <filename>mm_browser_back_sel.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selectedinactive" from="selectedactive" />
+            </statetype>
+        </buttonlist>
+
+        <!-- Push buttons -->
+
+        <button name="metadata" from="basebutton">
+            <position>20,540</position>
+            <value>Metadata</value>
+        </button>
+
+        <button name="done" from="basebutton">
+            <position>630,540</position>
+            <value>Done</value>
+        </button>
+    </window>
+
+    <window name="imagefinder">
+        <webbrowser name="webbrowser">
+            <area>20,20,1240,600</area>
+            <zoom>1.0</zoom>
+            <background color="black" alpha="1" />
+        </webbrowser>
+        <button name="done" from="basebutton">
+            <position>630,540</position>
+            <value>Done</value>
+        </button>
+    </window>
+
+    <window name="playlistview" include="music-base.xml">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="playlistposition" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <buttonlist name="currentplaylist" from="basecurrentplaylist">
+            <position>740,243</position>
+        </buttonlist>
+
+        <imagetype name="coverart">
+            <area>40,250,275,275</area>
+            <filename>images/shared/DefaultNetwork.png</filename>
+            <reflection shear="0" scale="65" length="15"/>
+        </imagetype>
+
+        <imagetype name="previewframe">
+            <area>31,235,293,305</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <textarea name="notracks" from="textarea_base">
+            <area>345,270,355,60</area>
+            <multiline>yes</multiline>
+            <font>small</font>
+            <case>Normal</case>
+            <value>You haven't selected any tracks to play</value>
+        </textarea>
+
+        <group name="infopanel" from="baseinfopanel">
+            <position>353,218</position>>
+        </group>
+
+        <group name="playliststatusgroup" from="baseplayliststatusgroup">
+            <position>350,600</position>
+        </group>
+
+        <group name="playlistvisualizergroup" from="baseplaylistvisualizergroup">
+            <position>40,600</position>
+        </group>
+
+    </window>
+
+    <window name="playlisteditorview_tree" include="music-base.xml">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     MUSIC TREE                                        -->
+        <!-- ===================================================== -->
+
+        <!-- optional - shows path to current item -->
+        <textarea name="breadcrumbs" from="textarea_base">
+            <area>450,3,650,45</area>
+            <case>normal</case>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <buttontree name="playlist_tree">
+            <area>740,240,540,440</area>
+            <numlists>1</numlists>
+            <spacing>0</spacing>
+            <buttonlist name="listtemplate" from="buttonlist_menu_check"/>
+        </buttontree>
+
+        <imagetype name="coverart">
+            <area>40,250,275,275</area>
+            <filename>images/shared/DefaultNetwork.png</filename>
+            <reflection shear="0" scale="65" length="15"/>
+        </imagetype>
+
+        <imagetype name="previewframe">
+            <area>31,235,293,305</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <group name="infopanel" from="baseinfopanel">
+            <position>350,220</position>>
+        </group>
+
+        <group name="playliststatusgroup" from="baseplayliststatusgroup">
+            <position>350,600</position>
+        </group>
+
+        <!--Causes MythUI hang see #11877
+        <group name="playlistvisualizergroup" from="baseplaylistvisualizergroup">
+            <position>25,600</position>
+        </group>-->
+
+        <statetype name="trackstate">
+            <position>100,660</position>
+            <state name="playing">
+                <imagetype name="playicon">
+                    <filename>images/music/play.png</filename>
+                </imagetype>
+            </state>
+            <state name="paused">
+                <imagetype name="pauseicon">
+                    <filename>images/music/pause.png</filename>
+                </imagetype>
+            </state>
+            <state name="stopped">
+                <imagetype name="stopicon">
+                    <filename>images/music/stop.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="time" from="textarea_base">
+            <area>40,600,150,30</area>
+            <font>small</font>
+            <align>allcenter</align>
+        </textarea>
+
+        <progressbar name="progress" from="basetrackprogress">
+            <position>40,632</position>
+        </progressbar>
+
+    </window>
+
+    <window name="playlisteditorview_gallery" include="music-base.xml">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <textarea name="breadcrumbs" from="textarea_base">
+            <area>450,3,650,45</area>
+            <case>normal</case>
+            <font>verysmall</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <buttontree name="playlist_tree">
+            <area>40,240,800,450</area>
+            <numlists>1</numlists>
+            <spacing>0</spacing>
+            <buttonlist name="listtemplate" from="basegallerybuttonlist" />
+        </buttontree>
+
+        <group name="infopanel" from="baseinfopanel">
+            <position>820,242</position>>
+        </group>
+
+        <group name="playliststatusgroup" from="baseplayliststatusgroup">
+            <position>820,600</position>
+        </group>
+
+    </window>
+
+    <window name="searchview">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="searchview1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <buttonlist name="field_list" from="selector_base_wide">
+                <position>240,175</position>
+            </buttonlist>
+
+            <textedit name="criteria_edit" from="textedit_base">
+                <position>240,210</position>
+            </textedit>
+
+            <textarea name="matcheslabel">
+                <area>250,245,200,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Matches:</value>
+            </textarea>
+
+            <textarea name="matches_text" from="matcheslabel">
+                <position>340,245</position>
+            </textarea>
+
+            <buttonlist name="tracks_list" from="buttonlist_dialog_wide">
+                <area>250,285,510,260</area>
+                <searchposition>758,55</searchposition>
+                <buttonarea>0,0,510,240</buttonarea>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <textarea name="title">
+                            <area>10,0,470,40</area>
+                            <font>normal</font>
+                            <alpha>128</alpha>
+                            <multiline>no</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                            <template>%TITLE% by %ARTIST% on %ALBUM%</template>
+                        </textarea>
+                        <statetype name="selectedstate">
+                            <state name="off">
+                                <imagetype name="LedOff">
+                                    <area>480,5,30,30</area>
+                                    <filename>images/shared/LEDOff.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="on">
+                                <imagetype name="LEDOn">
+                                    <area>480,5,30,30</area>
+                                    <filename>images/shared/LEDOn.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                    </state>
+                    <state name="selectedactive">
+                        <textarea name="title">
+                            <area>10,0,470,40</area>
+                            <font>normal</font>
+                            <alpha>255</alpha>
+                            <multiline>no</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                            <template>%TITLE% by %ARTIST% on %ALBUM%</template>
+                        </textarea>
+                        <statetype name="selectedstate">
+                            <state name="off">
+                                <imagetype name="LedOff">
+                                    <area>480,5,30,30</area>
+                                    <filename>images/shared/LEDOff.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="on">
+                                <imagetype name="LEDOn">
+                                    <area>480,5,30,30</area>
+                                    <filename>images/shared/LEDOn.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                    </state>
+                    <state name="inactive" from="active">
+                        <alpha>255</alpha>
+                    </state>
+                    <state name="selectedinactive" from="selectedactive">
+                        <alpha>128</alpha>
+                    </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <position>10,244</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,244</position>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="title">
+                <area>250,580,260,35</area>
+                <font>small</font>
+                <alpha>128</alpha>
+            </textarea>
+
+            <group name="playliststatusgroup" from="baseplayliststatusgroup">
+                <position>250,610</position>
+            </group>
+
+            <video name="visualizer">
+                <area>645,610,100,100,</area>
+            </video>
+        </group>
+
+    </window>
+
+    <window name="visualizerview">
+        <video name="visualizer">
+            <area>0,0,1280,720,</area>
+        </video>
+    </window>
+
+    <!-- used in the visualiser screen to show some track details after a track change -->
+    <window name="trackinfo_popup">
+        <area>-1,550,512,152</area>
+
+        <imagetype name="track_info_background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,152</area>
+        </imagetype>
+
+        <imagetype name="coverart">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>20,20,115,115</area>
+        </imagetype>
+        <imagetype name="previewframe">
+            <area>11,5,133,145</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>145,20,350,35</area>
+            <font>title</font>
+        </textarea>
+
+        <textarea name="album" from="textarea_base">
+            <area>145,50,350,30</area>
+            <font>title_small</font>
+        </textarea>
+
+        <textarea name="artist" from="textarea_base">
+            <area>145,75,350,30</area>
+            <alpha>128</alpha>
+        </textarea>
+
+       <!--<textarea name="time" from="textarea_base">
+            <area>145,100,350,25</area>
+            <font>verysmall</font>
+            <alpha>128</alpha>
+        </textarea>-->
+
+       <statetype name="ratingstate" from="rating_base">
+            <position>145,100</position>
+        </statetype>
+
+    </window>
+
+    <!-- This screen allows you to rip tracks from cd's -->
+    <window name="cdripper">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="file_cdripper1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Import CD</value>
+            </textarea>
+
+            <textarea name="artist_label">
+                <area>250,175,280,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Artist:</value>
+            </textarea>
+
+            <textedit name="artist" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+           <button name="searchartist" from="button_base">
+                <position>450,210</position>
+                <value>Artist</value>
+           </button>
+
+            <textarea name="quality_label" from="artist_label">
+                <position>250,280</position>
+                <value>Quality:</value>
+            </textarea>
+
+            <buttonlist name="quality" from="selector_base_small">
+                <position>580,280</position>
+            </buttonlist>
+
+            <textarea name="album_label" from="artist_label">
+                <position>250,350</position>
+                <value>Album:</value>
+            </textarea>
+
+            <textedit name="album" from="textedit_base">
+                <position>450,350</position>
+            </textedit>
+
+            <button name="searchalbum" from="button_base">
+                <position>450,385</position>
+                <value>Album</value>
+            </button>
+
+            <textarea name="genre_text" from="artist_label">
+                <position>250,454</position>
+                <value>Genre:</value>
+            </textarea>
+
+            <textedit name="genre" from="textedit_base">
+                <position>450,455</position>
+            </textedit>
+
+            <button name="searchgenre" from="button_base">
+                <position>450,490</position>
+                <value>Genre</value>
+            </button>
+
+            <textarea name="comp_label" from="artist_label">
+                <position>250,560</position>
+                <value>Multi-Artist:</value>
+            </textarea>
+
+            <checkbox name="compilation" from="checkbox_menu">
+                <position>735,560</position>
+            </checkbox>
+
+            <textarea name="year_label" from="artist_label">
+                <position>250,595</position>
+                <value>Year:</value>
+            </textarea>
+
+            <textedit name="year" from="textedit_base">
+                <position>450,595</position>
+            </textedit>
+
+                <button name="switch" from="button_base">
+                    <position>450,630</position>
+                    <value>Switch Titles</value>
+                </button>
+        </group>
+
+        <group name="file_cdripper3group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <buttonlist name="tracks" from="buttonlist_dialog_wide_details_check_permanent">
+                <area>250,395,510,300</area>
+                <buttonarea>0,0,510,280</buttonarea>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <textarea name="track" from="buttontext">
+                            <area>10,0,30,40</area>
+                        </textarea>
+                        <textarea name="title" from="track">
+                            <area>60,0,300,40</area>
+                        </textarea>
+                        <textarea name="artist" from="track">
+                            <area>380,0,220,40</area>
+                        </textarea>
+    <!--                    <textarea name="length" from="track">
+                            <area>620,0,90,30</area>
+                            <align>center</align>
+                        </textarea>-->
+                    </state>
+                    <state name="selectedactive">
+                        <textarea name="track" from="buttontext">
+                            <area>10,0,30,40</area>
+                        </textarea>
+                        <textarea name="title" from="track">
+                            <area>60,0,240,40</area>
+                        </textarea>
+                        <textarea name="length" from="track">
+                            <area>360,5,90,35</area>
+                            <font>verysmall</font>
+                        </textarea>
+                    </state>
+                    <state name="inactive">
+                        <textarea name="track" from="buttontext">
+                            <area>10,0,30,40</area>
+                        </textarea>
+                        <textarea name="title" from="track">
+                            <area>60,0,300,40</area>
+                        </textarea>
+                        <textarea name="artist" from="track">
+                            <area>380,0,220,40</area>
+                        </textarea>
+    <!--                    <textarea name="length" from="track">
+                            <area>620,0,90,30</area>
+                            <align>center</align>
+                        </textarea>-->
+                    </state>
+                    <state name="selectedinactive">
+                        <textarea name="track" from="buttontext">
+                            <area>10,0,30,40</area>
+                        </textarea>
+                        <textarea name="title" from="track">
+                            <area>60,0,240,40</area>
+                        </textarea>
+                        <textarea name="length" from="track">
+                            <area>360,5,100,35</area>
+                            <font>verysmall</font>
+                        </textarea>
+                    </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <position>10,284</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,284</position>
+                </statetype>
+            </buttonlist>
+        </group>
+
+        <group name="file_cdripperbutton4group" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+
+            <button name="scan" from="button_base_menu">
+                <position>2,175</position>
+                <value>Scan CD</value>
+            </button>
+
+            <button name="rip" from="button_base_menu">
+                <position>2,210</position>
+                <value>Rip CD</value>
+            </button>
+        </group>
+    </window>
+
+    <!-- This screen shows the track ripping status -->
+    <window name="ripstatus">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="ripstatusgroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Import your CD into the music library</value>
+            </textarea>
+
+            <textarea name="status" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Importing CD</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="overall" from="textarea_base">
+                <area>250,175,510,35</area>
+            </textarea>
+
+            <textarea name="overallpct" from="basetextarea">
+                <area>250,210,510,20</area>
+                <font>tiny</font>
+                <align>allcenter</align>
+            </textarea>
+
+            <progressbar name="overall_progress" from="progressbar_base">
+                <area>260,230,490,5</area>
+                <layout>horizontal</layout>
+                <style>slide</style>
+               <imagetype name="background">
+                   <area>0,0,490,5</area>
+                   <filename>images/shared/progressbar/progressbar_background.png</filename>
+                   <preserveaspect>false</preserveaspect>
+               </imagetype>
+               <imagetype name="progressimage">
+                   <area>0,0,490,5</area>
+                   <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                   <preserveaspect>false</preserveaspect>
+               </imagetype>
+            </progressbar>
+
+            <textarea name="track_label" from="overall">
+                <position>250,280</position>
+                <value>Encoding Track:</value>
+            </textarea>
+
+            <textarea name="track" from="overall">
+                <position>420,280</position>
+            </textarea>
+
+            <textarea name="trackpct" from="overallpct">
+                <position>250,315</position>
+            </textarea>
+
+            <progressbar name="track_progress" from="overall_progress">
+                <position>260,335</position>
+            </progressbar>
+        </group>
+    </window>
+
+    <window name="import_music">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="import_music1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+
+            <textarea name="screentitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Import music</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="location_label">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Location:</value>
+            </textarea>
+
+            <textarea name="filename_label" from="location_label">
+                <position>250,210</position>
+                <value>Filename:</value>
+            </textarea>
+
+            <textarea name="compilation_label" from="location_label">
+                <position>250,315</position>
+                <value>Compilation:</value>
+            </textarea>
+
+            <textarea name="compilation_artist_label" from="location_label">
+                <position>250,350</position>
+                <value>Comp. Artist:</value>
+            </textarea>
+
+            <textarea name="artist_label" from="location_label">
+                <position>250,385</position>
+                <value>Artist:</value>
+            </textarea>
+
+            <textarea name="album_label" from="location_label">
+                <position>250,420</position>
+                <value>Album:</value>
+            </textarea>
+
+            <textarea name="title_text" from="location_label">
+                <position>250,455</position>
+                <value>Title:</value>
+            </textarea>
+
+            <textarea name="genre_label" from="location_label">
+                <position>250,490</position>
+                <value>Genre:</value>
+            </textarea>
+
+            <textarea name="year_label" from="location_label">
+                <position>250,525</position>
+                <value>Year:</value>
+            </textarea>
+
+            <textarea name="track_label" from="location_label">
+                <position>250,560</position>
+                <value>Track No.:</value>
+            </textarea>
+
+            <textarea name="position_label" from="location_label">
+                <position>250,630</position>
+                <value>Position:</value>
+            </textarea>
+
+            <textarea name="status_label" from="location_label">
+                <position>250,665</position>
+                <value>Status:</value>
+            </textarea>
+
+            <!-- data fields -->
+
+            <textedit name="location" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+        </group>
+
+        <group name="import_musicbutton1group" from="defaultscreencontent_2A_animated">
+                <area>788,0,720,988</area>
+
+            <button name="directoryfinder" from="button_base_menu">
+                <position>2,175</position>
+                <value>Find</value>
+            </button>
+
+            <button name="scan" from="button_base_menu">
+                <position>2,210</position>
+                <value>Search</value>
+            </button>
+
+                <button name="coverart" from="button_base_menu">
+                    <position>2,245</position>
+                    <value>Covert Art</value>
+                </button>
+
+        </group>
+
+        <group name="import_music2group" from="defaultscreencontent_1A_animated">
+                <area>0,0,720,988</area>
+            <textarea name="filename" from="textarea_base">
+                <area>250,245,510,35</area>
+                <font>verysmall</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <checkbox name="compilation" from="checkbox_base">
+                <position>735,315</position>
+            </checkbox>
+
+            <textarea name="compartist" from="textarea_base">
+                <area>420,350,340,35</area>
+                <font>small</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <textarea name="artist" from="compartist">
+                <position>420,385</position>
+            </textarea>
+
+            <textarea name="album" from="compartist">
+                <position>420,420</position>
+            </textarea>
+
+            <textarea name="title" from="compartist">
+                <position>420,455</position>
+            </textarea>
+
+            <textarea name="genre" from="compartist">
+                <position>420,490</position>
+            </textarea>
+
+            <textarea name="year" from="compartist">
+                <position>420,525</position>
+            </textarea>
+
+            <textarea name="track" from="compartist">
+                <position>420,560</position>
+            </textarea>
+
+            <textarea name="position" from="compartist">
+                <position>420,630</position>
+            </textarea>
+
+            <textarea name="status" from="position">
+                <position>420,665</position>
+                <value>Already in database</value>
+            </textarea>
+        </group>
+
+        <group name="import_musicbutton2group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+
+            <button name="play" from="button_base_menu">
+                <position>2,350</position>
+                <value>Play</value>
+            </button>
+
+            <button name="add" from="button_base_menu">
+                <position>2,385</position>
+                <value>Add Current</value>
+            </button>
+
+            <button name="addallnew" from="button_base_menu">
+                <position>2,420</position>
+                <value>Add All New</value>
+            </button>
+
+            <button name="prev" from="button_base_menu">
+                <position>2,525</position>
+                <value>Previous</value>
+            </button>
+
+            <button name="next" from="button_base_menu">
+                <position>2,560</position>
+                <value>Next</value>
+            </button>
+
+            <button name="nextnew" from="button_base_menu">
+                <position>2,595</position>
+                <value>Next New</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="import_coverart">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="import_coverart1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Import Cover Art</value>
+            </textarea>
+
+            <textarea name="file_label">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>hcenter,vcenter</align>
+                <value>File:</value>
+            </textarea>
+
+            <textarea name="destination_label" from="file_label">
+                <position>250,245</position>
+                <value>Destination:</value>
+            </textarea>
+
+            <textarea name="position_label" from="file_label">
+                <position>250,350</position>
+                <value>Position:</value>
+            </textarea>
+
+            <textarea name="status_label" from="file_label">
+                <position>250,385</position>
+                <value>Status:</value>
+            </textarea>
+
+            <textarea name="title_label" from="file_label">
+                <position>250,420</position>
+                <value>Image Type:</value>
+            </textarea>
+
+            <textarea name="coverart_label" from="file_label">
+                <area>250,490,145,35</area>
+                <font>tiny</font>
+                <align>right,top</align>
+                <value>Image selected:</value>
+            </textarea>
+
+            <!-- data fields -->
+
+            <imagetype name="coverart">
+                <area>405,490,200,200</area>
+                <reflection shear="0" scale="65" length="15"/>
+            </imagetype>
+                <imagetype name="previewframe">
+                    <area>396,475,218,230</area>
+                    <preserveaspect>no</preserveaspect>
+                    <filename>images/shared/tvseries_focusframe.png</filename>
+                </imagetype>
+
+            <textarea name="file" from="textarea_base">
+                <area>250,210,510,35</area>
+                <font>verysmall</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <textarea name="destination" from="file">
+                <position>250,280</position>
+            </textarea>
+
+            <textarea name="position" from="file">
+                <area>420,350,340,35</area>
+                <font>small</font>
+            </textarea>
+
+            <textarea name="status" from="position">
+                <position>420,385</position>
+                <value>Already in database</value>
+            </textarea>
+
+            <buttonlist name="type" from="selector_base">
+                <position>450,420</position>
+            </buttonlist>
+
+            <textarea name="actionslbl" from="textarea_base">
+                <area>790,385,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Actions</value>
+            </textarea>
+        </group>
+
+        <group name="import_coverartbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="copy" from="button_base_menu">
+                <position>2,420</position>
+                <value>Copy</value>
+            </button>
+
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,490,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="prev" from="button_base_menu">
+                <position>2,525</position>
+                <value>Previous</value>
+            </button>
+
+            <button name="next" from="button_base_menu">
+                <position>2,560</position>
+                <value>Next</value>
+            </button>
+
+            <button name="exit" from="button_base_menu">
+                <position>2,595</position>
+                <value>Done</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="miniplayer">
+        <area>758,55,512,152</area>
+        <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,55" end="758,55" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="758,55" end="1280,55" easingcurve="InBack" />
+            </section>
+        </animation>
+
+        <imagetype name="track_info_background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,152</area>
+        </imagetype>
+
+        <imagetype name="coverart">
+            <filename>images/music/digital-music.jpg</filename>
+            <area>20,20,115,115</area>
+        </imagetype>
+        <imagetype name="previewframe">
+            <area>11,5,133,145</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>145,20,350,35</area>
+            <font>title</font>
+        </textarea>
+
+        <textarea name="album" from="textarea_base">
+            <area>145,50,350,30</area>
+            <font>title_small</font>
+        </textarea>
+
+        <textarea name="artist" from="textarea_base">
+            <area>145,75,350,30</area>
+            <alpha>128</alpha>
+        </textarea>
+
+        <statetype name="ratings_state">
+        </statetype>
+
+        <textarea name="time" from="textarea_base">
+            <area>145,100,350,25</area>
+            <font>verysmall</font>
+            <alpha>128</alpha>
+        </textarea>
+
+        <textarea name="info" from="basetextarea">
+            <area>0,0,1,1</area>
+            <alpha>0</alpha>
+        </textarea>
+
+        <progressbar name="progress" from="progressbar_base">
+            <area>145,125,345,5</area>
+            <layout>horizontal</layout>
+            <style>slide</style>
+           <imagetype name="background">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_background.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+           <imagetype name="progressimage">
+               <area>0,0,345,5</area>
+               <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+               <preserveaspect>false</preserveaspect>
+           </imagetype>
+        </progressbar>
+    </window>
+
+    <window name="volume_popup">
+        <area>758,55,512,152</area>
+        <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,55" end="758,55" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="758,55" end="1280,55" easingcurve="InBack" />
+            </section>
+        </animation>
+        <imagetype name="track_info_background">
+            <filename>images/shared/DialogProgressBG.png</filename>
+            <area>0,0,512,152</area>
+        </imagetype>
+
+        <textarea name="message" from="textarea_base">
+            <area>0,10,512,40</area>
+            <multiline>yes</multiline>
+            <align>allcenter</align>
+            <value>Volume</value>
+        </textarea>
+
+        <statetype name="mutestate" from="basemutestate">
+            <position>20,80</position>
+        </statetype>
+
+         <progressbar name="volumeprogress">
+              <position>80,100</position>
+              <layout>horizontal</layout>
+              <style>reveal</style>
+             <imagetype name="background">
+                 <area>0,0,350,10</area>
+                 <filename>images/shared/progressbar/progressbar_background.png</filename>
+                 <preserveaspect>false</preserveaspect>
+             </imagetype>
+             <imagetype name="progressimage">
+                 <area>0,0,350,10</area>
+                 <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                 <preserveaspect>false</preserveaspect>
+             </imagetype>
+         </progressbar>
+
+        <textarea name="volume" from="textarea_base">
+            <area>0,70,512,35</area>
+            <align>hcenter,top</align>
+            <template>%VOLUMEPERCENT%</template>
+        </textarea>
+    </window>
+
+    <window name="editmetadata">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="editmetadata1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Track Information</value>
+            </textarea>
+
+            <textarea name="compilation_label">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Compilation:</value>
+            </textarea>
+
+            <textarea name="compilation_artist_label" from="compilation_label">
+                <position>250,210</position>
+                <value>Comp. Artist:</value>
+            </textarea>
+
+            <textarea name="artist_label" from="compilation_label">
+                <position>250,245</position>
+                <value>Artist:</value>
+            </textarea>
+
+            <textarea name="album_label" from="compilation_label">
+                <position>250,280</position>
+                <value>Album:</value>
+            </textarea>
+
+            <textarea name="genre_label" from="compilation_label">
+                <position>250,315</position>
+                <value>Genre:</value>
+            </textarea>
+
+            <textarea name="title_text" from="compilation_label">
+                <position>250,350</position>
+                <value>Title:</value>
+            </textarea>
+
+            <textarea name="track_label" from="compilation_label">
+                <position>250,385</position>
+                <value>Track Number:</value>
+            </textarea>
+
+            <textarea name="year_label" from="compilation_label">
+                <position>250,420</position>
+                <value>Year:</value>
+            </textarea>
+
+            <textarea name="rating_label" from="compilation_label">
+                <position>250,455</position>
+                <value>Rating:</value>
+            </textarea>
+
+            <textarea name="artisticon_label" from="compilation_label">
+                <area>250,675,150,25</area>
+                <align>allcenter</align>
+                <font>tiny</font>
+                <value>Artist Image</value>
+            </textarea>
+
+            <textarea name="albumicon_label" from="artisticon_label">
+                <position>430,675</position>
+                <value>Album Image</value>
+            </textarea>
+
+            <textarea name="genreicon_label" from="artisticon_label">
+                <position>610,675</position>
+                <value>Genre Image</value>
+            </textarea>
+
+            <!-- edits -->
+
+            <checkbox name="compilationcheck" from="checkbox_menu">
+                <position>735,175</position>
+            </checkbox>
+
+            <textedit name="compartistedit" from="textedit_base">
+                <position>450,210</position>
+            </textedit>
+        </group>
+
+        <group name="editmetadatabutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="searchlbl" from="textarea_base">
+                <area>2,175,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Search</value>
+            </textarea>
+
+            <button name="searchcompartistbutton" from="button_base_menu">
+                <position>2,210</position>
+                <value>Comp. Artist</value>
+            </button>
+        </group>
+
+        <group name="editmetadata2group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textedit name="artistedit" from="textedit_base">
+                <position>450,245</position>
+            </textedit>
+        </group>
+
+        <group name="editmetadatabutton2group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="searchartistbutton" from="button_base_menu">
+                <position>2,245</position>
+                <value>Artist</value>
+            </button>
+        </group>
+
+        <group name="editmetadata3group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textedit name="albumedit" from="textedit_base">
+                <position>450,280</position>
+            </textedit>
+        </group>
+
+        <group name="editmetadatabutton3group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="searchalbumbutton" from="button_base_menu">
+                <position>2,280</position>
+                <value>Album</value>
+            </button>
+        </group>
+
+        <group name="editmetadata4group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textedit name="genreedit" from="textedit_base">
+                <position>450,315</position>
+            </textedit>
+        </group>
+
+        <group name="editmetadatabutton4group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="searchgenrebutton" from="button_base_menu">
+                <position>2,315</position>
+                <value>Genre</value>
+            </button>
+        </group>
+
+        <group name="editmetadata5group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textedit name="titleedit" from="textedit_base">
+                <position>450,350</position>
+            </textedit>
+
+            <spinbox name="tracknumspin" from="spinbox_menu">
+                <position>670,385</position>
+            </spinbox>
+
+            <spinbox name="yearspin" from="spinbox_menu">
+                <position>670,420</position>
+            </spinbox>
+
+            <statetype name="ratingstate" from="rating_base">
+                <position>460,460</position>
+            </statetype>
+
+         </group>
+
+        <group name="editmetadatabutton5group" from="defaultscreencontent_2A_animated">
+                <area>788,0,720,988</area>
+            <textarea name="ratingchangelbl" from="textarea_base">
+                <area>2,385,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Rating</value>
+            </textarea>
+
+            <button name="decratingbutton" from="button_base_menu">
+                <position>2,420</position>
+                <value>Decrease</value>
+            </button>
+
+            <button name="incratingbutton" from="button_base_menu">
+                <position>2,455</position>
+                <value>Increase</value>
+            </button>
+         </group>
+
+        <group name="editmetadata6group" from="defaultscreencontent_1A_animated">
+                <area>0,0,720,988</area>
+            <imagetype name="artisticon">
+                <area>250,525,150,150</area>
+                <filename>images/music/MM_Artists.png</filename>
+            </imagetype>
+
+            <imagetype name="albumicon" from="artisticon">
+                <position>430,525</position>
+                <filename>images/music/MM_Albums.png</filename>
+            </imagetype>
+
+            <imagetype name="genreicon" from="artisticon">
+                <position>610,525</position>
+                <filename>images/music/MM_Genres.png</filename>
+            </imagetype>
+        </group>
+
+        <group name="editmetadatabutton6group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="navigatelbl" from="textarea_base">
+                <area>2,525,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="albumartbutton" from="button_base_menu">
+                <position>2,560</position>
+                <value>Album Art</value>
+            </button>
+
+            <button name="donebutton" from="button_base_menu">
+                <position>2,595</position>
+                <value>Done</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="editalbumart" include="music-base.xml">
+         <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="editalbumart1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Album Art</value>
+            </textarea>
+
+            <textarea name="filelbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Filename:</value>
+            </textarea>
+
+            <textarea name="typelbl" from="filelbl">
+                <position>250,210</position>
+                <value>Type:</value>
+            </textarea>
+
+            <textarea name="imagefilenametext" from="filelbl">
+                <alpha>128</alpha>
+                <case>normal</case>
+                <area>420,175,340,35</area>
+            </textarea>
+
+            <textarea name="imagetypetext" from="imagefilenametext">
+                <position>420,210</position>
+            </textarea>
+
+                <imagetype name="coverartimage">
+                    <area>432,255,150,150</area>
+                    <reflection shear="0" scale="65" length="15"/>
+                </imagetype>
+
+                <imagetype name="previewframe">
+                    <area>420,240,168,180</area>
+                    <preserveaspect>no</preserveaspect>
+                    <filename>images/shared/tvseries_focusframe.png</filename>
+                </imagetype>
+
+            <buttonlist name="coverartlist" from="basegallerybuttonlist">
+                <area>255,450,510,450</area>
+                <buttonarea>0,0,510,450</buttonarea>
+            </buttonlist>
+
+        </group>
+
+        <group name="editalbumartbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+
+            <button name="metadatabutton" from="button_base_menu">
+                <position>2,175</position>
+                <value>Metadata</value>
+            </button>
+
+            <button name="donebutton" from="button_base_menu">
+                <position>2,210</position>
+                <value>Done</value>
+            </button>
+        </group>
+
+    </window>
+
+   <!-- this is the main smartplaylist editor screen -->
+     <window name="smartplaylisteditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="smartplaylisteditor1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Smart Playlist Editor</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="categorylbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Category:</value>
+            </textarea>
+
+            <buttonlist name="categoryselector" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+         </group>
+
+        <group name="smartplaylisteditorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="actionlbl" from="textarea_base">
+                <area>2,140,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Action</value>
+            </textarea>
+
+            <button name="categorybutton" from="button_base_menu">
+                <position>2,175</position>
+                <value>Search Category</value>
+            </button>
+         </group>
+
+        <group name="smartplaylisteditor2group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="titlelbl">
+                <area>250,210,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Title:</value>
+            </textarea>
+
+            <textedit name="titleedit" from="textedit_base">
+                <position>450,210</position>
+            </textedit>
+
+            <textarea name="matchlbl"  from="titlelbl">
+                <position>250,280</position>
+                <value>Match</value>
+            </textarea>
+
+            <buttonlist name="matchselector" from="selector_base_tiny">
+                <position>350,280</position>
+            </buttonlist>
+
+            <textarea name="match2lbl" from="titlelbl">
+                <position>250,280</position>
+                <align>right,vcenter</align>
+                <value>Of The Following Conditions:</value>
+            </textarea>
+
+            <buttonlist name="criterialist" from="buttonlist_dialog_wide_permanent">
+                <area>250,350,510,220</area>
+                <buttonarea>0,0,510,200</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,204</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,204</position>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="orderbylbl"  from="titlelbl">
+                <position>250,605</position>
+                <value>Order By:</value>
+            </textarea>
+
+            <buttonlist name="orderbyselector" from="selector_base">
+                <position>450,605</position>
+            </buttonlist>
+        </group>
+
+        <group name="smartplaylisteditorbutton2group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="orderbybutton" from="button_base_menu">
+                <position>2,210</position>
+                <value>Edit Order</value>
+            </button>
+        </group>
+
+        <group name="smartplaylisteditor3group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="matcheslbl"  from="textarea_base">
+                <area>250,640,510,35</area>
+                <value>Matches:</value>
+            </textarea>
+
+            <textarea name="matchestext"  from="textarea_base">
+                <area>420,640,100,35</area>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <textarea name="limitlbl"  from="matcheslbl">
+                <position>530,640</position>
+                <value>Limit:</value>
+            </textarea>
+
+            <spinbox name="limitspin" from="spinbox_base">
+                <position>670,640</position>
+                <!--<template type="zero">No Limit</template> -->
+            </spinbox>
+        </group>
+
+        <group name="smartplaylisteditorbutton3group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="showresultsbutton" from="button_base_menu">
+                <position>2,245</position>
+                <value>Show Results</value>
+            </button>
+
+            <textarea name="navigatelbl" from="textarea_base">
+                <area>2,315,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancelbutton" from="button_base_menu">
+                <position>2,350</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="savebutton" from="button_base_menu">
+                <position>2,385</position>
+                <value>Save</value>
+            </button>
+        </group>
+
+    </window>
+
+   <!-- popup to edit a smartplaylist criteria row -->
+    <window name="criteriaroweditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="criteriaroweditor1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Edit Criteria</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="fieldlbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Criteria:</value>
+            </textarea>
+
+            <buttonlist name="fieldselector" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+
+            <textarea name="operatorlbl" from="fieldlbl">
+                <position>250,245</position>
+                <value>Operator:</value>
+            </textarea>
+
+            <buttonlist name="operatorselector" from="selector_base">
+                <position>450,245</position>
+            </buttonlist>
+
+            <textarea name="value1lbl" from="fieldlbl">
+                <position>250,315</position>
+                <value>First Value:</value>
+            </textarea>
+
+            <textedit name="value1edit" from="textedit_base">
+                <position>450,315</position>
+            </textedit>
+
+            <buttonlist name="value1selector" from="selector_base">
+                <position>450,315</position>
+            </buttonlist>
+
+            <spinbox name="value1spinbox" from="spinbox_menu">
+                <position>420,315</position>
+            </spinbox>
+        </group>
+
+       <group name="criteriaroweditorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="searchlbl" from="textarea_base">
+                <area>2,175,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Set</value>
+            </textarea>
+
+            <button name="value1button" from="button_base_menu">
+                <position>2,210</position>
+                <value>First Value</value>
+            </button>
+        </group>
+
+<!--
+        <textarea name="andlbl"  from="basetextarea">
+            <area>40,235,376,50</area>
+            <align>allcenter</align>
+            <value>And</value>
+        </textarea>
+        -->
+
+       <group name="criteriaroweditor2group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="value2lbl" from="fieldlbl">
+                <position>250,395</position>
+                <value>Second Value:</value>
+            </textarea>
+
+            <textedit name="value2edit" from="textedit_base">
+                <position>450,395</position>
+            </textedit>
+
+            <buttonlist name="value2selector" from="selector_base">
+                <position>450,395</position>
+            </buttonlist>
+
+            <spinbox name="value2spinbox" from="spinbox_menu">
+                <position>420,395</position>
+            </spinbox>
+         </group>
+
+       <group name="criteriaroweditorbutton2group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="value2button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Second Value</value>
+            </button>
+
+            <!-- Push buttons -->
+            <textarea name="navigatelbl" from="textarea_base">
+                <area>2,315,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancelbutton" from="button_base_menu">
+                <position>2,350</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="savebutton" from="button_base_menu">
+                <position>2,385</position>
+                <value>Save</value>
+            </button>
+        </group>
+    </window>
+
+    <!-- popup to edit the date in a smartplaylist criteria row -->
+    <window name="dateeditordialog">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="criteriaroweditor1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Edit Date</value>
+            </textarea>
+
+            <textarea name="fixeddatelbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Fixed Date:</value>
+            </textarea>
+
+            <checkbox name="fixeddatecheck" from="checkbox_menu">
+                <position>420,175</position>
+            </checkbox>
+
+            <textarea name="daylbl"  from="fixeddatelbl">
+                <position>250,210</position>
+                <value>Day:</value>
+            </textarea>
+
+            <spinbox name="dayspinbox" from="spinbox_menu">
+                <position>420,210</position>
+            </spinbox>
+
+            <textarea name="monthlbl"  from="fixeddatelbl">
+                <position>250,245</position>
+                <value>Month:</value>
+            </textarea>
+
+            <spinbox name="monthspinbox" from="spinbox_menu">
+                <position>420,245</position>
+            </spinbox>
+
+            <textarea name="yearlbl"  from="fixeddatelbl">
+                <position>250,280</position>
+                <value>Year:</value>
+            </textarea>
+
+            <spinbox name="yearspinbox" from="spinbox_menu">
+                <position>420,280</position>
+            </spinbox>
+
+            <textarea name="nowlbl"  from="fixeddatelbl">
+                <position>250,350</position>
+                <value>Use Current Date:</value>
+            </textarea>
+
+            <checkbox name="nowcheck" from="checkbox_menu">
+                <position>420,350</position>
+            </checkbox>
+
+            <textarea name="adddayslbl"  from="fixeddatelbl">
+                <position>250,385</position>
+                <value>+/- Days:</value>
+            </textarea>
+
+            <spinbox name="adddaysspinbox" from="spinbox_menu">
+                <position>420,385</position>
+            </spinbox>
+
+            <textarea name="statustextlbl"  from="fixeddatelbl">
+                <position>250,455</position>
+                <value>Result:</value>
+            </textarea>
+
+            <textarea name="statustext" from="fixeddatelbl">
+                <position>420,455</position>
+                <font>normal</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <font state="valid">normal_running</font>
+                <font state="error">normal_error</font>
+            </textarea>
+        </group>
+
+        <group name="criteriaroweditorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="navigatelbl" from="textarea_base">
+                <area>2,315,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancelbutton" from="button_base_menu">
+                <position>2,350</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="okbutton" from="button_base_menu">
+                <position>2,385</position>
+                <value>Save</value>
+            </button>
+        </group>
+
+    </window>
+
+    <!-- popup to edit the smartplaylist order by clause-->
+    <window name="orderbydialog">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="orderbydialog1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Order by Fields</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="fieldlistlbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Fields:</value>
+            </textarea>
+
+            <buttonlist name="fieldlist" from="buttonlist_dialog_wide_permanent">
+                <area>250,210,510,220</area>
+                <buttonarea>0,0,510,200</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,204</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,204</position>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="newfieldlbl"  from="fieldlistlbl">
+                <position>250,455</position>
+                <value>New Field:</value>
+            </textarea>
+
+            <buttonlist name="fieldselector" from="selector_base">
+                <position>450,455</position>
+            </buttonlist>
+        </group>
+
+        <group name="orderbydialogbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="actionlbl" from="textarea_base">
+                <area>2,140,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Actions</value>
+            </textarea>
+
+            <button name="addbutton" from="button_base_menu">
+                <position>2,175</position>
+                <value>Add</value>
+            </button>
+
+            <button name="deletebutton" from="button_base_menu">
+                <position>2,210</position>
+                <value>Delete</value>
+            </button>
+
+            <button name="moveupbutton" from="button_base_menu">
+                <position>2,245</position>
+                <value>Move Up</value>
+            </button>
+
+            <button name="movedownbutton" from="button_base_menu">
+                <position>2,280</position>
+                <value>Move Down</value>
+            </button>
+
+            <button name="ascendingbutton" from="button_base_menu">
+                <position>2,315</position>
+                <value>Ascending</value>
+            </button>
+
+            <button name="descendingbutton" from="button_base_menu">
+                <position>2,350</position>
+                <value>Descending</value>
+            </button>
+
+            <textarea name="navigatelbl" from="textarea_base">
+                <area>2,420,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancelbutton" from="button_base_menu">
+                <position>2,455</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="okbutton" from="button_base_menu">
+                <position>2,490</position>
+                <value>Save</value>
+            </button>
+        </group>
+
+    </window>
+
+   <!-- shows some information for the currently selected or playing track -->
+    <window name="smartplresultviewer">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="smartplresultviewer1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Smart Playlist Results</value>
+            </textarea>
+
+             <!-- optional - shows current position in the list eg '1 of 123' -->
+    <!--        <textarea name="position" from="basetextarea">
+                <area>1050,15,200,40</area>
+                <align>right,vcenter</align>
+                <font>basemedium</font>
+            </textarea>-->
+
+            <buttonlist name="tracklist" from="buttonlist_dialog_wide_permanent">
+                <area>250,175,510,540</area>
+                <buttonarea>0,0,510,520</buttonarea>
+                  <statetype name="buttonitem">
+                       <area>0,0,510,35</area>
+                       <!--ACTIVE-->
+                       <state name="active">
+                           <textarea name="title">
+                               <area>10,0,470,40</area>
+                               <font>normal</font>
+                               <alpha>128</alpha>
+                               <multiline>no</multiline>
+                               <cutdown>yes</cutdown>
+                               <align>left,vcenter</align>
+                               <template>%TITLE% by %ARTIST% on %ALBUM%</template>
+                           </textarea>
+                       </state>
+                       <!--SELECTED ACTIVE-->
+                       <state name="selectedactive">
+                           <textarea name="title">
+                               <area>10,0,470,40</area>
+                               <font>normal</font>
+                               <alpha>255</alpha>
+                               <multiline>no</multiline>
+                               <cutdown>yes</cutdown>
+                               <align>left,vcenter</align>
+                               <template>%TITLE% by %ARTIST% on %ALBUM%</template>
+                           </textarea>
+                       </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <position>10,524</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,524</position>
+                </statetype>
+            </buttonlist>
+        </group>
+
+    </window>
+
+    <!-- shows some information for the currently selected or playing track -->
+    <window name="trackdetail_popup">
+        <area>100,55,1080,611</area>
+        <animation trigger="AboutToShow">
+            <section duration="400" centre="middle">
+                <zoom start="10" end="100" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="400" centre="middle">
+                <zoom start="100" end="10" easingcurve="InBack" />
+            </section>
+        </animation>
+
+        <group name="popuplarge" from="defaultpopuplarge"/>
+        <!-- ===================================================== -->
+        <!--     PROGRAM DETAILS                                   -->
+        <!-- ===================================================== -->
+
+        <imagetype name="coverart">
+            <area>30,65,330,330</area>
+            <filename>images/music/digital-music.jpg</filename>
+            <preserveaspect>yes</preserveaspect>
+            <reflection shear="0" scale="65" length="10"/>
+        </imagetype>
+        <imagetype name="previewframe">
+            <area>21,50,348,360</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <imagetype name="artisticon">
+            <area>30,420,150,150</area>
+            <filename>images/music/MM_Artists.png</filename>
+        </imagetype>
+
+        <imagetype name="genreicon">
+            <area>210,420,150,150</area>
+            <filename>images/music/MM_Genres.png</filename>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>380,65,670,35</area>
+            <font>title</font>
+        </textarea>
+
+        <textarea name="artistlbl" from="textarea_base">
+            <area>380,105,150,35</area>
+            <value>Artist:</value>
+        </textarea>
+
+        <textarea name="artist" from="textarea_base">
+            <area>540,105,510,35</area>
+            <alpha>128</alpha>
+            <case>normal</case>
+        </textarea>
+
+        <textarea name="albumlbl" from="artistlbl">
+            <position>380,140</position>
+            <value>Album:</value>
+        </textarea>
+
+        <textarea name="album" from="artist">
+            <position>540,140</position>
+        </textarea>
+
+        <textarea name="genrelbl" from="artistlbl">
+            <position>380,175</position>
+            <value>Genre:</value>
+        </textarea>
+
+        <textarea name="genre" from="artist">
+            <position>540,175</position>
+        </textarea>
+
+        <textarea name="tracknumlbl"  from="artistlbl">
+            <position>380,210</position>
+            <value>Track No.:</value>
+        </textarea>
+
+        <textarea name="tracknum" from="artist">
+            <position>540,210</position>
+        </textarea>
+
+        <textarea name="lenlbl"  from="artistlbl">
+            <position>380,245</position>
+            <value>Length:</value>
+        </textarea>
+
+        <textarea name="length" from="artist">
+            <position>540,245</position>
+        </textarea>
+
+        <textarea name="yearlbl"  from="artistlbl">
+            <position>380,280</position>
+            <value>Year:</value>
+        </textarea>
+
+        <textarea name="year" from="artist">
+            <position>540,280</position>
+        </textarea>
+
+        <textarea name="ratinglbl"  from="artistlbl">
+            <position>380,315</position>
+            <value>Rating:</value>
+        </textarea>
+
+        <statetype name="rating_state" from="rating_base">
+            <position>540,320</position>
+        </statetype>
+
+        <textarea name="generallbl" from="title">
+            <position>380,385</position>
+            <value>File Information</value>
+        </textarea>
+
+        <textarea name="dateaddedlbl"  from="artistlbl">
+            <position>380,425</position>
+            <value>Date Added:</value>
+        </textarea>
+
+        <textarea name="dateadded" from="artist">
+            <position>540,425</position>
+            <value>Last Value</value>
+        </textarea>
+
+        <textarea name="lastplaylbl"  from="artistlbl">
+            <position>380,460</position>
+            <value>Last Played:</value>
+        </textarea>
+
+        <textarea name="lastplayed" from="artist">
+            <position>540,460</position>
+            <value></value>
+        </textarea>
+
+        <textarea name="playcountlbl"  from="artistlbl">
+            <position>380,495</position>
+            <value>Played:</value>
+        </textarea>
+
+        <textarea name="playcount" from="artist">
+            <position>540,495</position>
+            <template>%playcount% times</template>
+        </textarea>
+
+        <textarea name="filenamelbl"  from="artistlbl">
+            <position>380,530</position>
+            <value>Filename:</value>
+        </textarea>
+
+        <textarea name="filename" from="artist">
+            <area>540,532,510,70</area>
+            <font>small</font>
+            <align>left,top</align>
+            <case>normal</case>
+            <multiline>yes</multiline>
+        </textarea>
+    </window>
+
+    <window name="trackslyricsview">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="playlistposition" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <imagetype name="previewframelyrics">
+            <area>325,225,930,450</area>
+            <preserveaspect>no</preserveaspect>
+            <!--<alpha>160</alpha>-->
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <buttonlist name="lyrics_list">
+            <area>370,260,870,440</area>
+            <buttonarea>0,0,115,440</buttonarea>
+            <spacing>0</spacing>
+            <layout>vertical</layout>
+            <arrange>stack</arrange>
+            <showarrow>no</showarrow>
+            <searchposition>-1,410</searchposition>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,30</area>
+                    <textarea name="buttontext">
+                        <area>0,0,100%,100%</area>
+                        <align>left,vcenter</align>
+                        <font>lyrics</font>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <textarea name="buttontext">
+                        <area>0,0,100%,100%</area>
+                        <align>left,vcenter</align>
+                        <font>lyrics_amber</font>
+                    </textarea>
+                </state>
+                <state name="selectedinactive" from="selectedactive">
+
+                </state>
+            </statetype>
+
+            <statetype name="upscrollarrow">
+                <position>1240,270</position>
+            </statetype>
+
+            <statetype name="downscrollarrow">
+                <position>1240,710</position>
+            </statetype>
+
+        </buttonlist>
+
+        <statetype name="loading_state">
+            <position>750,290</position>
+            <state name="off"></state>
+            <state name="on">
+                <imagetype name="loadinganimation">
+                    <position>0,0</position>
+                    <filepattern low="0" high="24">images/music/busyimages/%1.png</filepattern>
+                    <delay>150</delay>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="status_text" from="basetextarea">
+            <area>280,420,1080,50</area>
+            <font>title</font>
+            <case>upper</case>
+            <align>center</align>
+        </textarea>
+
+        <imagetype name="coverart">
+            <area>40,250,275,275</area>
+            <filename>images/shared/DefaultNetwork.png</filename>
+            <reflection shear="0" scale="65" length="15"/>
+        </imagetype>
+
+        <imagetype name="previewframe">
+            <area>31,235,293,305</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <group name="infopanel" from="basetrackinfopanel">
+            <position>40,500</position>>
+        </group>
+
+        <!--<group name="playliststatusgroup" from="baseplayliststatusgroup">
+            <position>345,600</position>
+       </group>-->
+
+       <group name="playlistvisualizergroup" from="trackprogressgroup">
+            <position>40,600</position>
+       </group>
+
+    </window>
+
+    <window name="streamlyricsview">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="playlistposition" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <imagetype name="previewframelyrics">
+            <area>395,225,860,450</area>
+            <preserveaspect>no</preserveaspect>
+            <!--<alpha>160</alpha>-->
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <buttonlist name="lyrics_list">
+            <area>430,260,800,440</area>
+            <buttonarea>0,0,115,440</buttonarea>
+            <spacing>0</spacing>
+            <layout>vertical</layout>
+            <arrange>stack</arrange>
+            <showarrow>no</showarrow>
+            <searchposition>-1,410</searchposition>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,30</area>
+                    <textarea name="buttontext">
+                        <area>0,0,100%,100%</area>
+                        <align>left,vcenter</align>
+                        <font>lyrics</font>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <textarea name="buttontext">
+                        <area>0,0,100%,100%</area>
+                        <align>left,vcenter</align>
+                        <font>lyrics_amber</font>
+                    </textarea>
+                </state>
+                <state name="selectedinactive" from="selectedactive">
+
+                </state>
+            </statetype>
+
+            <statetype name="upscrollarrow">
+                <position>1160,272</position>
+            </statetype>
+
+            <statetype name="downscrollarrow">
+                <position>1190,272</position>
+            </statetype>
+        </buttonlist>
+
+        <statetype name="loading_state">
+            <position>750,300</position>
+            <state name="off"></state>
+            <state name="on">
+                <imagetype name="loadinganimation">
+                    <position>0,0</position>
+                    <filepattern low="0" high="24">images/music/busyimages/%1.png</filepattern>
+                    <delay>150</delay>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="status_text" from="basetextarea">
+            <area>280,430,1080,50</area>
+            <font>title</font>
+            <case>upper</case>
+            <align>center</align>
+        </textarea>
+
+        <group name="streaminfopanel" from="basestreaminfopanel">
+            <area>40,325,300,240</area>
+        </group>
+
+    </window>
+
+    <window name="editlyrics">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMusicBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="ScreenTitleVideoManager" from="screentitle">
+            <value>Add/Edit Lyrics</value>
+        </textarea>
+
+        <textarea name="grabber_label">
+            <font>small</font>
+            <align>right,vcenter</align>
+            <area>640,245,200,50</area>
+            <value>Grabber:</value>
+        </textarea>
+
+        <textarea name="syncroniszed_label" from="grabber_label">
+            <position>640,300</position>
+            <value>Syncronized:</value>
+        </textarea>
+
+        <textarea name="title_label" from="grabber_label">
+            <position>14,245</position>
+            <value>Title:</value>
+        </textarea>
+
+        <textarea name="artist_label" from="grabber_label">
+            <position>14,300</position>
+            <value>Artist:</value>
+        </textarea>
+
+        <textarea name="album_label" from="grabber_label">
+            <position>14,355</position>
+            <value>Album:</value>
+        </textarea>
+
+        <textarea name="lyrics_label" from="grabber_label">
+            <position>14,410</position>
+            <value>Lyrics:</value>
+        </textarea>
+
+        <textedit name="titleedit" from="textedit_base">
+            <position>224,254</position>
+        </textedit>
+
+        <textedit name="artistedit" from="titleedit">
+            <position>224,309</position>
+        </textedit>
+
+        <textedit name="albumedit" from="titleedit">
+            <position>224,364</position>
+        </textedit>
+
+        <textedit name="grabberedit" from="titleedit">
+            <position>850,254</position>
+        </textedit>
+
+        <checkbox name="syncronizedcheck" from="checkbox_menu">
+            <position>850,308</position>
+        </checkbox>
+
+        <textedit name="lyricsedit" from="textedit_menu_box_wide">
+            <area>224,418,1000,600</area>
+        </textedit>
+
+        <button name="cancelbutton" from="button_base">
+            <position>1000,650</position>
+            <value>Cancel</value>
+        </button>
+
+        <button name="okbutton" from="button_base">
+            <position>900,650</position>
+            <value>OK</value>
+        </button>
+
+    </window>
+
+</mythuitheme>

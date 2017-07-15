@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="INFO_SETUP">
+
+    <button>
+        <type>SETTINGS_WEATHER</type>
+        <text>Weather Settings</text>
+        <description>Weather locale and sources</description>
+        <action>CONFIGPLUGIN mythweather</action>
+        <depends>mythweather</depends>
+    </button>
+
+    <button>
+        <type>SETTINGS_NEWS</type>
+        <text>News Settings</text>
+        <description>Choose which news sources interest you</description>
+        <action>CONFIGPLUGIN mythnews</action>
+        <depends>mythnews</depends>
+    </button>
+
+    <button>
+        <type>SETTINGS_WEBPAGE</type>
+        <text>Web Settings</text>
+        <action>CONFIGPLUGIN mythbrowser</action>
+        <depends>mythbrowser</depends>
+    </button>
+
+</mythmenu>
+

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="gallery">
+        <imagetype name="picturesbgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamPicturesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="ScreenTitleVideoGallery" from="screentitle">
+            <value>PICTURE GALLERY</value>
+        </textarea>
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     IMAGE GALLERY                                     -->
+        <!-- ===================================================== -->
+        <buttonlist name="images" from="buttonlist_menu">
+            <position>740,260</position>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     IMAGE DETAILS                                     -->
+        <!-- ===================================================== -->
+        <imagetype name="selectedimagebgd">
+            <area>37,257,666,377</area>
+            <alpha>255</alpha>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/BlackTransparent.png</filename>
+        </imagetype>
+        <imagetype name="selectedimage">
+            <area>40,260,660,371</area>
+            <alpha>255</alpha>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/backgrounds/images.jpg</filename>
+            <reflection shear="0" scale="65" length="15"/>
+        </imagetype>
+
+        <textarea name="breadcrumbs" from="textarea_base">
+            <area>40,690,660,25</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="noimages" from="breadcrumbs">
+            <align>right,vcenter</align>
+        </textarea>
+
+    </window>
+
+    <window name="filter">
+
+         <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamPicturesBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="filter1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Adjust view for your picture library</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Filter and sort images</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <!-- Filter: labels -->
+            <textarea name="filter_text"  from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Folder filter:</value>
+            </textarea>
+
+            <textarea name="type_filter" from="filter_text">
+                <position>250,210</position>
+                <value>Type filter:</value>
+            </textarea>
+
+            <textarea name="numimages_text" from="filter_text">
+                <position>250,315</position>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <!-- Sort: labels -->
+            <textarea name="sort_text" from="filter_text">
+                <position>250,245</position>
+                <value>Sort by:</value>
+            </textarea>
+
+            <!-- Widgets -->
+            <textedit name="dirfilter_text" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+            <buttonlist name="typefilter_select" from="selector_base">
+                <position>450,210</position>
+            </buttonlist>
+
+            <buttonlist name="sort_select" from="selector_base">
+                <position>450,245</position>
+            </buttonlist>
+
+            <textarea name="helptext" from="textarea_base">
+                <area>250,560,510,150</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+        <group name="filterbutton1group" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="check_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Check Filter</value>
+            </button>
+
+            <button name="done_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Done</value>
+            </button>
+
+            <button name="save_button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Save as default</value>
+            </button>
+        </group>
+
+    </window>
+
+</mythuitheme>

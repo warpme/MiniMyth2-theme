@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <!-- ===================================================== -->
+    <!--     MOVIE SELECTION POPUP                             -->
+    <!-- ===================================================== -->
+    <window name="moviesel">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="movieselgroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Movie selector</value>
+            </textarea>
+            <buttonlist name="results" from="filelist_base">
+                <position>250,175</position>
+            </buttonlist>
+        </group>
+
+    </window>
+
+    <!-- ===================================================== -->
+    <!--     ARTWORK SELECTION POPUP                           -->
+    <!-- ===================================================== -->
+    <window name="artworksel">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="artworkselgroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+    
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Artwork selector</value>
+            </textarea>
+    
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+    
+            <buttonlist name="results" from="filelist_big">
+                <position>250,175</position>
+                <statetype name="buttonitem">
+                    <state name="active">
+                        <textarea name="resolution">
+                            <area>300,50,200,50</area>
+                            <font>normal</font>
+                            <alpha>128</alpha>
+                            <multiline>no</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                            <value>No res specified</value>
+                        </textarea>
+                    </state>
+                    <state name="selectedactive">
+                        <textarea name="resolution">
+                            <area>300,50,200,50</area>
+                            <font>normal</font>
+                            <alpha>255</alpha>
+                            <multiline>no</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                            <value>No res specified</value>
+                        </textarea>
+                    </state>
+                </statetype>
+            </buttonlist>
+        </group>
+    </window>
+
+    <!-- ===================================================== -->
+    <!--     VIDEO MANAGER WINDOW                              -->
+    <!-- ===================================================== -->
+    <window name="manager">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     VIDEO LIST                                        -->
+        <!-- ===================================================== -->
+        <buttonlist name="videos" from="buttonlist_menu_details">
+            <position>740,260</position>
+            <statetype name="buttonitem">
+                <state name="selectedactive">
+                    <textarea name="length" from="textarea_base">
+                        <area>405,5,120,35</area>
+                        <font>verysmall</font>
+                        <case>Normal</case>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <statetype name="watchedstate">
+                        <state name="yes">
+                            <imagetype name="yes">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayWatched.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="no">
+                            <imagetype name="no">
+                                <area>375,9,22,22</area>
+                                <filename>images/shared/OverlayUnwatched.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+            </state>
+            </statetype>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     PROGRAM DETAILS                                   -->
+        <!-- ===================================================== -->
+        <imagetype name="coverart">
+            <area>25,260,250,375</area>
+            <filename>images/shared/DefaultDVDEmptyLong.png</filename>
+            <preserveaspect>yes</preserveaspect>
+            <reflection shear="0" scale="65" length="10"/>
+        </imagetype>
+
+    <group name="videodetails" from="defaultvideodetails">
+        <area>300,260,425,390</area>
+        </group>
+
+        <textarea name="starslbl">
+            <area>20,668,100,25</area>
+            <font>title_verysmall_blue</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <alpha>255</alpha>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <value>Stars</value>
+        </textarea>
+
+        <statetype name="userratingstate" from="rating_base">
+            <position>90,670</position>
+        </statetype>
+
+        <textarea name="ratinglbl" from="starslbl">
+            <position>300,668</position>
+            <value>Rating</value>
+        </textarea>
+
+
+        <textarea name="userrating" from="textarea_base">
+            <area>385,668,175,25</area>
+            <font>title_small</font>
+            <multiline>no</multiline>
+            <alpha>255</alpha>
+            <template>%USERRATING| - %%RATING%</template>
+        </textarea>
+
+         <imagetype name="banner">
+            <area>558,670,162,30</area>
+<!--            <mask>images/shared/BannerMask.png</mask>-->
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+
+       <textarea name="novideos" from="description">
+            <area>300,370,425,180</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <value>No videos in library, or no files found.  If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>    
+       </textarea>
+
+    </window>
+
+    <!-- ===================================================== -->
+    <!--     VIDEO TREE WINDOW                                 -->
+    <!-- ===================================================== -->
+    <window name="tree">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <buttontree name="videos" from="buttontree_video">
+            <position>740,240</position>
+        </buttontree>
+
+        <imagetype name="banner">
+            <area>160,247,545,125</area>
+        </imagetype>
+
+        <imagetype name="coverart">
+            <area>25,220,120,180</area>
+            <filename>images/shared/amt-blank-poster.png</filename>
+            <preserveaspect>yes</preserveaspect>
+            <reflection shear="0" scale="65" length="10"/>
+        </imagetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>25,410,675,35</area>
+            <font>title</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <template>%TITLE% %SUBTITLE% (%YEAR%)</template>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>25,445,675,200</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="level_label">
+            <area>1000,670,210,30</area>
+            <font>title_verysmall_blue</font>
+            <value>Parental Level</value>
+            <align>right,vcenter</align>
+        </textarea>
+
+        <statetype name="parentallevel">
+            <position>1220,665</position>
+            <state name="None">
+                <imagetype name="icon">
+                    <filename>mv_level_none.png</filename>
+                </imagetype>
+            </state>
+            <state name="Lowest">
+                <imagetype name="icon">
+                    <filename>mv_level_lowest.png</filename>
+                </imagetype>
+            </state>
+            <state name="Low">
+                <imagetype name="icon">
+                    <filename>mv_level_low.png</filename>
+                </imagetype>
+            </state>
+            <state name="Medium">
+                <imagetype name="icon">
+                    <filename>mv_level_medium.png</filename>
+                </imagetype>
+            </state>
+            <state name="High">
+                <imagetype name="icon">
+                    <filename>mv_level_high.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="directorlabel" from="textarea_base">
+            <area>25,670,105,25</area>
+            <font>title_verysmall_blue</font>
+            <align>left,vcenter</align>
+            <value>Director</value>
+        </textarea>
+
+        <textarea name="director" from="textarea_base">
+            <area>135,670,265,25</area>
+            <font>title_small</font>
+            <multiline>no</multiline>
+            <alpha>255</alpha>
+            <value></value>
+        </textarea>
+
+        <textarea name="ratinglabel" from="directorlabel">
+            <position>390,670</position>
+            <value>Rating</value>
+        </textarea>
+
+        <textarea name="userrating" from="director">
+            <position>470,670</position>
+            <template>%USERRATING%/10 - %RATING%</template>
+        </textarea>
+
+        <statetype name="userratingstate" from="rating_base">
+            <position>590,672</position>
+        </statetype>
+
+        <textarea name="novideos" from="description">
+            <value>No videos in library, or no files found.  If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>    
+       </textarea>
+
+    </window>
+
+    <!-- ===================================================== -->
+    <!--     VIDEO BROWSER WINDOW                              -->
+    <!-- ===================================================== -->
+    <window name="browser">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutBrowse_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     VIDEO LIST                                        -->
+        <!-- ===================================================== -->
+        <buttonlist name="videos" from="buttonlist_browse">
+            <position>0,505</position>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     VIDEO DETAILS                                     -->
+        <!-- ===================================================== -->
+        <imagetype name="coverart">
+            <area>25,70,290,410</area>
+            <filename>images/shared/amt-blank-poster.png</filename>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+
+        <imagetype name="OverlayWUBG">
+            <position>284,130</position>
+            <filename>images/shared/OverlayWUBG.png</filename>
+        </imagetype>
+
+        <statetype name="watchedstate">
+            <state name="yes">
+                <imagetype name="yes">
+                    <position>290,134</position>
+                    <filename>images/shared/OverlayWatched.png</filename>
+                </imagetype>
+            </state>
+            <state name="no">
+                <imagetype name="no">
+                    <position>290,134</position>
+                    <filename>images/shared/OverlayUnwatched.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>345,80,915,40</area>
+            <font>title_big</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <template>%TITLE% %SUBTITLE%</template>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>345,125,915,125</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>-->
+        </textarea>
+
+        <textarea name="novideos" from="description">
+            <value>No videos in library, or no files found.  If you have configured a video directory, press "M" (or the MENU key) and select "Scan for Changes."</value>    
+        </textarea>
+
+        <textarea name="MovieDetailslbl" from="textarea_base">
+            <area>345,275,400,25</area>
+            <font>title_small</font>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <value>Movie Details</value>
+        </textarea>
+
+        <textarea name="genres" from="textarea_base">
+            <area>345,300,400,25</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>None</value>
+        </textarea>
+
+        <textarea name="year" from="genres">
+            <position>345,325</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="length" from="genres">
+            <position>345,350</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="rating" from="genres">
+            <position>345,375</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="StarRatinglbl" from="MovieDetailslbl">
+            <position>345,425</position>
+            <value>Star rating</value>
+        </textarea>
+
+        <statetype name="userratingstate" from="rating_base">
+            <position>345,450</position>
+        </statetype>
+
+        <textarea name="userrating" from="genres">
+            <position>480,450</position>
+            <template>%USERRATING%/10</template>
+        </textarea>
+
+        <textarea name="Directorlbl" from="MovieDetailslbl">
+            <position>850,275</position>
+            <value>Director</value>
+        </textarea>
+
+        <textarea name="director" from="genres">
+            <position>850,300</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="castlbl" from="MovieDetailslbl">
+            <position>850,350</position>
+            <value>Cast</value>
+        </textarea>
+
+        <textarea name="cast" from="genres">
+            <position>850,375</position>
+            <value>Unknown</value>
+        </textarea>
+
+        <textarea name="Seasonlbl" from="MovieDetailslbl">
+            <position>850,425</position>
+            <value>Season and Episode</value>
+        </textarea>
+
+        <textarea name="##x##" from="genres">
+            <position>850,450</position>
+        </textarea>
+
+    </window>
+
+    <!-- ===================================================== -->
+    <!--     VIDEO GALLERY WINDOW                              -->
+    <!-- ===================================================== -->
+    <window name="gallery">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="position" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <buttonlist name="videos" from="buttonlist_gallery">
+            <position>20,260</position>
+        </buttonlist>
+
+        <textarea name="title" from="textarea_base">
+            <area>820,260,440,35</area>
+            <font>title</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>820,295,440,355</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="StarRatinglbl" from="textarea_base">
+            <area>820,680,150,25</area>
+            <font>title_verysmall_blue</font>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <value>Star rating</value>
+        </textarea>
+
+        <statetype name="userratingstate" from="rating_base">
+            <position>960,681</position>
+        </statetype>
+
+       <textarea name="userrating" from="textarea_base">
+            <area>1100,680,100,25</area>
+            <font>small</font>
+            <align>right,bottom</align>
+            <template>%USERRATING%/10</template>
+        </textarea>
+
+    </window>
+
+    <window name="edit_metadata">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="edit_metadatagroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+            </textarea>
+    
+            <textarea name="title_editlbl">
+                <area>250,175,200,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Title:</value>
+                <align>left,vcenter</align>
+            </textarea>
+    
+            <textedit name="title_edit" from="textedit_base">
+               <position>450,175</position>
+            </textedit>
+
+            <textarea name="subtitle_editlbl" from="title_editlbl">
+                <position>250,210</position>
+                <value>Subtitle:</value>
+            </textarea>
+
+            <textedit name="subtitle_edit" from="title_edit">
+                <position>450,210</position>
+            </textedit>
+
+            <textarea name="inetreflbl" from="title_editlbl">
+                <position>250,245</position>
+                <value>TMDB/TVDB ID:</value>
+            </textarea>
+
+            <textedit name="inetref_edit" from="textedit_base">
+                <position>450,245</position>
+            </textedit>
+
+            <textarea name="categorylbl" from="title_editlbl">
+                <position>250,280</position>
+                <value>Category:</value>
+            </textarea>
+
+            <buttonlist name="category_select" from="selector_base">
+                <position>450,280</position>
+            </buttonlist>
+
+            <textarea name="levellbl" from="title_editlbl">
+                <position>250,315</position>
+                <value>Parental Control:</value>
+            </textarea>
+
+            <buttonlist name="level_select" from="category_select">
+                <position>450,315</position>
+            </buttonlist>
+
+            <textarea name="childlbl" from="title_editlbl">
+                <position>250,350</position>
+                <value>File to Play Next:</value>
+            </textarea>
+
+            <buttonlist name="child_select" from="category_select">
+                <position>450,350</position>
+            </buttonlist>
+
+            <textarea name="browselbl" from="title_editlbl">
+                <position>250,385</position>
+                <value>Include while Browsing:</value>
+            </textarea>
+
+            <checkbox name="browse_check" from="checkbox_menu">
+                <position>445,385</position>
+            </checkbox>
+
+            <textarea name="watchedlbl" from="title_editlbl">
+                <position>530,385</position>
+                <value>Watched:</value>
+            </textarea>
+
+            <checkbox name="watched_check" from="checkbox_base">
+                <position>735,385</position>
+            </checkbox>
+
+            <textarea name="seasonlbl" from="title_editlbl">
+                <position>250,420</position>
+                <value>Season:</value>
+            </textarea>
+
+            <spinbox name="season" from="spinbox_menu">
+                <position>420,420</position>
+            </spinbox>
+
+            <textarea name="episodelbl" from="title_editlbl">
+                <position>530,420</position>
+                <value>Episode:</value>
+            </textarea>
+
+            <spinbox name="episode" from="spinbox_base">
+                <position>670,420</position>
+            </spinbox>
+
+            <textarea name="player_editlbl" from="title_editlbl">
+                <position>250,455</position>
+                <value>Player Command:</value>
+            </textarea>
+
+            <textedit name="player_edit" from="title_edit">
+                <position>450,455</position>
+            </textedit>
+        </group>
+
+        <group name="edit_metadatabuttongroup" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <textarea name="coverartbuttonlbl" from="textarea_base">
+                <area>2,140,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Coverart</value>
+            </textarea>
+
+            <button name="coverart_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Local</value>
+            </button>
+            <button name="net_coverart_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Find Online...</value>
+            </button>
+
+            <textarea name="fanart_text">
+                <position>0,0</position>
+                <alpha>0</alpha>
+            </textarea>
+
+            <textarea name="fanartbuttonlbl" from="coverartbuttonlbl">
+                <position>2,245</position>
+                <value>Fanart</value>
+            </textarea>
+            <button name="fanart_button" from="button_base_menu">
+                <position>2,280</position>
+                <value>Local</value>
+            </button>
+            <button name="net_fanart_button" from="button_base_menu">
+                <position>2,315</position>
+                <value>Find Online...</value>
+            </button>
+
+            <textarea name="bannerbuttonlbl" from="coverartbuttonlbl">
+                <position>2,350</position>
+                <value>Banner</value>
+            </textarea>
+            <button name="banner_button" from="button_base_menu">
+                <position>2,385</position>
+                <value>Local</value>
+            </button>
+            <button name="net_banner_button" from="button_base_menu">
+                <position>2,420</position>
+                <value>Find Online...</value>
+            </button>
+
+            <textarea name="screenshotbuttonlbl" from="coverartbuttonlbl">
+                <position>2,455</position>
+                <value>Screenshot</value>
+            </textarea>
+            <button name="screenshot_button" from="button_base_menu">
+                <position>2,490</position>
+                <value>Local</value>
+            </button>
+            <button name="net_screenshot_button" from="button_base_menu">
+                <position>2,525</position>
+                <value>Find Online...</value>
+            </button>
+
+            <textarea name="trailer_text">
+                <position>0,0</position>
+                <alpha>0</alpha>
+            </textarea>
+
+            <textarea name="trailerbuttonlbl" from="coverartbuttonlbl">
+                <position>2,560</position>
+                <value>Trailer</value>
+            </textarea>
+            <button name="trailer_button" from="button_base_menu">
+                <position>2,595</position>
+                <value>Local</value>
+            </button>
+            <button name="done_button" from="button_base_menu">
+                <position>2,665</position>
+                <value>Done</value>
+            </button>
+        </group>
+
+        <group name="edit_metadatadetailsgroup" from="defaultscreencontent_1B_animated">
+                <area>0,0,720,988</area>
+            <group name="artworkoverview" from="defaultartworkoverview">
+               <position>230,500</position>
+            </group>
+        </group>
+    </window>
+
+    <window name="castpopup">
+        <area>974,0,308,720</area>
+        <animation trigger="AboutToShow">
+            <section duration="500" centre="middle">
+                <position start="1280,0" end="974,0" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="500" centre="middle">
+                <position start="974,0" end="1280,0" easingcurve="InBack" />
+            </section>
+        </animation>
+       <imagetype name="popup_background">
+           <area>0,0,350,720</area>    
+           <filename>images/shared/HomeBladeSubRight.png</filename>
+       </imagetype>
+       <textarea name="changeviewtitle">
+           <area>16,20,290,100</area>
+           <font>title_small</font>
+           <case>upper</case>
+           <multiline>yes</multiline>
+           <align>left,bottom</align>
+           <cutdown>yes</cutdown>
+           <value>Cast</value>
+       </textarea>
+
+        <buttonlist name="cast" from="buttonlist_popup">
+            <position>6,130</position>
+        </buttonlist>
+    </window>
+
+    <window name="descriptionpopup">
+        <animation trigger="AboutToShow">
+            <section duration="400" centre="middle">
+                <zoom start="10" end="100" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="400" centre="middle">
+                <zoom start="100" end="10" easingcurve="InBack" />
+            </section>
+        </animation>
+        <group name="popuplarge" from="defaultpopuplarge">
+            <position>100,55</position>
+        </group>
+        <imagetype name="box">
+            <area>130,120,333,500</area>
+            <filename>images/shared/amt-blank-poster.png</filename>
+            <preserveaspect>yes</preserveaspect>
+            <reflection shear="0" scale="65" length="10"/>
+        </imagetype>
+
+        <imagetype name="OverlayWUBG">
+            <position>432,195</position>
+            <filename>images/shared/OverlayWUBG.png</filename>
+        </imagetype>
+
+        <statetype name="watchedstate">
+            <state name="yes">
+                <imagetype name="yes">
+                    <position>438,199</position>
+                    <filename>images/shared/OverlayWatched.png</filename>
+                </imagetype>
+            </state>
+            <state name="no">
+                <imagetype name="no">
+                    <position>438,199</position>
+                    <filename>images/shared/OverlayUnwatched.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="description" from="textarea_base">
+            <area>480,180,670,485</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+        <button name="ok" from="button_base">
+            <position>1000,610</position>
+            <value>OK</value>
+        </button>
+    </window>
+
+    <window name="itemdetailpopup">
+        <area>100,55,1080,611</area>
+        <animation trigger="AboutToShow">
+            <section duration="400" centre="middle">
+                <zoom start="10" end="100" easingcurve="OutBack" />
+            </section>
+        </animation>
+        <animation trigger="AboutToHide">
+            <section duration="400" centre="middle">
+                <zoom start="100" end="10" easingcurve="InBack" />
+            </section>
+        </animation>
+        <group name="popuplarge" from="defaultpopuplarge">
+            <position>0,0</position>
+        </group>
+        <imagetype name="coverart">
+            <area>30,65,333,500</area>
+            <filename>images/shared/amt-blank-poster.png</filename>
+            <preserveaspect>yes</preserveaspect>
+            <reflection shear="0" scale="65" length="10"/>
+        </imagetype>
+
+        <imagetype name="OverlayWUBG">
+            <position>332,140</position>
+            <filename>images/shared/OverlayWUBG.png</filename>
+        </imagetype>
+
+        <statetype name="watchedstate">
+            <state name="yes">
+                <imagetype name="yes">
+                    <position>338,144</position>
+                    <filename>images/shared/OverlayWatched.png</filename>
+                </imagetype>
+            </state>
+            <state name="no">
+                <imagetype name="no">
+                    <position>338,144</position>
+                    <filename>images/shared/OverlayUnwatched.png</filename>
+                </imagetype>
+            </state>
+        </statetype>
+
+        <textarea name="title" from="textarea_base">
+            <area>380,65,680,35</area>
+            <font>title</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <template>%TITLE% %SUBTITLE%</template>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>380,100,680,210</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+        </textarea>
+
+        <textarea name="MovieDetailslbl" from="textarea_base">
+            <area>380,335,400,25</area>
+            <font>title_small</font>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <value>Movie Details</value>
+        </textarea>
+
+        <textarea name="genres" from="textarea_base">
+            <area>380,360,325,25</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="year" from="genres">
+            <position>380,385</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="length" from="genres">
+            <position>380,410</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="rating" from="genres">
+            <position>380,435</position>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="StarRatinglbl" from="MovieDetailslbl">
+            <position>380,485</position>
+            <value>Star rating</value>
+        </textarea>
+
+        <statetype name="userratingstate" from="rating_base">
+            <position>380,515</position>
+        </statetype>
+
+       <textarea name="userrating" from="genres">
+            <area>515,515,100,25</area>
+            <template>%USERRATING%/10</template>
+        </textarea>
+
+        <textarea name="Directorlbl" from="MovieDetailslbl">
+            <area>750,335,120,25</area>
+            <value>Director</value>
+        </textarea>
+
+        <textarea name="director" from="genres">
+            <area>750,360,420,25</area>
+            <value>N/A</value>
+        </textarea>
+
+        <textarea name="castlbl" from="MovieDetailslbl">
+            <position>750,410</position>
+            <value>Cast</value>
+        </textarea>
+
+        <textarea name="cast" from="genres">
+            <position>750,435</position>
+            <value>Unknown</value>
+        </textarea>
+
+        <textarea name="Seasonlbl" from="MovieDetailslbl">
+            <position>750,485</position>
+            <value>Season and Episode</value>
+        </textarea>
+
+        <textarea name="##x##" from="genres">
+            <position>750,510</position>
+        </textarea>
+
+        <button name="play_button" from="button_base">
+            <position>750,550</position>
+            <value>Play</value>
+        </button>
+
+        <button name="done_button" from="button_base">
+            <position>900,550</position>
+            <value>Done</value>
+        </button>
+    </window>
+
+    <window name="file_associations">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamSettingsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="file_associationsgroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>File Associations</value>
+            </textarea>
+
+            <textarea name="extension_text">
+                <font>small</font>
+                <align>left,vcenter</align>
+                <area>250,175,510,35</area>
+                <value>Extension:</value>
+            </textarea>
+
+            <textarea name="command_text" from="extension_text">
+                <position>250,210</position>
+                <value>Command:</value>
+            </textarea>
+
+            <textarea name="default_text" from="extension_text">
+                <position>250,245</position>
+                <value>Use default player:</value>
+            </textarea>
+
+            <textarea name="ignore_text" from="extension_text">
+                <position>250,280</position>
+                <value>Ignore:</value>
+            </textarea>
+
+            <buttonlist name="extension_select" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+
+            <textedit name="command" from="textedit_base">
+                <position>450,210</position>
+            </textedit>
+    
+            <checkbox name="default_check" from="checkbox_base">
+                <position>735,245</position>
+            </checkbox>
+
+            <checkbox name="ignore_check" from="checkbox_base">
+                <position>735,280</position>
+            </checkbox>
+
+            <textarea name="helptext" from="textarea_base">
+                <area>250,540,510,150</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+
+        </group>
+
+        <group name="file-associationsbuttongroup" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="new_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>New</value>
+            </button>
+
+            <button name="delete_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Delete</value>
+            </button>
+
+            <button name="done_button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Done</value>
+            </button>
+        </group>
+
+    </window>
+
+
+    <window name="playersettings">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamSettingsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="playersettingsgroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Player Settings</value>
+            </textarea>
+
+            <textarea name="default_text">
+                <font>small</font>
+                <align>left,vcenter</align>
+                <area>250,175,250,35</area>
+                <value>Default Player:</value>
+            </textarea>
+
+            <textedit name="defaultplayer" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+            <textarea name="dvd_text" from="default_text">
+                <position>250,245</position>
+                <value>DVD Player:</value>
+            </textarea>
+
+            <textedit name="dvdplayer" from="textedit_base">
+                <position>450,245</position>
+            </textedit>
+
+            <textarea name="dvddrive_text" from="default_text">
+                    <position>250,280</position>
+                <value>DVD Drive:</value>
+            </textarea>
+
+            <textedit name="dvddrive" from="textedit_base">
+                <position>450,280</position>
+            </textedit>
+
+            <textarea name="blu_text" from="default_text">
+                <position>250,350</position>
+                <value>Blu-ray Mount:</value>
+            </textarea>
+
+            <textedit name="bluraymount" from="textedit_base">
+                <position>450,350</position>
+            </textedit>
+
+            <textarea name="blureg_text" from="default_text">
+                <position>250,385</position>
+                <value>Blu-ray Region:</value>
+            </textarea>
+
+            <buttonlist name="blurayregionlist" from="selector_base">
+                <position>450,385</position>
+            </buttonlist>
+
+            <textarea name="altcheck_text" from="default_text">
+                <position>250,455</position>
+                <value>Enable Alternate Player:</value>
+            </textarea>
+
+            <checkbox name="altcheck" from="checkbox_base">
+                <position>735,455</position>
+            </checkbox>
+
+            <textarea name="alt_text" from="default_text">
+                <position>250,490</position>
+                <value>Alternate Player:</value>
+            </textarea>
+
+            <textedit name="altplayer" from="textedit_base">
+                <position>450,490</position>
+            </textedit>
+
+            <textarea name="helptext" from="textarea_base">
+                <area>250,540,510,150</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+        <group name="playersettingsbuttongroup" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="ok" from="button_base_menu">
+                <position>2,175</position>
+                <value>OK</value>
+            </button>
+
+            <button name="cancel" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="filter">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamMoviesBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="filtergroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Filters video list</value>
+            </textarea>
+
+            <textarea name="textfilter_text">
+                <font>small</font>
+                <align>left,vcenter</align>
+                <area>250,175,510,35</area>
+                <value>Text Filter:</value>
+            </textarea>
+
+            <textarea name="category_text" from="textfilter_text">
+                <position>250,210</position>
+                <value>Category:</value>
+            </textarea>
+
+            <textarea name="genre_text" from="category_text">
+                <position>250,245</position>
+                <value>Genre:</value>
+            </textarea>
+
+            <textarea name="country_text" from="category_text">
+                <position>250,280</position>
+                <value>Country:</value>
+            </textarea>
+
+            <textarea name="cast_text" from="category_text">
+                <position>250,315</position>
+                <value>Actor/Actress:</value>
+            </textarea>
+
+            <textarea name="year_text" from="category_text">
+                <position>250,350</position>
+                <value>Year:</value>
+            </textarea>
+    
+            <textarea name="runtime_text" from="category_text">
+                <position>250,385</position>
+                <value>Runtime:</value>
+            </textarea>
+    
+            <textarea name="userrating_text" from="category_text">
+                <position>250,420</position>
+                <value>User Rating:</value>
+            </textarea>
+    
+            <textarea name="browse_text" from="category_text">
+                <position>250,455</position>
+                <value>Browse:</value>
+            </textarea>
+    
+            <textarea name="inetref_text" from="category_text">
+                <position>250,490</position>
+                <value>InetRef:</value>
+            </textarea>
+    
+            <textarea name="coverfile_text" from="category_text">
+                <position>250,525</position>
+                <value>Cover File:</value>
+            </textarea>
+    
+            <textarea name="orderby_text" from="category_text">
+                <position>250,560</position>
+                <value>Sort by:</value>
+            </textarea>
+    
+            <textarea name="watched_text" from="category_text">
+                <position>250,595</position>
+                <value>Watched:</value>
+            </textarea>
+
+                <textarea name="numvideos_text" from="category_text">
+                <position>250,650</position>
+                    <value>Result</value>
+                </textarea>
+    
+            <!-- Widgets -->
+            <textedit name="textfilter_input" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+    
+            <buttonlist name="category_select" from="selector_base">
+                <position>450,210</position>
+            </buttonlist>
+    
+            <buttonlist name="genre_select" from="selector_base">
+                <position>450,245</position>
+            </buttonlist>
+    
+            <buttonlist name="country_select" from="selector_base">
+                <position>450,280</position>
+            </buttonlist>
+    
+            <buttonlist name="cast_select" from="selector_base">
+                <position>450,315</position>
+            </buttonlist>
+    
+            <buttonlist name="year_select" from="selector_base">
+                <position>450,350</position>
+            </buttonlist>
+    
+            <buttonlist name="runtime_select" from="selector_base">
+                <position>450,385</position>
+            </buttonlist>
+    
+            <buttonlist name="userrating_select" from="selector_base">
+                <position>450,420</position>
+            </buttonlist>
+    
+            <buttonlist name="browse_select" from="selector_base">
+                <position>450,455</position>
+            </buttonlist>
+    
+            <buttonlist name="inetref_select" from="selector_base">
+                <position>450,490</position>
+            </buttonlist>
+    
+            <buttonlist name="coverfile_select" from="selector_base">
+                <position>450,525</position>
+            </buttonlist>
+    
+            <buttonlist name="orderby_select" from="selector_base">
+                <position>450,560</position>
+            </buttonlist>
+    
+            <buttonlist name="watched_select" from="selector_base">
+                <position>450,595</position>
+            </buttonlist>
+
+         </group>
+
+        <group name="filterbutton" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="done_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Ok</value>
+            </button>
+    
+            <button name="save_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Save as default</value>
+            </button>
+        </group>
+     </window>
+
+    <window name="metadatasettings">
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamSettingsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="metadatasettingsgroup" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Metadata settings</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="autometacheck_text">
+                <font>small</font>
+                <align>left,vcenter</align>
+                <area>250,175,510,35</area>
+                <value>Perform metadata update after video scan</value>
+            </textarea>
+
+            <textarea name="trailercheck_text" from="autometacheck_text">
+                <position>250,210</position>>
+                <value>Enable Random Trailer Playback</value>
+            </textarea>
+
+            <textarea name="unknownfilecheck_text" from="autometacheck_text">
+                <position>250,245</position>>
+                <value>Display unknown file types</value>
+            </textarea>
+
+            <textarea name="treeloadsmetacheck_text" from="autometacheck_text">
+                <position>250,280</position>>
+                <value>Enable metadata in file browse mode</value>
+            </textarea>
+
+            <textarea name="trailerplay_text" from="autometacheck_text">
+                <position>250,315</position>>
+                <value>Trailers to Play:</value>
+            </textarea>
+
+        <!--Widgets-->
+
+            <checkbox name="autometaupdatecheck" from="checkbox_base">
+                <position>735,175</position>
+            </checkbox>
+
+            <checkbox name="randomtrailercheck" from="checkbox_base">
+                <position>735,210</position>
+            </checkbox>
+
+            <checkbox name="unknownfilecheck" from="checkbox_base">
+                <position>735,245</position>
+            </checkbox>
+
+            <checkbox name="treeloadsmetacheck" from="checkbox_base">
+                <position>735,280</position>
+            </checkbox>
+
+            <spinbox name="trailernum" from="spinbox_base">
+                <position>680,315</position>
+            </spinbox>
+
+            <textarea name="helptext" from="textarea_base">
+                <area>250,540,510,150</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+         </group>
+
+        <group name="metadatasettingsbuttongroup" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="ok" from="button_base_menu">
+                <position>2,175</position>
+                <value>OK</value>
+            </button>
+
+            <button name="cancel" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+        </group>
+    </window>
+ </mythuitheme>

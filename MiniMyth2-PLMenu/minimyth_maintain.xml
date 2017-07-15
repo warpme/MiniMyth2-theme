@@ -1,0 +1,59 @@
+<mythmenu name="MINIMYTH_MAINTAIN">
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Baza Danych</text>
+      <description>Sprawdż / Optymalizuj</description>
+      <action>EXEC /usr/bin/mm_manage check_mythtv_db</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Cache Skórki</text>
+      <description>Zapisz</description>
+      <action>EXEC /usr/bin/mm_manage save_themecache</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Ciasteczka WEN</text>
+      <description>Zapisz</description>
+      <action>EXEC /usr/bin/mm_manage save_cookiejar</action>
+   </button>
+
+   <button>
+      <type>MINIMYTH_REFRESH_PHONEBOOK</type>
+      <text>Telefon</text>
+      <description>Odśwież Książkę</description>
+      <action>EXEC su root -c "/usr/bin/mm_manage reload_voip_config"</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>LAN</text>
+      <description>Testuj Prędkość Sieci</description>
+      <action>EXEC /usr/bin/mm_manage test_network_speed</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Gry</text>
+      <description>Zapisz Ustawienia</description>
+      <action>EXEC /usr/bin/mm_manage save_game</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Gry</text>
+      <description>Odtwórz Ustawienia</description>
+      <action>EXEC /usr/bin/mm_manage restore_game</action>
+   </button>
+
+   <button>
+      <type>MINIMYTH_REFRESH_THEME</type>
+      <text>Skórka</text>
+      <description>Załaduj Ponownie</description>
+      <action>EXEC su root -c "/usr/bin/mm_manage redownload_theme"</action>
+   </button>
+
+</mythmenu>

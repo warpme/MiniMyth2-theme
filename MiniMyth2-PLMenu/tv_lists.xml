@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="LISTS">
+
+    <button>
+        <type>TV_SEARCH_NEW_TITLES</type>
+        <text>Tytuły</text>
+        <description>Wyszukuj Nowe</description>
+        <action>TV_SEARCH_NEW</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_MOVIES</type>
+        <text>Filmy</text>
+        <description>Wyszukuj Wszystkie</description>
+        <action>TV_SEARCH_MOVIE</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_CATEGORIES</type>
+        <text>Kategorie</text>
+        <description>Wyszukuj po</description>
+        <action>TV_SEARCH_CATEGORY</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_CHANNELS</type>
+        <text>Kanały</text>
+        <description>Wyszukuj po</description>
+        <action>TV_SEARCH_CHANNEL</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_TIMES</type>
+        <text>Czas Nadawania</text>
+        <description>Wyszukuj po</description>
+        <action>TV_SEARCH_TIME</action>
+    </button>
+
+</mythmenu>

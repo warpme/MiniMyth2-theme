@@ -1,0 +1,39 @@
+<mythmenu name="MUSIC">
+
+   <button>
+      <type>MUSIC_SCAN</type>
+      <text>Scan</text>
+      <description>New files</description>
+      <action>SETTINGS_SCAN</action>
+   </button>
+
+   <button>
+      <type>MUSIC_PLAYLIST</type>
+      <text>Playlists</text>
+      <description>Create new</description>
+      <action>MUSIC_CREATE_PLAYLIST</action>
+   </button>
+
+   <button>
+       <type>MUSIC_IMPORT</type>
+       <text>Import</text>
+       <description>Music</description>
+       <action>MUSIC_IMPORT</action>
+   </button>
+
+   <button>
+        <type>MUSIC_RIP</type>
+        <text>Rip CD</text>
+        <description>Disc</description>
+        <action>JUMP Rip CD</action>
+        <depends>mythmusic</depends>
+    </button>
+
+    <button>
+        <type>EJECT</type>
+        <text>Eject</text>
+        <description>Drive tray</description>
+        <action>EJECT</action>
+    </button>
+
+</mythmenu>

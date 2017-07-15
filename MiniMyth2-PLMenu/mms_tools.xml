@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="ADVANCED">
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>Konserwacja</text>
+        <description>Podstawowa</description>
+        <action>MENU minimyth_tools.xml</action>
+    </button>
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>System</text>
+        <description>Co robi</description>
+        <action>TV_STATUS</action>
+    </button>
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>Muzyka</text>
+        <description>Narzędzia</description>
+        <action>PLUGIN mythmusic</action>
+        <depends>mythmusic</depends>
+    </button>
+
+    <button>
+        <type>TV_STATUS</type>
+        <text>Filmy</text>
+        <description>Importuj/Exportuj</description>
+        <action>PLUGIN mytharchive</action>
+        <depends>mytharchive</depends>
+    </button>
+
+</mythmenu>

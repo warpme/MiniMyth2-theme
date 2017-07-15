@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="OPTICAL_DISK">
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Blu-ray</text>
+        <description>Play Movie</description>
+        <action>JUMP Play Disc</action>
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Rip</text>
+        <description>DVD/BluRay</description>
+        <action>EXEC /usr/bin/mm_manage bluray_rip_start</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Status</text>
+        <description>Ripping</description>
+        <action>EXEC /usr/bin/mm_manage bluray_rip_progress</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Copy</text>
+        <description>DVD/BluRay</description>
+        <action>EXEC /usr/bin/mm_manage bluray_copy_start</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>DISC_PLAY</type>
+        <text>Cancel</text>
+        <description>Ripping</description>
+        <action>EXEC /usr/bin/mm_manage bluray_rip_stop</action>
+        <!--optical_rip<depends>disabled</depends>-->
+    </button>
+
+    <button>
+        <type>EJECT</type>
+        <text>Ejec</text>
+        <description>Drive Tray</description>
+        <action>EJECT</action>
+    </button>
+
+</mythmenu>

@@ -1,0 +1,38 @@
+<mythmenu name="MINIMYTH_PROCESS">
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Frontend</text>
+      <description>Restartuj</description>
+      <action>EXEC /usr/bin/mm_manage restart_this_frontend</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Mythbackend</text>
+      <description>Restartuj</description>
+      <action>EXEC /usr/bin/mm_manage restart_mythbackend</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>Serwer</text>
+      <description>Restartuj</description>
+      <action>EXEC /usr/bin/mm_manage restart_server</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>X-Server</text>
+      <description>Restartuj proces</description>
+      <action>EXEC /usr/bin/mm_manage restart_xserver</action>
+   </button>
+
+   <button>
+      <type>TV_STATUS</type>
+      <text>mythfrontend</text>
+      <description>Restartuj proces</description>
+      <action>EXEC /usr/bin/mm_manage restart_mythfrontend</action>
+   </button>
+
+</mythmenu>

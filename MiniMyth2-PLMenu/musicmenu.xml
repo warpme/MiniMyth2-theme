@@ -1,0 +1,47 @@
+<mythmenu name="MUSIC">
+
+   <button>
+      <type>MUSIC_SCAN</type>
+      <text>Wyszukaj</text>
+      <description>Dodane Pliki</description>
+      <action>SETTINGS_SCAN</action>
+   </button>
+
+   <button>
+      <type>MUSIC_PLAYLIST</type>
+      <text>Playlista</text>
+      <description>Utworz</description>
+      <action>MUSIC_CREATE_PLAYLIST</action>
+   </button>
+
+   <button>
+       <type>MUSIC_IMPORT</type>
+       <text>Pliki</text>
+       <description>Importuj</description>
+       <action>MUSIC_IMPORT</action>
+   </button>
+
+
+   <button>
+        <type>MUSIC_RIP</type>
+        <text>Płytę CD</text>
+        <description>Importuj</description>
+        <action>JUMP Rip CD</action>
+        <depends>mythmusic</depends>
+    </button>
+
+    <button>
+        <type>EJECT</type>
+        <text>CD/DVD</text>
+        <description>Wysuń tackę</description>
+        <action>EJECT</action>
+    </button>
+
+    <button>
+        <type>SETTINGS_MUSIC</type>
+        <text>Ustawienia</text>
+        <description>Muzyka</description>
+        <action>CONFIGPLUGIN mythmusic</action>
+   </button>
+
+</mythmenu>

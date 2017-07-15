@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="news">
+        <imagetype name="bgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="ScreenTitleRecordings" from="screentitle">
+            <value>NEWS</value>
+        </textarea>
+        <textarea name="page" from="textarea_base">
+            <area>1112,8,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <!-- ===================================================== -->
+        <!--     NEWS CATEGORIES & ITEMS                           -->
+        <!-- ===================================================== -->
+        <buttonlist name="siteslist" from="buttonlist_menu">
+            <position>740,250</position>
+        </buttonlist>
+
+        <buttonlist name="articleslist" from="buttonlist_menu">
+            <position>740,250</position>
+        </buttonlist>
+
+        <!-- ===================================================== -->
+        <!--     NEWS DETAILS                                      -->
+        <!-- ===================================================== -->
+        <imagetype name="thumbnail">
+            <area>25,260,400,225</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/defaultNetworkBigWide.png</filename>
+            <reflection shear="0" scale="65" length="15"/>
+        </imagetype>
+
+        <textarea name="updated" from="textarea_base">
+            <area>450,260,275,25</area>
+            <font>title_small</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <alpha>128</alpha>
+            <case>upper</case>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="title" from="textarea_base">
+            <area>450,295,275,200</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,top</align>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>25,540,695,120</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+        <textarea name="nosites" from="description"/>
+
+        <imagetype name="download">
+            <filename>need-download.png</filename>
+            <area>25,670,30,30</area>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+
+        <imagetype name="ispodcast">
+            <filename>podcast.png</filename>
+            <area>70,670,30,30</area>
+            <preserveaspect>no</preserveaspect>
+        </imagetype>
+
+    </window>
+
+    <window name="editor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="editor1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+            </textarea>
+
+            <textarea name="namelabel">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Name site:</value>
+            </textarea>
+
+            <textedit name="name" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+            <textarea name="podcastlabel" from="namelabel">
+                <position>250,210</position>
+                <value>Site icon:</value>
+            </textarea>
+
+            <checkbox name="podcast_check" from="checkbox_menu">
+                <position>735,210</position>
+            </checkbox>
+
+            <textarea name="urllabel" from="namelabel">
+                <position>250,280</position>
+                <value>URL site:</value>
+            </textarea>
+
+            <textedit name="url" from="textedit_base">
+                <position>450,280</position>
+            </textedit>
+
+            <textarea name="iconlabel" from="namelabel">
+                <position>250,315</position>
+                <value>Site icon:</value>
+            </textarea>
+
+            <textedit name="icon" from="textedit_base">
+                <position>450,315</position>
+            </textedit>
+        </group>
+
+        <group name="editorbutton1group" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="ok" from="button_base_menu">
+                <position>2,175</position>
+                <value>Save</value>
+            </button>
+
+            <button name="cancel" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="config">
+        <imagetype name="background" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="config1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+        <textarea name="pagetitle" from="textarea_base">
+            <area>250,75,515,65</area>
+            <font>menu_active</font>
+            <case>upper</case>
+            <align>hcenter,vcenter</align>
+            <cutdown>yes</cutdown>
+            <multiline>yes</multiline>
+            <value>News settings</value>
+        </textarea>
+
+        <buttonlist name="category" from="buttonlist_dialog_wide">
+            <position>250,175</position>
+    </buttonlist>
+
+            <buttonlist name="sites" from="buttonlist_dialog_wide_check">
+                <position>250,175</position>
+            </buttonlist>
+
+            <textarea name="context_switch" from="textarea_base">
+                <area>250,560,510,50</area>
+                <multiline>yes</multiline>
+            </textarea>
+
+            <textarea name="help" from="textarea_base">
+                <area>250,580,510,35</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+    </window>
+
+</mythuitheme>

@@ -1,0 +1,31 @@
+<mythmenu name="VIDEO_SETTINGS">
+
+    <button>
+        <type>VIDEO_SETTINGS_GENERAL</type>
+        <description>Ustawienia</description>
+        <text>Ogólne</text>
+        <action>VIDEO_SETTINGS_GENERAL</action>
+     </button>
+
+     <button>
+        <type>VIDEO_SETTINGS_PLAYER</type>
+        <description>Ustawienia</description>
+        <text>Odtwarzanie</text>
+        <action>VIDEO_SETTINGS_PLAYER</action>
+    </button>
+
+    <button>
+        <type>VIDEO_SETTINGS_METADATA</type>
+        <description>Ustawienia</description>
+        <text>Meta-dane</text>
+        <action>VIDEO_SETTINGS_METADATA</action>
+    </button>
+
+    <button>
+       <type>VIDEO_FILE_TYPES</type>
+        <description>Skojarzenia</description>
+        <text>Pliki</text>
+        <action>VIDEO_SETTINGS_ASSOCIATIONS</action>
+    </button>
+
+</mythmenu>

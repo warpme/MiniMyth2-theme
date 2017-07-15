@@ -1,0 +1,31 @@
+<mythmenu name="GAME_SETTINGS">
+
+   <button>
+      <type>GAME_SETTINGS_GENERAL</type>
+      <text>Ustawienia</text>
+      <description>Ogólne</description>
+      <action>GAME_SETTINGS</action>
+   </button>
+
+   <button>
+      <type>GAME_SETTINGS_PLAYERS</type>
+      <text>Śilniki Gier</text>
+      <description>Ustawienia</description>
+      <action>GAME_PLAYERS</action>
+   </button>
+
+   <button>
+      <type>GAME_CLEAR_DATA</type>
+      <text>Osiągi</text>
+      <description>Skasuj</description>
+      <action>CLEAR_GAME_DATA</action>
+   </button>
+
+   <button>
+      <type>GAME_SCAN</type>
+      <text>Biblioteka</text>
+      <description>Dodaj gry</description>
+      <action>SEARCH_FOR_GAMES</action>
+   </button>
+
+</mythmenu>

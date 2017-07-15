@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="WEB">
+
+    <button>
+        <type>NETFLIX</type>
+        <text>Netflix</text>
+        <description>Oglądaj</description>
+        <!--netflix<depends>disabled</depends>-->
+        <action>EXEC /usr/bin/google-chrome.py --disable-seccomp-sandbox --disable-background-mode --kiosk 'http://www.netflix.com/'</action>
+    </button>
+
+    <button>
+        <type>NEWS</type>
+        <text>Wiadomości</text>
+        <description>Czytaj</description>
+        <action>PLUGIN mythnews</action>
+        <depends>mythnews</depends>
+    </button>
+
+    <button>
+        <type>WEBPAGE</type>
+        <text>Strony WWW</text>
+        <description>Przeglądaj</description>
+        <action>PLUGIN mythbrowser</action>
+        <depends>mythbrowser</depends>
+    </button>
+
+    <button>
+        <type>NET_VIDEO_SEARCH</type>
+        <text>Wyszukuj</text>
+        <description>Portale Video</description>
+        <action>JUMP MythNetSearch</action>
+        <depends>mythnetvision</depends>
+    </button>
+
+    <button>
+        <type>NET_VIDEO_TREE</type>
+        <text>Przeglądaj</text>
+        <description>Portale Video</description>
+        <action>JUMP MythNetTree</action>
+        <depends>mythnetvision</depends>
+    </button>
+
+    <button>
+        <type>NETFLIX</type>
+        <text>ShowMAX</text>
+        <description>Oglądaj</description>
+        <!--netflix<depends>disabled</depends>-->
+        <action>EXEC /usr/bin/google-chrome.py --disable-seccomp-sandbox --disable-background-mode --kiosk 'http://www.showmax.com/'</action>
+    </button>
+
+</mythmenu>

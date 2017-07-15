@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="SCHEDULE">
+
+    <button>
+        <type>TV_PROGRAM_GUIDE</type>
+        <text>Rozkład</text>
+        <description>Przeglądaj</description>
+        <action>TV_SCHEDULE</action>
+    </button>
+
+    <button>
+        <type>TV_UPCOMING_RECORDINGS</type>
+        <text>Przyszłe</text>
+        <description>Sprawdź</description>
+        <action>TV_FIX_CONFLICTS</action>
+    </button>
+
+    <button>
+        <type>TV_RECORDING_RULES</type>
+        <text>Reguły</text>
+        <description>Przejżyj</description>
+        <action>TV_MANAGE_RECORDING_RULES</action>
+    </button>
+
+    <button>
+        <type>TV_PREVIOUS</type>
+        <text>Poprzednie</text>
+        <description>Przejżyj</description>
+        <action>TV_PREVIOUS</action>
+    </button>
+
+    <button>
+        <type>TV_MANUAL_SCHEDULE</type>
+        <text>Manualnie</text>
+        <description>Programuj</description>
+        <action>TV_MANUALSCHEDULE</action>
+    </button>
+    <button>
+        <type>TV_PROGFIND</type>
+        <text>Alfabetycznie</text>
+        <description>Wyszukaj</description>
+        <action>TV_PROGFIND</action>
+    </button>
+
+</mythmenu>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="WORDS">
+
+    <button>
+        <type>TV_SEARCH_TITLES</type>
+        <text>Tytuły</text>
+        <description>Wyszukuj po</description>
+        <action>TV_SEARCH_TITLE</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_KEYWORDS</type>
+        <text>Hasła</text>
+        <description>Wyszukuj po</description>
+        <action>TV_SEARCH_KEYWORD</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_PEOPLE</type>
+        <text>Aktorzy</text>
+        <description>Wyszukuj po</description>
+        <action>TV_SEARCH_PEOPLE</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_POWER</type>
+        <text>Zaawansowane</text>
+        <description>Wyszukuj</description>
+        <action>TV_SEARCH_POWER</action>
+    </button>
+
+    <button>
+        <type>TV_SEARCH_STORED</type>
+        <text>Wyszukiwania</text>
+        <description>Zachowane</description>
+        <action>TV_SEARCH_STORED</action>
+    </button>
+
+</mythmenu>

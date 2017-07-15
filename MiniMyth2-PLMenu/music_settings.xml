@@ -1,0 +1,38 @@
+<mythmenu name="MUSIC_SETTINGS">
+
+   <button>
+      <type>MUSIC_SETTINGS_GENERAL</type>
+      <text>Ogólne</text>
+      <description>Ustawienia</description>
+      <action>SETTINGS_GENERAL</action>
+   </button>
+
+   <button>
+      <type>MUSIC_SETTINGS_PLAYER</type>
+      <text>Odtwarzanie</text>
+      <description>Ustawienia</description>
+      <action>SETTINGS_PLAYER</action>
+   </button>
+
+   <button>
+      <type>MUSIC_SETTINGS_RATING</type>
+      <text>Oceny</text>
+      <description>Ustawienia</description>
+      <action>SETTINGS_RATING</action>
+   </button>
+
+   <button>
+      <type>MUSIC_SETTINGS_VISUALIZATION</type>
+      <text>Wizualizacje</text>
+      <description>Ustawienia</description>
+      <action>SETTINGS_VISUALIZATION</action>
+   </button>
+
+   <button>
+      <type>MUSIC_SETTINGS_RIP</type>
+      <text>Zgrywanie CD</text>
+      <description>Konfiguruj</description>
+      <action>SETTINGS_IMPORT</action>
+   </button>
+
+</mythmenu>

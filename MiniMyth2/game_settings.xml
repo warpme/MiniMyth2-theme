@@ -1,0 +1,31 @@
+<mythmenu name="GAME_SETTINGS">
+
+   <button>
+      <type>GAME_SETTINGS_GENERAL</type>
+      <text>Settings</text>
+      <description>Game folders and general</description>
+      <action>GAME_SETTINGS</action>
+   </button>
+
+   <button>
+      <type>GAME_SETTINGS_PLAYERS</type>
+      <text>Players</text>
+      <description>Configure your game</description>
+      <action>GAME_PLAYERS</action>
+   </button>
+
+   <button>
+       <type>GAME_CLEAR_DATA</type>
+      <text>Data</text>
+      <description>Clear your game</description>
+      <action>CLEAR_GAME_DATA</action>
+   </button>
+
+   <button>
+      <type>GAME_SCAN</type>
+      <text>Library</text>
+      <description>Add games to your</description>
+      <action>SEARCH_FOR_GAMES</action>
+   </button>
+
+</mythmenu>

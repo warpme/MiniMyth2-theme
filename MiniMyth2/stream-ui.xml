@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+
+<mythuitheme>
+
+    <window name="streamview" include="music-base.xml">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamRadioBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="playlistposition" from="textarea_base">
+            <area>1112,5,146,40</area>
+            <font>normal</font>
+            <case>lower</case>
+            <align>allcenter</align>
+            <multiline>no</multiline>
+            <cutdown>no</cutdown>
+        </textarea>
+
+        <textarea name="nostreams" from="textarea_base">
+            <area>660,400,600,380</area>
+            <shape name="outer_frame">
+                <area>0,0,620,400</area>
+                <fill color="#000000" alpha="0" />
+                <line color="#CCCCCC" alpha="255" />
+            </shape>
+            <shape name="outer_tree_bg">
+                <area>0,0,620,400</area>
+                <fill color="#666666" alpha="120" />
+            </shape>
+            <shape name="warning_bg">
+                <area>10,10,600,380</area>
+                <fill color="#000000" alpha="255" />
+            </shape>
+            <textarea name="warning_txt" from="textarea_base">
+                <area>0,140,600,100</area>
+                <multiline>yes</multiline>
+                <font>basenormal</font>
+                <align>allcenter</align>
+                <cutdown>yes</cutdown>
+                <value>Naciśnij MENU aby dodać stacje radiowe.</value>
+            </textarea>
+        </textarea>
+
+        <buttonlist name="streamlist" from="buttonlist_menu_details_permanent">
+            <position>740,240</position>
+            <searchposition>758,55</searchposition>
+            <buttonarea>0,0,540,280</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <imagetype name="buttonimage">
+                        <area>10,5,30,30</area>
+                        <filename>images/shared/OSDAudioNF.png</filename>
+                    </imagetype>
+                    <textarea name="channel" from="textarea_base">
+                        <area>50,3,250,40</area>
+                        <font state="error">normal_red</font>
+                        <font state="running">normal_amber</font>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="genre" from="title">
+                        <area>385,7,110,33</area>
+                        <font>verysmall</font>
+                        <font state="error">verysmall_red</font>
+                        <font state="running">verysmall_amber</font>
+                        <case>Normal</case>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <statetype name="playstate">
+                        <state name="playing">
+                            <imagetype name="buttonimage1">
+                                <area>10,5,30,30</area>
+                                <filename>images/shared/OSDAudioFO.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedactive">
+                    <imagetype name="buttonimage">
+                        <area>10,5,30,30</area>
+                        <filename>images/shared/OSDAudioNF.png</filename>
+                    </imagetype>
+                    <textarea name="channel" from="textarea_base">
+                        <area>50,3,250,40</area>
+                        <font state="error">normal_red</font>
+                        <font state="running">normal_amber</font>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="genre" from="title">
+                        <area>385,7,110,33</area>
+                        <font>verysmall</font>
+                        <font state="error">verysmall_red</font>
+                        <font state="running">verysmall_amber</font>
+                        <case>Normal</case>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <statetype name="playstate">
+                        <state name="playing">
+                            <imagetype name="buttonimage1">
+                                <area>10,5,30,30</area>
+                                <filename>images/shared/OSDAudioFO.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="inactive" from="active">
+                   <alpha>192</alpha>
+                </state>
+                <state name="selectedinactive" from="selectedactive">
+                   <alpha>128</alpha>
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <position>10,280</position>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>30,280</position>
+            </statetype>
+        </buttonlist>
+
+        <buttonlist name="playedtrackslist">
+            <area>740,600,370,100</area>
+            <spacing>0</spacing>
+            <layout>vertical</layout>
+            <arrange>stack</arrange>
+            <showarrow>no</showarrow>
+            <buttonarea>0,0,370,100</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,20</area>
+                    <textarea name="tracknum">
+                        <area>0,0,45,20</area>
+                        <font>verysmall_grey</font>
+                        <align>right,vcenter</align>
+                        <template>%1  -</template>
+                    </textarea>
+                    <textarea name="title">
+                        <area>65,0,350,20</area>
+                        <font>verysmall</font>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <textarea name="artist">
+                        <area>270,0,160,20</area>
+                        <font>verysmall</font>
+                        <align>right,vcenter</align>
+                    </textarea>
+                    <textarea name="length">
+                        <area>420,0,80,20</area>
+                        <align>right,vcenter</align>
+                        <font>verysmall_grey</font>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <!--<shape name="selectbar">
+                        <area>0,0,100%,20</area>
+                    </shape>-->
+                </state>
+                <state name="selectedinactive" from="active">
+                    <shape name="selectbar">
+                        <area>0,0,100%,20</area>
+                    </shape>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <imagetype name="coverart">
+            <area>40,250,275,275</area>
+            <filename>images/shared/DefaultNetwork.png</filename>
+            <reflection shear="0" scale="65" length="15"/>
+        </imagetype>
+        <imagetype name="previewframe">
+            <area>31,235,293,305</area>
+            <preserveaspect>no</preserveaspect>
+            <filename>images/shared/tvseries_focusframe.png</filename>
+        </imagetype>
+
+        <group name="infopanel" from="basestreaminfopanel">
+            <position>350,248</position>>
+        </group>
+
+        <group name="playliststatusgroup" from="basestreamstatusgroup">
+            <position>350,600</position>
+        </group>
+
+        <group name="playlistvisualizergroup" from="baseplaylistvisualizergroup">
+            <position>40,600</position>
+        </group>
+
+    </window>
+
+    <window name="editstreammetadata">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamRadioBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="broadcasterlabel">
+            <area>50,250,200,35</area>
+            <font>small</font>
+            <align>right,vcenter</align>
+            <value>Broadcaster:</value>
+        </textarea>
+        <textedit name="broadcasteredit" from="textedit_base">
+            <area>250,250,500,35</area>
+        </textedit>
+
+        <textarea name="channellabel" from="broadcasterlabel">
+            <area>50,285,200,35</area>
+            <value>Channel:</value>
+        </textarea>
+        <textedit name="channeledit" from="textedit_base">
+            <area>250,285,500,35</area>
+        </textedit>
+
+        <textarea name="descriptionlabel" from="broadcasterlabel">
+            <area>50,320,200,35</area>
+            <value>Description:</value>
+        </textarea>
+        <textedit name="descriptionedit" from="textedit_base">
+            <area>250,320,500,35</area>
+        </textedit>
+
+        <textarea name="logourllabel" from="broadcasterlabel">
+            <area>50,355,200,35</area>
+            <value>Logo URL:</value>
+        </textarea>
+        <textedit name="logourledit" from="textedit_base">
+            <area>250,355,500,35</area>
+        </textedit>
+
+        <textarea name="genrelabel" from="broadcasterlabel">
+            <area>50,390,200,35</area>
+            <value>Genres:</value>
+        </textarea>
+        <textedit name="genreedit" from="textedit_base">
+            <area>250,390,500,35</area>
+        </textedit>
+
+        <textarea name="countrylabel" from="broadcasterlabel">
+            <area>50,425,200,35</area>
+            <value>Country:</value>
+        </textarea>
+        <textedit name="countryedit" from="textedit_base">
+            <area>250,425,500,35</area>
+        </textedit>
+
+        <textarea name="formatlabel" from="broadcasterlabel">
+            <area>50,460,200,35</area>
+            <value>Metadata Format:</value>
+        </textarea>
+        <textedit name="formatedit" from="textedit_base">
+            <area>250,460,500,35</area>
+        </textedit>
+
+        <textarea name="languagelabel" from="broadcasterlabel">
+            <area>50,495,200,35</area>
+            <value>Language:</value>
+        </textarea>
+        <textedit name="languageedit" from="textedit_base">
+            <area>250,495,500,35</area>
+        </textedit>
+
+        <textarea name="urllabel" from="broadcasterlabel">
+            <area>550,250,200,35</area>
+            <value>URL1:</value>
+        </textarea>
+        <textedit name="url1edit" from="textedit_base">
+            <area>750,250,500,35</area>
+        </textedit>
+
+        <textarea name="url2label" from="broadcasterlabel">
+            <area>550,285,200,35</area>
+            <value>URL2:</value>
+        </textarea>
+        <textedit name="url2edit" from="textedit_base">
+            <area>750,285,500,35</area>
+        </textedit>
+
+        <textarea name="url3label" from="broadcasterlabel">
+            <area>550,320,200,35</area>
+            <value>URL3:</value>
+        </textarea>
+        <textedit name="url3edit" from="textedit_base">
+            <area>750,320,500,35</area>
+        </textedit>
+
+        <textarea name="url4label" from="broadcasterlabel">
+            <area>550,355,200,35</area>
+            <value>URL4:</value>
+        </textarea>
+        <textedit name="url4edit" from="textedit_base">
+            <area>750,355,500,35</area>
+        </textedit>
+
+        <textarea name="url5label" from="broadcasterlabel">
+            <area>550,390,200,35</area>
+            <value>URL5:</value>
+        </textarea>
+        <textedit name="url5edit" from="textedit_base">
+            <area>750,390,500,50</area>
+        </textedit>
+
+        <button name="searchbutton" from="button_base">
+            <position>270,600</position>
+            <value>Search</value>
+        </button>
+
+        <button name="cancelbutton" from="button_base">
+            <position>900,600</position>
+            <value>Cancel</value>
+        </button>
+
+        <button name="savebutton" from="button_base">
+            <position>1050,600</position>
+            <value>Save</value>
+        </button>
+
+    </window>
+
+    <window name="searchstream">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamRadioBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+
+        <textarea name="broadcasterlabel">
+            <area>40,230,140,50</area>
+            <font>small</font>
+            <align>right,vcenter</align>
+            <value>Broadcaster:</value>
+        </textarea>
+        <buttonlist name="broadcasterlist" from="selector_base">
+            <position>190,237</position>
+        </buttonlist>
+
+        <textarea name="countrylabel" from="broadcasterlabel">
+            <position>40,280</position>
+            <value>Country:</value>
+        </textarea>
+        <buttonlist name="countrylist" from="selector_base">
+            <position>190,287</position>
+        </buttonlist>
+
+        <textarea name="genrelabel" from="broadcasterlabel">
+            <position>40,330</position>
+            <value>Genre:</value>
+        </textarea>
+        <buttonlist name="genrelist" from="selector_base">
+            <position>190,337</position>
+        </buttonlist>
+
+        <textarea name="languagelabel" from="broadcasterlabel">
+            <position>40,380</position>
+            <value>Language:</value>
+        </textarea>
+        <buttonlist name="languagelist" from="selector_base">
+            <position>190,387</position>
+        </buttonlist>
+
+        <textarea name="channellabel" from="broadcasterlabel">
+            <position>40,430</position>
+            <value>Channel:</value>
+        </textarea>
+        <textedit name="channeledit" from="textedit_base">
+            <position>190,437</position>
+        </textedit>
+
+        <textarea name="matcheslable" from="broadcasterlabel">
+            <area>155,630,150,50</area>
+            <value>Matches:</value>
+        </textarea>
+
+        <textarea name="matchestext" from="broadcasterlabel">
+            <area>315,630,150,50</area>
+            <font>title_small</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <buttonlist name="streamlist">
+            <area>586,230,660,450</area>
+            <scrollstyle>free</scrollstyle>
+            <arrange>stack</arrange>
+            <wrapstyle>items</wrapstyle>
+            <layout>vertical</layout>
+            <spacing>1</spacing>
+            <drawfrombottom>true</drawfrombottom>
+            <buttonarea>2,0,660,450</buttonarea>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <area>0,0,100%,40</area>
+                    <imagetype name="MenuItemNF">
+                        <area>0,0,640,40</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>10,0,620,40</area>
+                        <align>left,vcenter</align>
+                        <alpha>128</alpha>
+                    </textarea>
+                    <imagetype name="buttonimage">
+                        <area>5,2,36,36</area>
+                        <filename>images/shared/OSDAudioNF.png</filename>
+                        <!--<filename>images/shared/amt-blank-poster.png</filename>-->
+                    </imagetype>
+                    <textarea name="broadcasterchannel" from="buttontext">
+                        <area>50,5,300,35</area>
+                    </textarea>
+                    <textarea name="genre" from="buttontext">
+                        <area>380,5,260,35</area>
+                    </textarea>
+                </state>
+
+                <state name="selectedactive">
+                    <area>0,0,100%,40</area>
+                    <imagetype name="MenuItemNF">
+                        <area>0,0,640,40</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <imagetype name="MenuItemFO">
+                        <area>0,0,640,40</area>
+                        <filename>images/shared/MenuItemFO.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>10,0,620,40</area>
+                        <align>left,vcenter</align>
+                        <alpha>255</alpha>
+                    </textarea>
+                    <imagetype name="buttonimage">
+                        <area>5,2,36,36</area>
+                        <filename>mm_nothumb.png</filename>
+                    </imagetype>
+                    <statetype name="selectedstate">
+                        <area>620,15,35,35</area>
+                        <state name="off"></state>
+                        <state name="on">
+                            <imagetype name="statusimage">
+                                <filename>images/shared/check_full.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="broadcasterchannel" from="buttontext">
+                        <area>50,5,300,35</area>
+                    </textarea>
+                    <textarea name="genre" from="buttontext">
+                        <area>380,5,260,35</area>
+                    </textarea>
+                </state>
+                <state name="selectedinactive" from="active">
+                </state>
+            </statetype>
+
+            <statetype name="upscrollarrow">
+                <position>10,460</position>
+                <state type="off">
+                    <imagetype name="upoff">
+                        <filename>images/shared/ArrowUpNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>images/shared/ArrowUpFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>25,460</position>
+                <state type="off">
+                    <imagetype name="upoff">
+                        <filename>images/shared/ArrowDownNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>images/shared/ArrowDownFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+    </window>
+
+</mythuitheme>

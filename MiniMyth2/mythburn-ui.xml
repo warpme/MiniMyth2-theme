@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<!--
+
+MythArchive GUI theme
+
+-->
+<mythuitheme>
+
+    <window name="profilepopup">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="profilepopup1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Change Encoding Profile</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="caption_textlbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Archive Item:</value>
+            </textarea>
+
+            <textarea name="caption_text" from="textarea_base">
+                <area>420,175,340,35</area>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <textarea name="profile_listlbl" from="caption_textlbl">
+                <position>250,210</position>
+                <value>Encoder Profile:</value>
+            </textarea>
+
+            <buttonlist name="profile_list" from="selector_base">
+                <position>450,210</position>
+            </buttonlist>
+
+            <textarea name="oldsizelbl" from="caption_textlbl">
+                <position>250,245</position>
+                <value>Current Size:</value>
+            </textarea>
+
+            <textarea name="oldsize_text" from="caption_text">
+                <area>420,245,100,35</area>
+            </textarea>
+
+            <textarea name="newsizelbl" from="oldsizelbl">
+                <position>560,245</position>
+                <value>New Size:</value>
+            </textarea>
+
+            <textarea name="newsize_text" from="oldsize_text">
+                <position>660,245</position>
+                <align>right,vcenter</align>
+            </textarea>
+
+            <textarea name="description_text" from="caption_text">
+                <area>250,315,510,90</area>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+        <group name="profilepopupbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="ok_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>OK</value>
+            </button>
+        </group>
+    </window>
+
+    <!--
+        theme selector
+    -->
+
+    <window name="themeselector">
+
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="themeselector1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>DVD Menu Theme</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="theme_selectorlbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Select a theme:</value>
+            </textarea>
+
+            <buttonlist name="theme_selector" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+
+            <!--
+                theme preview images
+            -->
+
+            <textarea name="intro_image_text" from="textarea_base">
+                <area>285,245,200,150</area>
+                <align>allcenter</align>
+                <multiline>yes</multiline>
+                <value>Not Applicable</value>
+            </textarea>
+
+            <imagetype name="intro_image">
+                <area>285,245,200,150</area>
+                <preserveaspect>no</preserveaspect>
+            </imagetype>
+
+            <imagetype name="intro_image_cover" from="intro_image">
+                <filename>images/shared/ButtonMenuGlass.png</filename>
+                <alpha>128</alpha>
+            </imagetype>
+
+            <textarea name="introtitle" from="textarea_base">
+                <area>285,225,200,20</area>
+                <align>left,bottom</align>
+                <case>normal</case>
+                <font>tiny</font>
+                <value>Intro:</value>
+            </textarea>
+
+            <textarea name="mainmenu_image_text" from="intro_image_text">
+                <position>530,245</position>
+            </textarea>
+
+            <imagetype name="mainmenu_image" from="intro_image">
+                <position>530,245</position>
+            </imagetype>
+
+            <imagetype name="mainmenu_image_cover" from="mainmenu_image">
+                <filename>images/shared/ButtonMenuGlass.png</filename>
+                <alpha>128</alpha>
+            </imagetype>
+
+            <textarea name="menutitle" from="introtitle">
+                <position>530,225</position>
+                <value>Main Menu:</value>
+            </textarea>
+
+            <textarea name="chapter_image_text" from="intro_image_text">
+                <position>285,415</position>
+            </textarea>
+
+            <imagetype name="chapter_image" from="intro_image">
+                <position>285,415</position>
+            </imagetype>
+
+            <imagetype name="chapter_image_cover" from="chapter_image">
+                <filename>images/shared/ButtonMenuGlass.png</filename>
+                <alpha>128</alpha>
+            </imagetype>
+
+            <textarea name="chaptertitle" from="introtitle">
+                <position>285,395</position>
+                <value>Chapter Menu:</value>
+            </textarea>
+
+            <textarea name="details_image_text" from="intro_image_text">
+                <position>530,415</position>
+            </textarea>
+
+            <imagetype name="details_image" from="intro_image">
+                <position>530,415</position>
+            </imagetype>
+
+            <imagetype name="details_image_cover" from="details_image">
+                <filename>images/shared/ButtonMenuGlass.png</filename>
+                <alpha>128</alpha>
+            </imagetype>
+
+            <textarea name="detailtitle" from="introtitle">
+                <position>530,395</position>
+                <value>Details:</value>
+            </textarea>
+
+            <!--
+                theme description
+            -->
+
+            <imagetype name="theme_image" >
+                <area>250,600,90,110</area>
+                <preserveaspect>no</preserveaspect>
+            </imagetype>
+
+            <textarea name="themedescription" from="textarea_base">
+                <area>350,600,410,110</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>top,justify</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+        <group name="themeselectorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,175,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="prev_button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Previous</value>
+            </button>
+
+            <button name="next_button" from="button_base_menu">
+                <position>2,280</position>
+                <value>Next</value>
+            </button>
+        </group>
+
+    </window>
+
+    <!--
+        ******************************************************************
+        The main mythburn screen
+        *******************************************************************
+    -->
+
+    <window name="mythburn">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="mythburn1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Select Archive Items</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <buttonlist name="archivelist" from="buttonlist_dialog_wide_check_permanent">
+                <area>250,175,510,460</area>
+                <buttonarea>0,0,510,440</buttonarea>
+                <statetype name="buttonitem">
+                    <area>0,0,510,35</area>
+                    <state name="selectedactive">
+                        <area>0,0,510,80</area>
+                        <imagetype name="MenuItemNF">
+                            <area>0,0,510,40</area>
+                            <filename>images/shared/MenuItemNF.png</filename>
+                        </imagetype>
+                        <imagetype name="MenuItemFO">
+                            <area>0,0,490,40</area>
+                            <filename>images/shared/MenuItemFO.png</filename>
+                        </imagetype>
+                       <imagetype name="MediaItemDetailBG">
+                            <area>350,5,160,30</area>
+                            <filename>images/shared/MediaItemDetailBG.png</filename>
+                        </imagetype>
+                        <textarea name="buttontext">
+                            <area>10,0,335,40</area>
+                            <font>normal</font>
+                            <alpha>255</alpha>
+                            <multiline>no</multiline>
+                            <cutdown>yes</cutdown>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <statetype name="cutliststatus">
+                            <area>355,9,22,22</area>
+                            <state name="none">
+                                <imagetype name="statusimage">
+                                    <area>0,0,22,22</area>
+                                    <filename>images/shared/OSDVideoNF.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="using">
+                                <imagetype name="statusimage">
+                                    <area>0,0,22,22</area>
+                                    <filename>images/shared/OSDVideoFO.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="notusing">
+                                <area>0,9,22,22</area>
+                                <imagetype name="statusimage">
+                                    <area>0,0,22,22</area>
+                                    <filename>images/shared/OSDVideoNF.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <textarea name="size" from="buttontext">
+                            <area>385,7,125,33</area>
+                            <font>verysmall</font>
+                            <case>Normal</case>
+                            <align>left,vcenter</align>
+                        </textarea>
+                        <statetype name="movestate">
+                            <area>498,9,22,22</area>
+                            <state name="off"></state>
+                            <state name="on">
+                                <imagetype name="statusimageup">
+                                    <area>0,0,11,11</area>
+                                    <filename>images/shared/ArrowUpFO.png</filename>
+                                </imagetype>
+                                <imagetype name="statusimagedown">
+                                    <area>0,11,11,11</area>
+                                    <filename>images/shared/ArrowDownFO.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <textarea name="subtitle" from="buttontext">
+                            <area>20,40,270,40</area>
+                            <font>verysmall</font>
+                            <case>normal</case>
+                            <alpha>255</alpha>
+                        </textarea>
+                        <textarea name="date" from="subtitle">
+                            <area>270,40,220,40</area>
+                            <align>right,vcenter</align>
+                            <template>%date% / %profile%</template>
+                        </textarea>
+                    </state>
+                    <!--SELECTED INACTIVE-->
+                    <state name="selectedinactive" from="selectedactive">
+                        <alpha>128</alpha>
+                    </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <position>10,444</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,444</position>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="nofiles" from="textarea_base">
+                <area>250,650,510,35</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <value>No files are selected for archive</value>
+            </textarea>
+
+            <progressbar name="size_bar"from="progressbar_base">
+                <area>260,705,490,5</area>
+                <layout>horizontal</layout>
+                <style>reveal</style>
+                <imagetype name="background">
+                    <area>0,0,490,5</area>
+                    <filename>images/shared/progressbar/progressbar_background.png</filename>
+                    <preserveaspect>false</preserveaspect>
+                </imagetype>
+                <imagetype name="progressimage">
+                    <area>0,0,490,5</area>
+                    <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                    <preserveaspect>false</preserveaspect>
+                </imagetype>
+            </progressbar>
+
+            <textarea name="maxsize" from="textarea_base">
+                <area>650,685,100,20</area>
+                <font>tiny</font>
+                <case>normal</case>
+                <align>right,vcenter</align>
+            </textarea>
+
+            <textarea name="minsize" from="maxsize">
+                <position>260,685</position>
+                <align>left,vcenter</align>
+            </textarea>
+
+            <textarea name="currentsize" from="maxsize">
+                <area>360,685,290,20</area>
+                <font>tiny_amber</font>
+                <align>hcenter,vcenter</align>
+                <template>Current size: %1</template>
+            </textarea>
+
+            <textarea name="currentsize_error" from="currentsize">
+                <font>tiny_red</font>
+            </textarea>
+        </group>
+
+        <group name="mythburnbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="addrecording_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Add Recording</value>
+            </button>
+
+            <button name="addvideo_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Add video</value>
+            </button>
+
+            <button name="addfile_button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Add File</value>
+            </button>
+
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,315,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,350</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="prev_button" from="button_base_menu">
+                <position>2,385</position>
+                <value>Previous</value>
+            </button>
+
+            <button name="next_button" from="button_base_menu">
+                <position>2,420</position>
+                <value>Next</value>
+            </button>
+        </group>
+
+    </window>
+
+  <!--
+      *******************************************************************
+      The editmetadata dialog
+      *******************************************************************
+  -->
+
+  <window name="edit_metadata">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="edit_metadata1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Archive Item Details</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="title_label" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Title:</value>
+            </textarea>
+
+            <textedit name="title_edit" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+            <textarea name="subtitle_label" from="title_label">
+                <position>250,245</position>
+                <value>Subtitle:</value>
+            </textarea>
+
+            <textedit name="subtitle_edit" from="textedit_base">
+                <position>450,245</position>
+            </textedit>
+
+            <textarea name="startdate_label" from="title_label">
+                <position>250,315</position>
+                <value>Start Date:</value>
+            </textarea>
+
+            <textedit name="startdate_edit" from="textedit_base">
+                <position>450,315</position>
+            </textedit>
+
+            <textarea name="starttime_label" from="title_label">
+                <position>250,385</position>
+                <value>Time:</value>
+            </textarea>
+
+            <textedit name="starttime_edit" from="textedit_base">
+                <position>450,385</position>
+            </textedit>
+
+            <textarea name="description_label" from="title_label">
+                <position>250,455</position>
+                <value>Description:</value>
+            </textarea>
+
+            <textedit name="description_edit" from="textedit_menu_wide">
+               <position>250,490</position>
+            </textedit>
+        </group>
+
+        <group name="edit_metadatabutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="ok_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>OK</value>
+            </button>
+        </group>
+    </window>
+
+  <window name="thumbfinder">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="thumbfinder1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Thumb Image Selector</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+
+            <textarea name="currentposlbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Current Position:</value>
+            </textarea>
+
+            <textarea name="currentpos" from="textarea_base">
+                <area>420,175,330,35</area>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <textarea name="seekamountlbl" from="currentposlbl">
+                <position>250,210</position>
+                <value>Seek Amount:</value>
+            </textarea>
+
+            <textarea name="seekamount" from="currentpos">
+                <position>420,210</position>
+                <value>Frame</value>
+            </textarea>
+
+    <!--        <textarea name="frameimagelbl" from="currentposlbl">
+                <position>250,245</position>
+                <value>Current Frame:</value>
+            </textarea>-->
+
+            <button name="frame_button">
+                <area>365,290,281,159</area>
+                <statetype name="buttonstate">
+                    <state name="active"/>
+                    <state name="selected">
+                        <shape name="frameimageselectedbgd">
+                            <area>0,0,281,159</area>
+                            <type>box</type>
+                            <cornerradius>10</cornerradius>
+                            <line color="#105B8F" alpha="128" width="1"/>
+                            <fill color="#105B8F" alpha="128"/>
+                        </shape>
+                    </state>
+                    <state name="disabled"/>
+                    <state name="pushed">
+                        <shape name="frameimageselectedbgd">
+                            <area>0,0,281,159</area>
+                            <cornerradius>10</cornerradius>
+                            <type>box</type>
+                            <line color="#E0991A" alpha="128" width="1"/>
+                            <fill color="#E0991A" alpha="128"/>
+                        </shape>
+                    </state>
+                </statetype>
+            </button>
+
+            <imagetype name="frameimage">
+                <area>368,292,275,154</area>
+                <alpha>255</alpha>
+            </imagetype>
+
+            <textarea name="arrowuplbl" from="textarea_base">
+                <area>250,250,510,20</area>
+                <font>tiny</font>
+                <case>normal</case>
+                <align>hcenter,top</align>
+                <value>increase seek amount</value>
+            </textarea>
+
+            <imagetype name="arrowup">
+                <area>495,270,20,20</area>
+                <filename>images/shared/ArrowUpFO.png</filename>
+            </imagetype>
+
+            <textarea name="arrowdownlbl" from="textarea_base">
+                <area>250,465,510,20</area>
+                <font>tiny</font>
+                <case>normal</case>
+                <align>hcenter,bottom</align>
+                <value>decrease seek amount</value>
+            </textarea>
+
+            <imagetype name="arrowdown" from="arrowup">
+                <position>495,450</position>
+                <filename>images/shared/ArrowDownFO.png</filename>
+            </imagetype>
+
+            <textarea name="arrowleftlbl" from="textarea_base">
+                <area>250,290,115,165</area>
+                <font>tiny</font>
+                <case>normal</case>
+                <align>hcenter,vcenter</align>
+                <value>move left</value>
+            </textarea>
+
+            <imagetype name="arrowleft" from="arrowup">
+                <position>345,362</position>
+                <filename>images/shared/ArrowLeftFO.png</filename>
+            </imagetype>
+
+            <textarea name="arrowrightlbl" from="textarea_base">
+                <area>643,290,117,165</area>
+                <font>tiny</font>
+                <case>normal</case>
+                <align>hcenter,vcenter</align>
+                <value>move right</value>
+            </textarea>
+
+            <imagetype name="arrowright" from="arrowup">
+                <position>643,362</position>
+                <filename>images/shared/ArrowRightFO.png</filename>
+            </imagetype>
+
+            <imagetype name="positionimage">
+                <position>0,0</position>
+                <alpha>0</alpha>
+            </imagetype>
+
+            <buttonlist name="thumblist" from="filelist_base_check">
+                <area>250,490,510,220</area>
+                <buttonarea>0,0,510,200</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,204</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,204</position>
+                </statetype>
+            </buttonlist>
+        </group>
+
+        <group name="thumbfinderbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="save_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Save</value>
+            </button>
+        </group>
+
+    </window>
+
+</mythuitheme>

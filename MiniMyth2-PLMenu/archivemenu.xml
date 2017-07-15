@@ -1,0 +1,46 @@
+<mythmenu name="ARCHIVE">
+
+   <button>
+      <type>ARCHIVE_CREATE_DVD</type>
+      <text>DVD</text>
+      <description>Utwórz</description>
+      <action>ARCHIVE_CREATE_DVD</action>
+   </button>
+
+   <button>
+      <type>ARCHIVE_CREATE_ARCHIVE</type>
+      <text>Nagrania</text>
+      <description>Exportuj</description>
+      <action>ARCHIVE_CREATE_ARCHIVE</action>
+  </button>
+
+   <button>
+       <type>ARCHIVE_ENCODE_VIDEO</type>
+       <text>Plik</text>
+       <description>Enkoduj</description>
+       <action>ARCHIVE_ENCODE_VIDEO</action>
+       <depends></depends>
+   </button>
+
+   <button>
+       <type>ARCHIVE_IMPORT_VIDEO</type>
+       <text>Archiwum</text>
+       <description>Importuj</description>
+       <action>ARCHIVE_IMPORT_VIDEO</action>
+   </button>
+
+   <button>
+       <type>ARCHIVE_UTILITIES</type>
+       <text>Narzędzia</text>
+       <description>Archiwizacja</description>
+       <action>MENU archiveutils.xml</action>
+   </button>
+
+    <button>
+        <type>EJECT</type>
+        <text>Media</text>
+        <description>Wysuń</description>
+        <action>EJECT</action>
+    </button>
+
+</mythmenu>

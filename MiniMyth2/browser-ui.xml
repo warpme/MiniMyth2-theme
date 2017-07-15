@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="browser">
+        <imagetype name="browserbgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+        <imagetype name="BackgroundOverlay" from="image_wallpaper_base">
+            <filename>images/shared/TVFanartOverlay.png</filename>
+        </imagetype>
+
+        <buttonlist name="pagelist">
+            <area>220,5,510,35</area>
+            <align>allcenter</align>
+            <layout>horizontal</layout>
+            <wrapstyle>selection</wrapstyle>
+            <arrange>stack</arrange>
+            <buttonarea>0,0,510,35</buttonarea>
+            <statetype name="buttonitem">
+                <area>0,0,510,35</area>
+                <state name="active">
+                    <imagetype name="MenuItemNF">
+                        <area>0,0,510,35</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <textarea name="buttontext">
+                        <area>0,5,490,35</area>
+                        <font>normal</font>
+                        <alpha>128</alpha>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <align>allcenter</align>
+                    </textarea>
+                    <imagetype name="favicon">
+                        <area>-40,3,35,35</area>
+                    </imagetype>
+                    <statetype name="loadingstate">
+                        <area>-35,8,40,40</area>
+                        <state name="loading">
+                            <imagetype name="animation">
+                                <!--<position>0,0</position>-->
+                                <filepattern low="1" high="8">mb_loading_%1.png</filepattern>
+                                <delay>160</delay>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                </state>
+                <state name="selectedactive">
+                    <imagetype name="MenuItemNF">
+                        <area>0,0,510,35</area>
+                        <filename>images/shared/MenuItemNF.png</filename>
+                    </imagetype>
+                    <imagetype name="MenuItemFO">
+                        <area>0,0,490,35</area>
+                        <filename>images/shared/MenuItemFO.png</filename>
+                    </imagetype>
+                    <imagetype name="favicon">
+                        <area>-40,3,35,35</area>
+                    </imagetype>
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>0,8,490,35</area>
+                        <font>normal</font>
+                        <alpha>255</alpha>
+                        <multiline>no</multiline>
+                        <cutdown>yes</cutdown>
+                        <align>allcenter</align>
+                        <scroll direction="left" />
+                    </textarea>
+                </state>
+                <state name="inactive" from="active">
+                    <!--    <alpha>0</alpha>-->
+                </state>
+                <state name="selectedinactive" from="active">
+                    <!--    <alpha>0</alpha>-->
+                </state>
+           </statetype>
+
+           <statetype name="upscrollarrow">
+                <position>494,5</position>
+                <state type="off">
+                    <imagetype name="upoff">
+                        <filename>images/shared/ArrowRightNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>images/shared/ArrowRightFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <position>494,20</position>    
+                <state type="off">
+                    <imagetype name="upoff">
+                        <filename>images/shared/ArrowLeftNF.png</filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upon">
+                        <filename>images/shared/ArrowLeftFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <button name="back">
+            <position>10,0</position>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDRewindNF.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selected">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDRewindFO.png</filename>
+                    </imagetype>
+                </state>
+                <state name="disabled">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDRewindNF.png</filename>
+                    </imagetype>
+                </state>
+                <state name="pushed">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDRewindFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </button>
+
+        <button name="forward">
+            <position>60,0</position>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDForwardNF.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selected">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDForwardFO.png</filename>
+                    </imagetype>
+                </state>
+                <state name="disabled">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDForwardNF.png</filename>
+                    </imagetype>
+                </state>
+                <state name="pushed">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDForwardFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </button>
+
+        <button name="exit">
+            <position>1220,0</position>
+            <statetype name="buttonstate">
+                <state name="active">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDStopNF.png</filename>
+                    </imagetype>
+                </state>
+                <state name="selected">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDStopFO.png</filename>
+                    </imagetype>
+                </state>
+                <state name="disabled">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDStopNF.png</filename>
+                    </imagetype>
+                </state>
+                <state name="pushed">
+                    <imagetype name="icon">
+                        <filename>images/shared/OSDStopFO.png</filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </button>
+
+        <progressbar name="progressbar" from="progressbar_base">
+            <area>820,20,320,10</area>
+            <imagetype name="background">
+                <area>0,0,320,10</area>
+                <filename>images/shared/progressbar/progressbar_background.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+            <imagetype name="progressimage">
+                <area>0,0,320,10</area>
+                <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                <preserveaspect>false</preserveaspect>
+            </imagetype>
+        </progressbar>
+
+        <webbrowser name="webbrowser">
+            <area>0,50,1280,671</area>
+            <zoom>1.4</zoom>
+        </webbrowser>
+
+    </window>
+
+    <window name="bookmarkmanager">
+        <imagetype name="browserbgd" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="Title" from="screentitle">
+            <value>Bookmark Manager</value>
+        </textarea>
+
+        <buttonlist name="grouplist" from="buttonlist_menu">
+            <position>740,260</position>
+        </buttonlist>
+
+        <buttonlist name="bookmarklist" from="buttonlist_menu_details">
+            <position>740,260</position>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="name" from="textarea_base">
+                        <area>10,0,350,40</area>
+                        <alpha>160</alpha>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <textarea name="name" from="textarea_base">
+                        <area>10,0,350,40</area>
+                    </textarea>
+                    <textarea name="url" from="textarea_base">
+                        <area>375,7,155,33</area>
+                        <font>verysmall</font>
+                        <case>normal</case>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <imagetype name="NetworkImage">
+            <area>25,260,275,415</area>
+            <filename>images/shared/DefaultNetworkLong.png</filename>
+            <preserveaspect>yes</preserveaspect>
+        </imagetype>
+
+        <textarea name="messagetext" from="textarea_base">
+            <area>25,660,720,50</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>left,vcenter</align>
+            <multiline>yes</multiline>
+        </textarea>
+
+    </window>
+
+    <window name="bookmarkeditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+
+        <group name="bookmarkeditor1group" from="defaultscreencontent_1B_animated">
+                <area>0,0,720,988</area>
+
+            <textarea name="title" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+            </textarea>
+
+            <textarea name="categorylbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Category:</value>
+            </textarea>
+
+            <textedit name="category" from="textedit_base">
+                <position>450,175</position>
+            </textedit>
+
+                <textarea name="homepagelabel" from="categorylbl">
+                    <area>250,210,300,35</area>
+                    <value>Homepage:</value>
+                </textarea>
+
+                <checkbox name="homepage" from="checkbox_base">
+                    <position>735,210</position>
+                </checkbox>
+
+            <textarea name="namelbl" from="categorylbl">
+                <position>250,245</position>
+                <value>URL Name:</value>
+            </textarea>
+
+            <textedit name="name" from="textedit_base">
+                <position>450,245</position>
+            </textedit>
+
+            <textarea name="urllbl" from="categorylbl">
+                <position>250,280</position>
+                <value>URL:</value>
+            </textarea>
+
+            <textedit name="url" from="textedit_base">
+                <position>450,280</position>
+            </textedit>
+
+            <button name="findcategory" from="button_base">
+                <position>250,575</position>
+                <value>Search</value>
+            </button>
+
+    </group>
+
+        <group name="bookmarkeditorbutton2group" from="defaultscreencontent_2B_animated">
+                <area>788,0,720,988</area>
+            <button name="ok" from="button_base_menu">
+                <position>2,175</position>
+                <value>Save</value>
+            </button>
+
+            <button name="cancel" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="browserconfig">
+        <imagetype name="background" from="image_wallpaper_base">
+            <area>0,0,1280,720</area>
+            <filename>images/backgrounds/MediaStreamNewsBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="browserconfig1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- content of the window                              -->
+            <!-- ================================================== -->
+
+            <textarea name="title">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+            </textarea>
+
+            <textarea name="commandlbl">
+                <area>250,175,510,35</area>
+                <font>small</font>
+                <align>left,vcenter</align>
+                <value>Browser Command:</value>
+            </textarea>
+
+            <textedit name="command" from="textedit_base">
+                <position>450,210</position>
+            </textedit>
+
+            <textarea name="zoomlabel" from="commandlbl">
+                <position>250,280</position>
+                <value>Text Size:</value>
+            </textarea>
+
+            <textedit name="zoom" from="textedit_base">
+               <position>450,280</position>
+            </textedit>
+
+            <textarea name="pluginlabel" from="commandlbl">
+                <position>250,315</position>
+                <value>Enable plugins:</value>
+            </textarea>
+
+            <checkbox name="enablepluginscheck" from="checkbox_menu">
+                <position>735,315</position>
+            </checkbox>
+
+            <textarea name="description" from="textarea_base">
+                <area>250,550,510,120</area>
+                <cutdown>yes</cutdown>
+                <font>smaller</font>
+                <case>normal</case>
+                <alpha>128</alpha>
+                <align>hcenter,bottom</align>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+        <group name="browserconfigbutton1group" from="defaultscreencontent_2B_animated">
+                <area>788,0,720,988</area>
+            <button name="ok" from="button_base_menu">
+                <position>2,175</position>
+                <value>Save</value>
+            </button>
+
+            <button name="cancel" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+        </group>
+
+    </window>
+
+</mythuitheme>

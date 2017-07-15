@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mythmenu name="INFO_SETUP">
+
+    <button>
+        <type>SETTINGS_WEATHER</type>
+        <text>Pogoda</text>
+        <description>Lokalizacja i źródła</description>
+        <action>CONFIGPLUGIN mythweather</action>
+        <depends>mythweather</depends>
+    </button>
+
+    <button>
+        <type>SETTINGS_NEWS</type>
+        <text>Wiadomości</text>
+        <description>Uerwery</description>
+        <action>CONFIGPLUGIN mythnews</action>
+        <depends>mythnews</depends>
+    </button>
+
+    <button>
+        <type>SETTINGS_WEBPAGE</type>
+        <text>Strony WWW</text>
+        <description>Adresy</description>
+        <action>CONFIGPLUGIN mythbrowser</action>
+        <depends>mythbrowser</depends>
+    </button>
+
+</mythmenu>
+

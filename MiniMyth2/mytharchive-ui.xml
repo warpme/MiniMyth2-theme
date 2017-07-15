@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<!--
+
+Common MythArchive window definitions
+
+-->
+<mythuitheme>
+
+    <window name="selectdestination">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="selectdestination1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="destination_text" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Select Destination</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="destinationlbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Destination:</value>
+            </textarea>
+
+            <buttonlist name="destination_selector" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+
+            <textedit name="filename_edit" from="textedit_menu_wide">
+                <position>250,210</position>
+            </textedit>
+
+            <textarea name="freespace_label" from="destinationlbl">
+                <position>250,245</position>
+                <value>Free Space:</value>
+            </textarea>
+
+            <textarea name="makeisoimage_text" from="destinationlbl">
+                <position>250,315</position>
+                <value>Make ISO Image</value>
+            </textarea>
+
+             <textarea name="burntodvdr_text" from="destinationlbl">
+                <position>250,350</position>
+                <value>Burn to DVD</value>
+            </textarea>
+
+            <textarea name="erasedvdrw_text" from="destinationlbl">
+                <position>250,385</position>
+                <value>Force Overwrite of DVD-RW Media</value>
+            </textarea>
+
+       </group>
+
+        <group name="selectdestinationbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="filelbl" from="textarea_base">
+                <area>2,140,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>File</value>
+            </textarea>
+
+            <button name="find_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Find Location</value>
+            </button>
+        </group>
+
+        <group name="selectdestination2group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <textarea name="freespace_text" from="textarea_base">
+                <area>420,245,320,35</area>
+                <case>normal</case>
+                <alpha>128</alpha>
+            </textarea>
+
+            <checkbox name="makeisoimage_check" from="checkbox_base">
+                <position>730,315</position>
+            </checkbox>
+
+            <checkbox name="burntodvdr_check" from="checkbox_base">
+                <position>730,350</position>
+            </checkbox>
+
+            <checkbox name="erasedvdrw_check" from="checkbox_base">
+                <position>730,385</position>
+            </checkbox>
+        </group>
+
+        <group name="selectdestinationbutton2group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,245,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,280</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="prev_button" from="button_base_menu">
+                <position>2,315</position>
+                <value>Previous</value>
+            </button>
+
+            <button name="next_button" from="button_base_menu">
+                <position>2,350</position>
+                <value>Next</value>
+            </button>
+        </group>
+
+    </window>
+
+  <!--
+      Recording Selector
+  -->
+  <window name="recording_selector">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="recording_selector1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Select Recordings</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="showrecordingslbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Show Recordings</value>
+            </textarea>
+
+            <buttonlist name="category_selector" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+
+            <buttonlist name="recordinglist" from="buttonlist_dialog_wide_check_permanent">
+                <area>250,210,510,260</area>
+                <buttonarea>0,0,510,240</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,244</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,244</position>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="progtitle" from="textarea_base">
+                <area>250,505,510,40</area>
+                <font>title</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <case>upper</case>
+                <align>left,top</align>
+            </textarea>
+
+            <textarea name="progdescription" from="textarea_base">
+                <area>250,545,510,120</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+            </textarea>
+
+            <textarea name="filesizelbl" from="textarea_base">
+                <area>250,665,510,25</area>
+                <font>title_verysmall_blue</font>
+                <align>left,vcenter</align>
+                <value>Filesize</value>
+            </textarea>
+
+            <textarea name="filesize" from="textarea_base">
+                <area>350,665,150,25</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>left,vcenter</align>
+            </textarea>
+
+            <textarea name="progdatetimelbl" from="filesizelbl">
+                <position>250,690</position>
+                <value>Date (time)</value>
+            </textarea>
+
+            <textarea name="progdatetime" from="filesize">
+                <position>350,690</position>
+            </textarea>
+
+            <imagetype name="cutlist_icon_off">
+                <area>730,680,30,30</area>
+                <preserveaspect>no</preserveaspect>
+                <filename>images/shared/OSDVideoNF.png</filename>
+            </imagetype>
+
+            <imagetype name="cutlist_image">
+                <area>730,680,30,30</area>
+                <preserveaspect>no</preserveaspect>
+                <filename>images/shared/OSDVideoFO.png</filename>
+            </imagetype>
+
+            <imagetype name="preview_image">
+                <area>1000,425,200,170</area>
+                <filename>blank.png</filename>
+            </imagetype>
+        </group>
+
+        <group name="recording_selectorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="ok_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>OK</value>
+            </button>
+        </group>
+
+    </window>
+
+  <!--
+      File Selector
+  -->
+
+    <window name="file_selector">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="file_selector1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Select Destination</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textedit name="location_edit" from="textedit_menu_wide">
+                <position>250,175</position>
+            </textedit>
+
+            <buttonlist name="filelist" from="filelist_base_check">
+                <position>250,210</position>
+            </buttonlist>
+        </group>
+
+        <group name="file_selectorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="back_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Back</value>
+            </button>
+
+            <button name="home_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Home</value>
+            </button>
+
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Cancel</value>
+            </button>
+    
+            <button name="ok_button" from="button_base_menu">
+                <position>2,280</position>
+                <value>OK</value>
+            </button>
+        </group>
+
+    </window>
+
+  <!--
+      Video Selector
+  -->
+  <window name="video_selector">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="video_selector1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Select Videos</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <textarea name="showrecordingslbl" from="textarea_base">
+                <area>250,175,510,35</area>
+                <value>Show Videos</value>
+            </textarea>
+
+            <buttonlist name="category_selector" from="selector_base">
+                <position>450,175</position>
+            </buttonlist>
+
+            <buttonlist name="videolist" from="buttonlist_dialog_wide_check_permanent">
+                <area>250,210,510,260</area>
+                <buttonarea>0,0,510,240</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,244</position>    
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,244</position>    
+                </statetype>
+            </buttonlist>
+
+            <textarea name="videotitle" from="textarea_base">
+                <area>250,505,510,40</area>
+                <font>title</font>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+                <case>upper</case>
+                <align>left,top</align>
+            </textarea>
+
+            <textarea name="videoplot" from="textarea_base">
+                <area>250,545,510,120</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>justify</align>
+                <multiline>yes</multiline>
+                <cutdown>yes</cutdown>
+            </textarea>
+
+            <textarea name="warning_text" from="videoplot"/>
+
+            <textarea name="filesizelbl" from="textarea_base">
+                <area>250,665,510,25</area>
+                <font>title_verysmall_blue</font>
+                <align>left,vcenter</align>
+                <value>Filesize</value>
+            </textarea>
+
+            <textarea name="parentallevel_textlbl" from="filesizelbl">
+                <position>250,690</position>
+                <value>Parental Level</value>
+            </textarea>
+
+            <textarea name="filesize" from="textarea_base">
+                <area>400,665,150,25</area>
+                <font>small</font>
+                <case>normal</case>
+                <align>left,vcenter</align>
+            </textarea>
+
+            <textarea name="parentallevel_text" from="filesize">
+                <position>400,690</position>
+            </textarea>
+
+            <imagetype name="cover_image">
+                <area>730,670,30,40</area>
+                <preserveaspect>no</preserveaspect>
+            </imagetype>
+        </group>
+
+        <group name="video_selectorbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,175</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="ok_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>OK</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="logviewer">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamDVDBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2A_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="logviewer1group" from="defaultscreencontent_1A_animated">
+           <area>0,0,720,988</area>
+            <!-- ================================================== -->
+            <!-- Screen description                                 -->
+            <!-- ================================================== -->
+            <textarea name="pagetitledesc" from="textarea_base">
+                <area>250,10,515,65</area>
+                <font>menu_description</font>
+                <case>upper</case>
+                <align>right,bottom</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Write video to data dvd or file</value>
+            </textarea>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>right,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Log Viewer</value>
+            </textarea>
+
+            <!-- ================================================== -->
+            <!-- screen content                                     -->
+            <!-- ================================================== -->
+            <buttonlist name="loglist" from="buttonlist_dialog_wide_permanent">
+                <position>250,175</position>
+            </buttonlist>
+
+            <textarea name="logitem_text" from="textarea_base">
+                <area>250,575,510,135</area>
+                <multiline>yes</multiline>
+            </textarea>
+        </group>
+
+        <group name="logviewerbutton1group" from="defaultscreencontent_2A_animated">
+           <area>788,0,720,988</area>      
+            <textarea name="navigationlbl" from="textarea_base">
+                <area>2,175,180,35</area>
+                <alpha>128</alpha>
+                <font>title_small</font>
+                <align>right,bottom</align>
+                <value>Navigation</value>
+            </textarea>
+
+            <button name="cancel_button" from="button_base_menu">
+                <position>2,210</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="update_button" from="button_base_menu">
+                <position>2,245</position>
+                <value>Update</value>
+            </button>
+
+            <button name="exit_button" from="button_base_menu">
+                <position>2,280</position>
+                <value>Exit</value>
+            </button>
+        </group>
+
+    </window>
+
+</mythuitheme>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mythuitheme SYSTEM "http://www.mythtv.org/schema/mythuitheme.dtd">
+<mythuitheme>
+
+    <window name="rawsettingseditor">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamSystemBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_2B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="rawsettingseditor1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="label-text" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Edit System events</value>
+            </textarea>
+
+            <buttonlist name="settings" from="buttonlist_dialog_wide_permanent">
+                <area>250,175,510,420</area>
+                <buttonarea>0,0,510,400</buttonarea>
+                <statetype name="upscrollarrow">
+                    <position>10,404</position>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,404</position>
+                </statetype>
+            </buttonlist>
+
+            <textarea name="heading" from="textarea_base">
+                <area>250,605,510,35</area>
+            </textarea>
+
+            <textedit name="settingvalue" from="textedit_menu_wide">
+                <position>250,640</position>
+            </textedit>
+        </group>
+
+        <group name="rawsettingseditorbutton1group" from="defaultscreencontent_2B_animated">
+           <area>788,0,720,988</area>
+            <button name="cancel" from="button_base_menu">
+                <position>2,175</position>
+                <value>Cancel</value>
+            </button>
+
+            <button name="save" from="button_base_menu">
+                <position>2,210</position>
+                <value>Save</value>
+            </button>
+        </group>
+
+    </window>
+
+    <window name="themechooser">
+        <imagetype name="background" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamSystemBGD.png</filename>
+        </imagetype>
+        <imagetype name="backgroundoverlay" from="background_overlay_base" />
+        <group name="screenlayoutSettings" from="defaultscreenlayoutSettings_1B_animated">
+            <position>0,0</position>
+        </group> 
+        <group name="themechooser1group" from="defaultscreencontent_1B_animated">
+           <area>0,0,720,988</area>
+
+            <textarea name="pagetitle" from="textarea_base">
+                <area>250,75,515,65</area>
+                <font>menu_active</font>
+                <case>upper</case>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <multiline>yes</multiline>
+                <value>Theme Chooser</value>
+            </textarea>
+
+            <buttonlist name="themes" from="buttonlist_dialog_wide_details_permanent">
+                <area>250,175,510,220</area>
+                <buttonarea>0,0,510,200</buttonarea>
+                <statetype name="buttonitem">
+                    <state name="selectedactive">
+                        <!-- State to show whether a theme is locally installed or remotely downloadable-->
+                        <statetype name="themelocation">
+                            <area>345,9,22,22</area>
+                            <state name="local">
+                                <imagetype name="localimg">
+                                    <area>0,0,22,22</area>
+                                    <filename>images/tv-recordings/schedule/schedule_record.png</filename>
+                                </imagetype>
+                            </state>
+                            <state name="remote">
+                                <imagetype name="remoteimg">
+                                    <area>0,0,22,22</area>
+                                    <filename>images/tv-recordings/schedule/schedule_other.png</filename>
+                                </imagetype>
+                            </state>
+                        </statetype>
+                        <!-- State to indicate whether an installed downloadable theme is up to date or not-->
+                        <statetype name="themestatus">
+                            <state name="uptodate">
+                                <textarea name="uptodatetext" from="textarea_base">
+                                    <area>380,7,110,33</area>
+                                    <font>verysmall</font>
+                                    <case>Normal</case>
+                                    <align>left,vcenter</align>
+                                    <value>Up to date</value>
+                                </textarea>
+                            </state>
+                            <state name="updateavailable">
+                                <textarea name="updateavailabletext" from="textarea_base">
+                                    <area>380,7,110,33</area>
+                                    <font>verysmall</font>
+                                    <case>Normal</case>
+                                    <align>left,vcenter</align>
+                                    <value>Update available</value>
+                                </textarea>
+                            </state>
+                            <state name="default">
+                                <imagetype name="remoteimg">
+                                    <area>345,9,22,22</area>
+                                    <filename>images/tv-recordings/schedule/schedule_mark.png</filename>
+                                </imagetype>
+                                <textarea name="defaultext" from="textarea_base">
+                                    <area>380,7,110,33</area>
+                                    <font>verysmall</font>
+                                    <case>Normal</case>
+                                    <align>left,vcenter</align>
+                                    <value>Locally installed</value>
+                                </textarea>
+                            </state>
+                        </statetype>
+                    </state>
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <position>10,204</position>    
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>30,204</position>    
+                </statetype>
+            </buttonlist>
+
+            <imagetype name="preview">
+                <area>250,450,250,140</area>
+                <filename />
+                <preserveaspect>true</preserveaspect>
+            </imagetype>
+
+            <textarea name="name" from="textarea_base">
+                <area>520,450,220,35</area>
+                <multiline>no</multiline>
+                <font>title</font>
+                <cutdown>yes</cutdown>
+            </textarea>
+
+            <textarea name="resolution" from="textarea_base">
+                <area>520,485,220,30</area>
+                <font>small</font>
+                <alpha>128</alpha>
+                <multiline>no</multiline>
+                <align>left,vcenter</align>
+                <cutdown>yes</cutdown>
+                <template>Resolution: %1</template>
+            </textarea>
+
+            <textarea name="aspect" from="resolution">
+                <position>520,515</position>
+                <template>Aspect: %1</template>
+            </textarea>
+
+            <textarea name="downloadlbl" from="textarea_base">
+                <area>520,560,220,20</area>
+                <font>tiny</font>
+                <alpha>255</alpha>
+                <multiline>no</multiline>
+                <align>hcenter,vcenter</align>
+                <cutdown>yes</cutdown>
+                <value>Download status</value>
+            </textarea>
+
+            <progressbar name="downloadprogressbar"from="progressbar_base">
+                <area>520,585,220,5</area>
+                <layout>horizontal</layout>
+                <style>reveal</style>
+                <imagetype name="background">
+                    <area>0,0,220,5</area>
+                    <filename>images/shared/progressbar/progressbar_background.png</filename>
+                    <preserveaspect>false</preserveaspect>
+                </imagetype>
+                <imagetype name="progressimage">
+                    <area>0,0,220,5</area>
+                    <filename>images/shared/progressbar/progressbar_fill_blue.png</filename>
+                    <preserveaspect>false</preserveaspect>
+                </imagetype>
+            </progressbar>
+
+            <textarea name="description" from="textarea_base">
+                <area>250,610,510,100</area>
+                <multiline>yes</multiline>
+                <font>verysmall</font>
+                <case>normal</case>
+                <align>justify,top</align>
+                <cutdown>yes</cutdown>
+            </textarea>
+
+    <!--        <buttonlist name="themes">
+                <area>250,175,510,170</area>
+                <scrollstyle>free</scrollstyle>
+                <wrapstyle>items</wrapstyle>
+                <layout>vertical</layout>
+                <spacing>2</spacing>
+                <drawfrombottom>false</drawfrombottom>
+                <buttonarea>0,0,100%,95%</buttonarea>
+                <statetype name="buttonitem">
+    -->
+
+    <!-- State to indicate whether an installed downloadable theme is up to date or not
+                        <statetype name="themestatus">
+                            <area>0,30,60,30</area>
+                            <state name="uptodate">
+                                <shape name="status">
+                                    <area>0,0,60,30</area>
+                                    <type>ellipse</type>
+                                    <fill color="#00FF00" />
+                                </shape>
+                            </state>
+                            <state name="updateavailable">
+                                <shape name="status">
+                                    <area>0,0,60,30</area>
+                                    <type>ellipse</type>
+                                    <fill color="#0000FF" />
+                                </shape>
+                            </state>
+                        </statetype>
+    -->
+    <!--                </state>
+
+               <state name="selectedactive" from="active">
+                        <shape name="item">
+                            <fill color="#0767AB" alpha="240" />
+                        </shape>
+                        <textarea name="buttontext">
+                            <alpha>200</alpha>
+                            <font>basesmall</font>
+                        </textarea>
+                        <imagetype name="buttonimage">
+                            <alpha>255</alpha>
+                        </imagetype>
+                        <imagetype name="divider">
+                            <filename />
+                        </imagetype>
+                    </state>
+                    <state name="selectedinactive" from="active" />
+                </statetype>
+                <statetype name="upscrollarrow">
+                    <position>325,490</position>
+                    <state type="off">
+                    </state>
+                    <state type="full">
+                        <imagetype name="upon">
+                            <filename>lb-uparrow-reg.png</filename>
+                            <alpha>230</alpha>
+                        </imagetype>
+                    </state>
+                </statetype>
+                <statetype name="downscrollarrow">
+                    <position>343,490</position>
+                    <state type="off">
+                    </state>
+                    <state type="full">
+                        <imagetype name="dnon">
+                            <filename>lb-dnarrow-reg.png</filename>
+                            <alpha>230</alpha>
+                        </imagetype>
+                    </state>
+                </statetype>
+            </buttonlist>-->
+
+            <statetype name="fullpreviewstate">
+                <area>0,0,1280,720</area>
+                <state name="fullscreen">
+                    <area>0,0,1280,720</area>
+                    <imagetype name="fullscreenpreview">
+                        <area>0,0,1280,720</area>
+                        <filename />
+                    </imagetype>
+
+                    <textarea name="fullscreenname" from="textarea_base">
+                        <area>0,20,1280,50</area>
+                        <multiline>no</multiline>
+                        <font>normal_amber</font>
+                        <align>hcenter,vcenter</align>
+                    </textarea>
+                </state>
+            </statetype>
+        </group>
+    </window>
+
+</mythuitheme>
