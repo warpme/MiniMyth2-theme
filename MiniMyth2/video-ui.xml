@@ -257,7 +257,7 @@
         </textarea>
 
         <textarea name="level_label">
-            <area>650,670,210,30</area>
+            <area>650,668,210,30</area>
             <font>title_verysmall_blue</font>
             <value>Parental Level</value>
             <align>right,vcenter</align>

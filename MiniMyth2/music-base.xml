@@ -561,7 +561,7 @@
                     <area>5,130,140,20</area>
                     <align>hcenter,vcenter</align>
                     <font>tiny</font>
-                    <weight>bold</weight>
+                    <case>bold</case>
                 </textarea>
 
             </state>
