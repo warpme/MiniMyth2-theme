@@ -47,7 +47,7 @@
             <!-- ================================================== -->
             <!-- Screen description                                 -->
             <!-- ================================================== -->
-    
+
             <textarea name="title" from="textarea_base">
                 <area>250,75,515,65</area>
                 <font>menu_active</font>
@@ -57,11 +57,11 @@
                 <multiline>yes</multiline>
                 <value>Artwork selector</value>
             </textarea>
-    
+
             <!-- ================================================== -->
             <!-- screen content                                     -->
             <!-- ================================================== -->
-    
+
             <buttonlist name="results" from="filelist_big">
                 <position>250,175</position>
                 <statetype name="buttonitem">
@@ -231,7 +231,7 @@
         </imagetype>
 
         <imagetype name="coverart">
-            <area>25,220,120,180</area>
+            <area>25,245,100,133</area>
             <filename>images/shared/amt-blank-poster.png</filename>
             <preserveaspect>yes</preserveaspect>
             <reflection shear="0" scale="65" length="10"/>
@@ -257,37 +257,37 @@
         </textarea>
 
         <textarea name="level_label">
-            <area>1000,670,210,30</area>
+            <area>650,670,210,30</area>
             <font>title_verysmall_blue</font>
             <value>Parental Level</value>
             <align>right,vcenter</align>
         </textarea>
 
         <statetype name="parentallevel">
-            <position>1220,665</position>
+            <position>890,674</position>
             <state name="None">
                 <imagetype name="icon">
-                    <filename>mv_level_none.png</filename>
+                    <filename>images/shared/parental-level/background.png</filename>
                 </imagetype>
             </state>
             <state name="Lowest">
                 <imagetype name="icon">
-                    <filename>mv_level_lowest.png</filename>
+                    <filename>images/shared/parental-level/lowest.png</filename>
                 </imagetype>
             </state>
             <state name="Low">
                 <imagetype name="icon">
-                    <filename>mv_level_low.png</filename>
+                    <filename>images/shared/parental-level/low.png</filename>
                 </imagetype>
             </state>
             <state name="Medium">
                 <imagetype name="icon">
-                    <filename>mv_level_medium.png</filename>
+                    <filename>images/shared/parental-level/medium.png</filename>
                 </imagetype>
             </state>
             <state name="High">
                 <imagetype name="icon">
-                    <filename>mv_level_high.png</filename>
+                    <filename>images/shared/parental-level/high.png</filename>
                 </imagetype>
             </state>
         </statetype>
@@ -1244,37 +1244,37 @@
                 <position>250,350</position>
                 <value>Year:</value>
             </textarea>
-    
+
             <textarea name="runtime_text" from="category_text">
                 <position>250,385</position>
                 <value>Runtime:</value>
             </textarea>
-    
+
             <textarea name="userrating_text" from="category_text">
                 <position>250,420</position>
                 <value>User Rating:</value>
             </textarea>
-    
+
             <textarea name="browse_text" from="category_text">
                 <position>250,455</position>
                 <value>Browse:</value>
             </textarea>
-    
+
             <textarea name="inetref_text" from="category_text">
                 <position>250,490</position>
                 <value>InetRef:</value>
             </textarea>
-    
+
             <textarea name="coverfile_text" from="category_text">
                 <position>250,525</position>
                 <value>Cover File:</value>
             </textarea>
-    
+
             <textarea name="orderby_text" from="category_text">
                 <position>250,560</position>
                 <value>Sort by:</value>
             </textarea>
-    
+
             <textarea name="watched_text" from="category_text">
                 <position>250,595</position>
                 <value>Watched:</value>
@@ -1284,56 +1284,56 @@
                 <position>250,650</position>
                     <value>Result</value>
                 </textarea>
-    
+
             <!-- Widgets -->
             <textedit name="textfilter_input" from="textedit_base">
                 <position>450,175</position>
             </textedit>
-    
+
             <buttonlist name="category_select" from="selector_base">
                 <position>450,210</position>
             </buttonlist>
-    
+
             <buttonlist name="genre_select" from="selector_base">
                 <position>450,245</position>
             </buttonlist>
-    
+
             <buttonlist name="country_select" from="selector_base">
                 <position>450,280</position>
             </buttonlist>
-    
+
             <buttonlist name="cast_select" from="selector_base">
                 <position>450,315</position>
             </buttonlist>
-    
+
             <buttonlist name="year_select" from="selector_base">
                 <position>450,350</position>
             </buttonlist>
-    
+
             <buttonlist name="runtime_select" from="selector_base">
                 <position>450,385</position>
             </buttonlist>
-    
+
             <buttonlist name="userrating_select" from="selector_base">
                 <position>450,420</position>
             </buttonlist>
-    
+
             <buttonlist name="browse_select" from="selector_base">
                 <position>450,455</position>
             </buttonlist>
-    
+
             <buttonlist name="inetref_select" from="selector_base">
                 <position>450,490</position>
             </buttonlist>
-    
+
             <buttonlist name="coverfile_select" from="selector_base">
                 <position>450,525</position>
             </buttonlist>
-    
+
             <buttonlist name="orderby_select" from="selector_base">
                 <position>450,560</position>
             </buttonlist>
-    
+
             <buttonlist name="watched_select" from="selector_base">
                 <position>450,595</position>
             </buttonlist>
