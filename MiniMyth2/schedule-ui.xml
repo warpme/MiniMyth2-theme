@@ -1126,7 +1126,7 @@
                 <alpha>128</alpha>
             </textarea>-->
 
-            <textarea name="recprioritylbl" from="basetextarea">
+            <textarea name="recprioritylbl" from="textarea_base">
                 <area>250,635,170,25</area>
                 <font>title_verysmall_blue</font>
                 <value>Priorytet reguły:</value>
@@ -1477,6 +1477,223 @@
                 <value>Ok</value>
             </button>
         </group>
+    </window>
+
+<window name="prevreclist">
+
+        <imagetype name="fanart" from="image_wallpaper_base">
+            <filename>images/backgrounds/MediaStreamScheduleBGD.png</filename>
+        </imagetype>
+        <group name="screenlayoutTVlist" from="defaultscreenlayoutTVlist_1">
+            <position>0,0</position>
+        </group>
+        <textarea name="sched" from="screentitle">
+            <value>Previously Recorded</value>
+        </textarea>
+
+        <imagetype name="TitleBackgroundDateText" from="titlebackground2"/>
+
+        <textarea name="keyinstr" from="textarea_base">
+            <area>220,670,560,25</area>
+            <font>small</font>
+            <alpha>128</alpha>
+            <value>(1) Time (2) Title</value>
+        </textarea>
+
+        <textarea name="curview" from="textarea_base">
+            <area>20,670,560,25</area>
+            <font>small</font>
+            <alpha>128</alpha>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <buttonlist name="titles" from="buttonlist_video">
+            <position>620,260</position>
+            <spacing>0</spacing>
+            <statetype name="buttonitem">
+                <area>10,0,570,40</area>
+                <state name="active">
+                    <textarea name="buttontext" from="textarea_base">
+                        <area>10,0,570,40</area>
+                        <font>normal</font>
+                        <alpha>128</alpha>
+                        <cutdown>yes</cutdown>
+                        <align>left,vcenter</align>
+                    </textarea>
+                </state>
+                <state name="selectedactive" from="active">
+                    <textarea name="buttontext">
+                        <alpha>255</alpha>
+                    </textarea>
+                </state>
+                <state name="selectedinactive">
+                </state>
+            </statetype>
+            <statetype name="upscrollarrow">
+                <state type="off">
+                    <imagetype name="upon">
+                        <filename></filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="upoff">
+                        <filename></filename>
+                    </imagetype>
+                </state>
+            </statetype>
+            <statetype name="downscrollarrow">
+                <state type="off">
+                    <imagetype name="dnon">
+                        <filename></filename>
+                    </imagetype>
+                </state>
+                <state type="full">
+                    <imagetype name="dnoff">
+                        <filename></filename>
+                    </imagetype>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <buttonlist name="shows" from="buttonlist_wide">
+            <position>620,260</position>
+            <statetype name="buttonitem">
+                <state name="active">
+                    <textarea name="shortstarttimedate" from="textarea_base">
+                        <area>10,0,570,40</area>
+                        <alpha>255</alpha>
+                        <font>normal</font>
+                        <alpha>255</alpha>
+                        <font state="disabled">normal_inactive</font>
+                        <font state="error">normal_red</font>
+                        <font state="warning">normal_warning</font>
+                        <font state="running">normal_amber</font>
+                        <align>left,vcenter</align>
+                        <template>%shorttimedate% - %title%</template>
+                    </textarea>
+                    <textarea name="card" from="shortstarttimedate">
+                        <area>600,0,35,40</area>
+                        <alpha>255</alpha>
+                        <font>normal</font>
+                        <font state="disabled">normal_inactive</font>
+                        <font state="error">normal_red</font>
+                        <font state="warning">normal_warning</font>
+                        <font state="running">normal_amber</font>
+                        <align>right,vcenter</align>
+                        <template>(%card%)</template>
+                    </textarea>
+                </state>
+                <state name="selectedactive">
+                    <textarea name="title" from="textarea_base">
+                        <area>10,0,270,40</area>
+                        <alpha>255</alpha>
+                        <font state="error">normal_red</font>
+                        <font state="warning">normal_warning</font>
+                        <font state="running">normal_amber</font>
+                        <align>left,vcenter</align>
+                    </textarea>
+                    <imagetype name="statusimagedefault">
+                        <area>290,9,22,22</area>
+                        <filename>images/tv-recordings/schedule/schedule_mark.png</filename>
+                    </imagetype>
+                    <statetype name="status">
+                        <area>290,9,22,22</area>
+                        <state name="disabled">
+                            <imagetype name="statusimage">
+                                <area>0,0,22,22</area>
+                                <filename>images/tv-recordings/schedule/schedule_disabled.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="error">
+                            <imagetype name="statusimage">
+                                <area>0,0,22,22</area>
+                                <filename>images/tv-recordings/schedule/schedule_conflict.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="warning">
+                            <imagetype name="statusimage">
+                                <area>0,0,22,22</area>
+                                <filename>images/tv-recordings/schedule/schedule_other.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="normal">
+                            <imagetype name="statusimage">
+                                <area>0,0,22,22</area>
+                                <filename>images/tv-recordings/schedule/schedule_record.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="running">
+                            <imagetype name="statusimage">
+                                <area>0,0,22,22</area>
+                                <filename>images/tv-recordings/schedule/schedule_recording.png</filename>
+                            </imagetype>
+                        </state>
+                        <state name="marked">
+                            <imagetype name="statusimage">
+                                <area>0,0,22,22</area>
+                                <filename>images/tv-recordings/schedule/schedule_mark.png</filename>
+                            </imagetype>
+                        </state>
+                    </statetype>
+                    <textarea name="shortstarttimedate" from="textarea_base">
+                        <area>320,7,320,33</area>
+                        <alpha>255</alpha>
+                        <font>verysmall</font>
+                        <case>normal</case>
+                        <font state="error">verysmall_red</font>
+                        <font state="running">verysmall_amber</font>
+                        <align>left,vcenter</align>
+                        <template>Input %card%:  %shorttimedate% on %longchannel%</template>
+                    </textarea>
+                </state>
+            </statetype>
+        </buttonlist>
+
+        <textarea name="title" from="textarea_base">
+            <area>20,260,560,40</area>
+            <font>title</font>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="channel" from="textarea_base">
+            <area>20,300,560,25</area>
+            <font>title_small</font>
+            <multiline>no</multiline>
+            <cutdown>yes</cutdown>
+            <case>upper</case>
+            <align>left,vcenter</align>
+            <alpha>192</alpha>
+            <template>%longchannel% - %timedate%</template>
+        </textarea>
+
+        <textarea name="rectypestatus" from="textarea_base">
+            <area>20,605,420,25</area>
+            <font>small</font>
+            <align>left,vcenter</align>
+        </textarea>
+
+        <textarea name="description" from="textarea_base">
+            <area>20,340,560,235</area>
+            <font>small</font>
+            <case>normal</case>
+            <align>justify</align>
+            <multiline>yes</multiline>
+            <cutdown>yes</cutdown>
+            <template>%"|SUBTITLE|"\n%%YEARSTARS| %%DESCRIPTION%</template>
+        </textarea>
+
+        <!--<textarea name="help1text" from="textarea_base">
+            <font>small</font>
+            <area>630,220,1000,36</area>
+        </textarea>-->
+        <textarea name="help2text" from="textarea_base">
+            <area>100,380,400,144</area>
+            <multiline>yes</multiline>
+        </textarea>
+
     </window>
 
     <window name="programlist">
